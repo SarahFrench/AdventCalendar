@@ -1,13 +1,14 @@
+#hugo {
+  min-width: 400px;
+}
 #frag {
   position: absolute;
   z-index: 9;
-  text-align: center;
 }
 
 #frag-bottle {
   cursor: move;
   z-index: 10;
-  color: #fff;
 }
 
 #frag-2{
