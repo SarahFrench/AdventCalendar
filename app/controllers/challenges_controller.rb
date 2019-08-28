@@ -3,7 +3,8 @@ class ChallengesController < ApplicationController
   CHALLENGES = {
     1 => 'pong',
     2 => 'test',
-    3 => 'eyebrows'
+    3 => 'eyebrows',
+    4 => 'vue'
   }
 
   def show
