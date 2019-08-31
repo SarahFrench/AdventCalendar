@@ -1,16 +1,70 @@
-#hugo {
-  min-width: 400px;
-}
-#frag {
-  position: absolute;
-  z-index: 9;
+.hidden {
+  opacity: 0;
 }
 
-#frag-bottle {
+.shown {
+  opacity: 1;
+}
+
+#hugo-container {
+  min-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+
+  & #favourite {
+    position: absolute;
+    top: 10%;
+    left: 60%;
+  }
+}
+  position: absolute;
+#favourite {
+  z-index: 9;
+  width: 100px;
+  height: 150px;
+
+  & #ring--inner {
+    width: 250px;
+    height: 250px;
+    position: relative;
+    top: -200px;
+    left: -75px;
+  }
+
+  & #ring--outer {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    top: -475px;
+    left: -100px;
+  }
+}
+
+.bottle__svg {
   cursor: move;
   z-index: 10;
 }
 
-#frag-2{
-  margin-left: 120px;
+.bottle__container {
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.spin--clockwise {
+  -webkit-animation: spin-ccw 16s infinite linear;
+}
+
+@-webkit-keyframes spin-ccw {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(-360deg);}
+}
+
+
+.spin--anticlockwise {
+  -webkit-animation: spin-cw 16s infinite linear;
+}
+
+@-webkit-keyframes spin-cw {
+    0%  {-webkit-transform: rotate(0deg);}
+    100% {-webkit-transform: rotate(360deg);}
 }
