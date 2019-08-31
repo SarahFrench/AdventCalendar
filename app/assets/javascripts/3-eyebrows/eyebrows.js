@@ -1,16 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-  let page = document.getElementsByTagName("body")[0].getAttribute('data-page');
-
-  var svg = document.getElementById("hugo");
-  var s = Snap(svg);
-
   var eyebrowDown = Snap.select('#eyebrow-down');
   var eyebrowUp = Snap.select('#eyebrow-up');
 
   var eyebrowDownPoints = eyebrowDown.node.getAttribute('d');
   var eyebrowUpPoints = eyebrowUp.node.getAttribute('d');
-
 
   var toUp = function(){
     eyebrowDown.animate({ d: eyebrowUpPoints }, 2000, mina.elastic, toDown);
@@ -25,9 +19,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
 })
 
+function dragStart(event) {
+  event.dataTransfer.setData("Text", event.target.id);
+}
+
+function allowDrop(event) {
+  event.preventDefault();
+}
+
+function angryShake(){
+  let hugo = document.getElementById('hugo');
+  hugo.classList.add("animated");
+  hugo.classList.add("shake");
+
+  //need to remove fro repeat animation
+  setTimeout(function(){
+    hugo.classList.remove("animated");
+    hugo.classList.remove("shake");
+  }, 1000);
+}
+
 document.addEventListener("drop", function(event){
   var data = event.dataTransfer.getData("Text");
-  //some issues if event.target ends up being svg element
   if (data === 'frag' && event.target.id === 'hugo'){
     happyObject = document.getElementsByClassName("happy")
     Object.keys(happyObject).forEach(function (key){
@@ -41,6 +54,8 @@ document.addEventListener("drop", function(event){
 
     event.target.parentNode.appendChild(document.getElementById('frag'))
 
+  } else if (data != 'frag' && event.target.id === 'hugo'){
+    angryShake();
   }
 
 });
