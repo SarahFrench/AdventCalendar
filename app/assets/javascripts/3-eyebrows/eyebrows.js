@@ -1,5 +1,10 @@
-document.addEventListener("DOMContentLoaded", function() {
+let isHugoHappy = false;
 
+document.addEventListener("DOMContentLoaded", function() {
+  eyebrowRaising();
+})
+
+function eyebrowRaising(){
   var eyebrowDown = Snap.select('#eyebrow-down');
   var eyebrowUp = Snap.select('#eyebrow-up');
 
@@ -16,8 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   toUp();
-
-})
+}
 
 function dragStart(event) {
   event.dataTransfer.setData("Text", event.target.id);
