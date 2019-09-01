@@ -11,13 +11,24 @@
   margin-left: auto;
   margin-right: auto;
 
+  & #hugo {
+    // needed for drag and drop to be straight-forward
+    z-index: 15;
+  }
+
   & #favourite {
     position: absolute;
     top: 10%;
     left: 60%;
   }
 }
+
+#start-message {
+  width: 500px;
   position: absolute;
+  z-index: -10;
+}
+
 #favourite {
   z-index: 9;
   width: 100px;
