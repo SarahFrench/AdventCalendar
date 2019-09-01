@@ -1,8 +1,94 @@
 let isHugoHappy = false;
 
 document.addEventListener("DOMContentLoaded", function() {
-  eyebrowRaising();
+  if (document.getElementById('hugo')) {
+
+    showIntroMessage();
+    setTimeout(hideIntroMessage, 5000);
+    setTimeout(function(){
+      fadeIntoView(document.getElementById('hugo'));
+      let bottles = document.getElementsByClassName('bottle__svg');
+      for (let i = 0; i < bottles.length; i++){
+        fadeIntoView(bottles[i]);
+      }
+    }, 8000);
+
+    // let allBottles = document.getElementsByClassName('bottle__container');
+    // for (let i = 0; i < allBottles.length; i++){
+    //   allBottles[i].addEventListener('mouseover', function(){
+    //     // console.log(allBottles[i]);
+    //   })
+    // }
+  }
 })
+
+function showIntroMessage(){
+  let message1 = document.querySelector('#start-message #intro-text-1');
+  let message2 = document.querySelector('#start-message #intro-text-2');
+  let message3 = document.querySelector('#start-message #intro-text-3');
+  let message4 = document.querySelector('#start-message #intro-text-4');
+
+  setTimeout(function(){
+    message1.classList.add('animated')
+    message1.classList.add('fadeInDown')
+  }, 0);
+  setTimeout(function(){
+    message2.classList.add('animated')
+    message2.classList.add('fadeInDown')
+  }, 2000);
+  setTimeout(function(){
+    message3.classList.add('animated')
+    message3.classList.add('fadeInDown')
+  }, 3000);
+  setTimeout(function(){
+    message4.classList.add('animated')
+    message4.classList.add('fadeInDown')
+  }, 5000);
+}
+
+function hideIntroMessage(){
+  let message1 = document.querySelector('#start-message #intro-text-1');
+  let message2 = document.querySelector('#start-message #intro-text-2');
+  let message3 = document.querySelector('#start-message #intro-text-3');
+  let message4 = document.querySelector('#start-message #intro-text-4');
+
+  setTimeout(function(){
+    message1.classList.add('animated');
+    message1.classList.remove('fadeInDown');
+    message1.classList.add('fadeOutDown');
+  }, 0);
+  setTimeout(function(){
+    message2.classList.add('animated');
+    message2.classList.remove('fadeInDown');
+    message2.classList.add('fadeOutDown');
+  }, 0);
+  setTimeout(function(){
+    message3.classList.add('animated');
+    message3.classList.remove('fadeInDown');
+    message3.classList.add('fadeOutDown');
+  }, 0);
+  setTimeout(function(){
+    message4.classList.add('animated');
+    message4.classList.remove('fadeInDown');
+    message4.classList.add('fadeOutDown');
+  }, 3000);
+}
+
+function fadeIntoView(element){
+  //Needed if element is already animated via CSS
+  setTimeout(function(){
+    element.setAttribute('opacity', 0.25);
+  },500);
+  setTimeout(function(){
+    element.setAttribute('opacity', 0.5);
+  },700);
+  setTimeout(function(){
+    element.setAttribute('opacity', 0.75);
+  },800);
+  setTimeout(function(){
+    element.setAttribute('opacity', 1);
+  },900);
+}
 
 function eyebrowRaising(){
   var eyebrowDown = Snap.select('#eyebrow-down');
@@ -36,7 +122,7 @@ function angryShake(){
   hugo.classList.add("animated");
   hugo.classList.add("shake");
 
-  //need to remove fro repeat animation
+  //need to remove for repeat animation
   setTimeout(function(){
     hugo.classList.remove("animated");
     hugo.classList.remove("shake");
@@ -65,25 +151,27 @@ function showHeartRings(){
   let innerRing = document.getElementById('ring--inner');
   let outerRing = document.getElementById('ring--outer');
 
-  favourite.setAttribute('overflow', 'show');
+  favourite.appendChild(innerRing);
+  favourite.appendChild(outerRing);
 
   //using sequential setTimeouts to change opacity as can't do multiple webkit CSS animations on the same element (?)
+  fadeIntoView(innerRing);
+  fadeIntoView(outerRing);
+}
+
+function showThanksMessage(){
+  let message1 = document.querySelector('#success-message #success-text-1');
+  let message2 = document.querySelector('#success-message #success-text-2');
+
   setTimeout(function(){
-    innerRing.setAttribute('opacity', 0.25);
-    outerRing.setAttribute('opacity', 0.25);
-  },500);
+    message1.classList.add('animated')
+    message1.classList.add('fadeInDown')
+  }, 0);
   setTimeout(function(){
-    innerRing.setAttribute('opacity', 0.5);
-    outerRing.setAttribute('opacity', 0.5);
-  },700);
-  setTimeout(function(){
-    innerRing.setAttribute('opacity', 0.75);
-    outerRing.setAttribute('opacity', 0.75);
-  },800);
-  setTimeout(function(){
-    innerRing.setAttribute('opacity', 1);
-    outerRing.setAttribute('opacity', 1);
-  },900);
+    message2.classList.add('animated')
+    message2.classList.add('fadeInDown')
+  }, 2000);
+}
   }
 
 document.addEventListener("drop", function(event){
@@ -93,6 +181,7 @@ document.addEventListener("drop", function(event){
       makeHugoSVGHappy();
       moveFragrance();
       showHeartRings();
+      showThanksMessage();
       isHugoHappy = true;
     } else if (data != 'favourite' && event.target.id === 'hugo'){
       angryShake();
