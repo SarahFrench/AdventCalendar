@@ -1,7 +1,7 @@
 let isHugoHappy = false;
 
 document.addEventListener("DOMContentLoaded", function() {
-  if (document.getElementById('hugo')) {
+  if (document.getElementById('eyebrows')) {
 
     showIntroMessage();
     setTimeout(hideIntroMessage, 5000);
@@ -12,13 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
         fadeIntoView(bottles[i]);
       }
     }, 8000);
-
-    // let allBottles = document.getElementsByClassName('bottle__container');
-    // for (let i = 0; i < allBottles.length; i++){
-    //   allBottles[i].addEventListener('mouseover', function(){
-    //     // console.log(allBottles[i]);
-    //   })
-    // }
+    setTimeout(function(){
+      showPromptMessage(2000);
+    }, 9000);
   }
 })
 
@@ -90,27 +86,39 @@ function fadeIntoView(element){
   },900);
 }
 
-function eyebrowRaising(){
-  var eyebrowDown = Snap.select('#eyebrow-down');
-  var eyebrowUp = Snap.select('#eyebrow-up');
+function swapToAngryEyes(){
+  let neutralRightEyeEyebrow = document.getElementById("eye-eyebrow-right-neutral");
+  let neutralLeftEye = document.getElementById("eye-left-neutral");
+  let neutralLeftEyebrow = document.getElementById("eyebrow-left-neutral");
+  let angryLeftEyeEyebrow = document.getElementById("eye-eyebrow-left-angry");
+  let angryRightEyeEyebrow = document.getElementById("eye-eyebrow-right-angry");
 
-  var eyebrowDownPoints = eyebrowDown.node.getAttribute('d');
-  var eyebrowUpPoints = eyebrowUp.node.getAttribute('d');
+  neutralRightEyeEyebrow.setAttribute('opacity', '0');
+  neutralLeftEye.setAttribute('opacity', '0');
+  neutralLeftEyebrow.setAttribute('opacity', '0');
 
-  var toUp = function(){
-    eyebrowDown.animate({ d: eyebrowUpPoints }, 2000, mina.elastic, toDown);
-  }
+  angryLeftEyeEyebrow.setAttribute('opacity', '1');
+  angryRightEyeEyebrow.setAttribute('opacity', '1');
+}
 
-  var toDown = function(){
-    eyebrowDown.node.setAttribute('d',eyebrowDownPoints);
-    setTimeout(toUp, 5000);
-  }
+function swapToNeutralEyes(){
+  let neutralRightEyeEyebrow = document.getElementById("eye-eyebrow-right-neutral");
+  let neutralLeftEye = document.getElementById("eye-left-neutral");
+  let neutralLeftEyebrow = document.getElementById("eyebrow-left-neutral");
+  let angryLeftEyeEyebrow = document.getElementById("eye-eyebrow-left-angry");
+  let angryRightEyeEyebrow = document.getElementById("eye-eyebrow-right-angry");
 
-  toUp();
+  angryLeftEyeEyebrow.setAttribute('opacity', '0');
+  angryRightEyeEyebrow.setAttribute('opacity', '0');
+
+  neutralRightEyeEyebrow.setAttribute('opacity', '1');
+  neutralLeftEye.setAttribute('opacity', '1');
+  neutralLeftEyebrow.setAttribute('opacity', '1');
 }
 
 function dragStart(event) {
-  event.dataTransfer.setData("Text", event.target.id);
+  event.dataTransfer.setData("id", event.target.id);
+  event.dataTransfer.setData("classes", event.target.classList);
 }
 
 function allowDrop(event) {
@@ -165,26 +173,108 @@ function showThanksMessage(){
 
   setTimeout(function(){
     message1.classList.add('animated')
-    message1.classList.add('fadeInDown')
+    message1.classList.add('fadeIn')
   }, 0);
   setTimeout(function(){
     message2.classList.add('animated')
-    message2.classList.add('fadeInDown')
+    message2.classList.add('fadeIn')
   }, 2000);
 }
-  }
+
+function showPromptMessage(duration){
+  let message1 = document.querySelector('#hugo-message #prompt-text-1');
+  let message2 = document.querySelector('#hugo-message #prompt-text-2');
+
+  message1.classList.add('animated');
+  message1.classList.add('fadeIn');
+  message2.classList.add('animated');
+  message2.classList.add('fadeIn');
+
+  setTimeout(function(){
+    message1.classList.add('animated');
+    message1.classList.remove('fadeIn');
+    message1.classList.add('fadeOut');
+    message2.classList.add('animated');
+    message2.classList.remove('fadeIn');
+    message2.classList.add('fadeOut');
+    setTimeout(function () {
+      message1.classList.remove('animated');
+      message2.classList.remove('animated');
+      message1.classList.remove('fadeOut');
+      message2.classList.remove('fadeOut');
+    }, 1000);
+  }, duration)
+}
+
+function showRejectionMessage(duration){
+  let message1 = document.querySelector('#hugo-message #reject-text-1');
+  let message2 = document.querySelector('#hugo-message #reject-text-2');
+
+  message1.classList.add('animated');
+  message1.classList.add('fadeIn');
+  message2.classList.add('animated');
+  message2.classList.add('fadeIn');
+
+  setTimeout(function(){
+    message1.classList.add('animated');
+    message1.classList.remove('fadeIn');
+    message1.classList.add('fadeOut');
+    message2.classList.add('animated');
+    message2.classList.remove('fadeIn');
+    message2.classList.add('fadeOut');
+    setTimeout(function () {
+      message1.classList.remove('animated');
+      message2.classList.remove('animated');
+      message1.classList.remove('fadeOut');
+      message2.classList.remove('fadeOut');
+    }, 1000);
+  }, duration)
+}
+
+function showNoThanksMessage(duration){
+  let message1 = document.querySelector('#hugo-message #nothanks-text-1');
+  let message2 = document.querySelector('#hugo-message #nothanks-text-2');
+
+  message1.classList.add('animated');
+  message1.classList.add('fadeIn');
+  message2.classList.add('animated');
+  message2.classList.add('fadeIn');
+
+  setTimeout(function(){
+    message1.classList.add('animated');
+    message1.classList.remove('fadeIn');
+    message1.classList.add('fadeOut');
+    message2.classList.add('animated');
+    message2.classList.remove('fadeIn');
+    message2.classList.add('fadeOut');
+    setTimeout(function () {
+      message1.classList.remove('animated');
+      message2.classList.remove('animated');
+      message1.classList.remove('fadeOut');
+      message2.classList.remove('fadeOut');
+    }, 1000);
+  }, duration)
+}
 
 document.addEventListener("drop", function(event){
-  if (!isHugoHappy){
-    var data = event.dataTransfer.getData("Text");
-    if (data === 'favourite' && event.target.id === 'hugo'){
+  if (!isHugoHappy && event.target.classList.contains('hugo')){
+    var data = event.dataTransfer.getData("id");
+    var data2 = event.dataTransfer.getData("classes");
+    if (data === 'favourite'){
       makeHugoSVGHappy();
       moveFragrance();
       showHeartRings();
       showThanksMessage();
       isHugoHappy = true;
-    } else if (data != 'favourite' && event.target.id === 'hugo'){
+    } else if (/good/.test(data2)){
       angryShake();
+      showNoThanksMessage(2000);
+      setTimeout(swapToNeutralEyes, 2000);
+    } else {
+      swapToAngryEyes()
+      angryShake();
+      showRejectionMessage(2000);
+      setTimeout(swapToNeutralEyes, 2000);
     }
   }
 });
