@@ -20,3 +20,16 @@
   <a href="/days/<%= i %>">Challenge <%= i %></a>
 <% end %>
 </table>
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(){
+    document.body.style.backgroundColor = '#435A6F'
+    let house = document.getElementById('house');
+    let height = window.screen.availHeight;
+    house.setAttribute('viewBox', `${-(height * 0.2)} 0 ${height} ${height/2}` )
+    house.classList.add('animated');
+    house.classList.add('fadeIn');
+    house.setAttribute('opacity', 1);
+  })
+
+</script>
