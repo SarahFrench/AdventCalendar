@@ -16,10 +16,18 @@
 <%= render "white-50" %>
 <%= render "white-100" %>
 </svg>
+
+
+<div class="window-container">
 <% (1..25).each do |i| %>
-  <a href="/days/<%= i %>">Challenge <%= i %></a>
+  <div class="window" id="window_<%=i%>">
+    <a href="/days/<%= i %>">Challenge <%= i %></a>
+  </div>
 <% end %>
-</table>
+</div>
+
+
+
 
 <script type="text/javascript">
   document.addEventListener("DOMContentLoaded", function(){
