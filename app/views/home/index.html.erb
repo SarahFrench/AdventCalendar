@@ -13,7 +13,7 @@
 </svg>
 
 
-<div class="window-container">
+<div id="advent-home" class="window-container">
 <% (1..25).each do |i| %>
   <div class="window" id="window_<%=i%>">
     <a href="/days/<%= i %>">Challenge <%= i %></a>
@@ -33,6 +33,13 @@
     house.classList.add('animated');
     house.classList.add('fadeIn');
     house.setAttribute('opacity', 1);
+
+    let dates = JSON.parse( window.localStorage.getItem("advent") );
+    for(let i=1; i <= 25; i++){
+      if(dates[i] === true){
+        document.getElementById(`window_${i}`).classList.add("open");
+      }
+    }
   })
 
   document.addEventListener("DOMContentLoaded", function(){
@@ -42,8 +49,7 @@
         let number = event.target.id.match(/\d+/)[0];
         if(number <= <%= Time.now.day%>){
           event.target.classList.add("open");
-        } else {
-          console.log("here");
+          updateAdventPlace(number);
         }
       })
     }
