@@ -1,16 +1,19 @@
-<svg id="house" class="svg" opacity="0" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
-<%= render "pink" %>
-<%= render "orange" %>
-<%= render "yellow" %>
-<%= render "green" %>
-<%= render "dark-blue" %>
-<%= render "light-blue" %>
+<div class="svg-container">
+  <svg id="house" class="svg" opacity="0" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <%= render "pink" %>
+  <%= render "orange" %>
+  <%= render "yellow" %>
+  <%= render "green" %>
+  <%= render "dark-blue" %>
+  <%= render "light-blue" %>
 
-<%= render "house-lines" %>
+  <%= render "house-lines" %>
 
-<%= render "white-50" %>
-<%= render "white-100" %>
-</svg>
+  <%= render "white-50" %>
+  <%= render "white-100" %>
+  </svg>
+</div>
+
 
 
 <div id="advent-home" class="window-container">
@@ -34,7 +37,9 @@
     document.body.style.backgroundColor = '#435A6F'
     let house = document.getElementById('house');
     let height = window.screen.availHeight;
-    house.setAttribute('viewBox', `${-(height * 0.2)} 0 ${height} ${height/2}` )
+    // house.setAttribute('viewBox', `${-(height * 0.2)} 0 ${height} ${height/2}` )
+    house.setAttribute('viewBox', '0 0 500 400' )
+    house.setAttribute('height', '100vh')
     house.classList.add('animated');
     house.classList.add('fadeIn');
     house.setAttribute('opacity', 1);
