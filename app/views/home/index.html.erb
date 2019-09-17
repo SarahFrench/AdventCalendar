@@ -14,7 +14,12 @@
 
 
 <div id="advent-home" class="window-container">
-<% (1..25).each do |i| %>
+<% date_order = [11, 12, 24, 10, 3,
+                 9, 21, 5, 22, 6,
+                 20, 1, 25, 8, 18,
+                 13, 19, 4, 23, 16,
+                 7, 15, 17, 14, 2] %>
+<% date_order.each do |i| %>
   <div class="window" id="window_<%=i%>">
     <a href="/days/<%= i %>">Challenge <%= i %></a>
   </div>
