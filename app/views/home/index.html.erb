@@ -2,6 +2,20 @@
 <h1>Home</h1>
 
 <table>
+<svg id="house" class="svg" opacity="0" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<%# <%= render "dark-blue" %> %>
+<%= render "pink" %>
+<%= render "orange" %>
+<%= render "yellow" %>
+<%= render "green" %>
+<%= render "dark-blue" %>
+<%= render "light-blue" %>
+
+<%= render "house-lines" %>
+
+<%= render "white-50" %>
+<%= render "white-100" %>
+</svg>
 <% (1..25).each do |i| %>
   <a href="/days/<%= i %>">Challenge <%= i %></a>
 <% end %>
