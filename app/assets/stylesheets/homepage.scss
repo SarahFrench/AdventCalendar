@@ -17,4 +17,8 @@
 
 .window {
   background-color: white;
+
+  &.open {
+    opacity: 0;
+  }
 }
