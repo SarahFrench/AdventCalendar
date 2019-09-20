@@ -1,43 +1,70 @@
+.wall__container {
+  width: 80vw;
+  height: 40vw;
+}
+
+.wall {
+  display: grid;
+  grid-template-columns: [col-0] 25% [col-1] 25% [col-2] 25% [col-3] 25% [col-4];
+  grid-template-rows: [row-0] 25% [row-1] 25% [row-2] 25% [row-3] 25% [row-4];
+
+  text-align: center;
+}
+
 .card {
-  width: 200px;
-  height: 150px;
+  border: solid 1px black;
+  min-width: 200px;
+  width: 100%;
+  min-height: 150px;
+  height: 100%;
 
-  &__container {
-    perspective: 1000px;
-    background-color: blue;
+}
+
+//TODO: nth child to add margins?
+//margin is relative to the boundary in the grid. Not affected by neighbouring elements.
+
+.row {
+  &_1 {
+    grid-row-start: row-0;
+    grid-row-end: row-1;
+    margin-top: 10px;
   }
-
-  &__inner {
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-    position: relative;
-    width: 200px;
-    height: 150px;
+  &_2 {
+    grid-row-start: row-1;
+    grid-row-end: row-2;
+    margin-top: 20px;
   }
-
-  &__front {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: solid 1px black;
-    backface-visibility: hidden;
-    width: 200px;
-    height: 150px;
+  &_3 {
+    grid-row-start: row-2;
+    grid-row-end: row-3;
+    margin-top: 30px;
   }
-
-  &__back {
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: solid 1px red;
-    backface-visibility: hidden;
-    transform: rotateY(180deg);
-    width: 200px;
-    height: 150px;
+  &_4 {
+    grid-row-start: row-3;
+    grid-row-end: row-4;
+    margin-top: 40px;
   }
 }
 
-.card:hover .card__inner {
-  transform: rotateY(180deg);
+.col {
+  &_1 {
+    grid-column-start: col-0;
+    grid-column-end:col-1;
+    margin-left: 10px;
+  }
+  &_2 {
+    grid-column-start: col-1;
+    grid-column-end:col-2;
+    margin-left: 20px;
+  }
+  &_3 {
+    grid-column-start: col-2;
+    grid-column-end:col-3;
+    margin-left: 30px;
+  }
+  &_4 {
+    grid-column-start: col-3;
+    grid-column-end:col-4;
+    margin-left: 40px;
+  }
 }
