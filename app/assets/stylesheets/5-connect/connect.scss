@@ -1,0 +1,43 @@
+.card {
+  width: 200px;
+  height: 150px;
+
+  &__container {
+    perspective: 1000px;
+    background-color: blue;
+  }
+
+  &__inner {
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 200px;
+    height: 150px;
+  }
+
+  &__front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 1px black;
+    backface-visibility: hidden;
+    width: 200px;
+    height: 150px;
+  }
+
+  &__back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: solid 1px red;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    width: 200px;
+    height: 150px;
+  }
+}
+
+.card:hover .card__inner {
+  transform: rotateY(180deg);
+}
