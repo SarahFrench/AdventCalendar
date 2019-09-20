@@ -147,6 +147,10 @@ function makeHugoSVGHappy(){
   Object.keys(unHappyObject).forEach(function (key){
     unHappyObject[key].setAttribute('opacity', 0);
   });
+
+  // document.getElementById('eye-left-neutral').setAttribute('opacity', 0);
+  // document.getElementById('eyebrow-left-neutral').setAttribute('opacity', 0);
+  // document.getElementById('eye-eyebrow-right-neutral').setAttribute('opacity', 0);
 }
 
 function moveFragrance(){
