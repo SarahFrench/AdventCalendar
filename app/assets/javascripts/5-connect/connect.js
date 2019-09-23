@@ -7,15 +7,17 @@ document.addEventListener("DOMContentLoaded", function(){
     let cardClasses = coren.getCardPositionClasses(i);
     cardElements[i].innerText = cardData.text;
     cardElements[i].id = cardData.id;
-    cardElements[i].classList.add(cardClasses.row);
-    cardElements[i].classList.add(cardClasses.col);
+    // cardElements[i].classList.add(cardClasses.row);
+    // cardElements[i].classList.add(cardClasses.col);
     cardElements[i].addEventListener('click', function(event){
-      if(coren.selections.cards.length < 4){
+      if(coren.selections.cards.length < 3){
         coren.selectCard(event.target);
       } else {
-        coren.areCardsSameGroup();
-        coren.resetSelectedCards();
         coren.selectCard(event.target);
+        if(coren.areCardsSameGroup()){
+            coren.positionSortedCards();
+        }
+        setTimeout(function(){coren.resetSelectedCards(), 3000});
       }
     })
   }
@@ -33,34 +35,30 @@ document.addEventListener("DOMContentLoaded", function(){
 
 class Game {
   constructor(){
-    this.rowSorted = {
-        row1: false,
-        row2: false,
-        row3: false,
-        row4: false
-      };
+    this.isRowSorted = [false,false,false];
     this.selections = {
         cardSelected: false,
         cards: []
       };
     this.cards = [
-        { id: 1, text: "card 1", group: 1 },
-        { id: 2, text: "card 2", group: 2 },
-        { id: 3, text: "card 3", group: 3 },
-        { id: 4, text: "card 4", group: 4 },
-        { id: 5, text: "card 5", group: 1 },
-        { id: 6, text: "card 6", group: 2 },
-        { id: 7, text: "card 7", group: 3 },
-        { id: 8, text: "card 8", group: 4 },
-        { id: 9, text: "card 9", group: 1 },
-        { id: 10, text: "card 10", group: 2 },
-        { id: 11, text: "card 11", group: 3 },
-        { id: 12, text: "card 12", group: 4 },
-        { id: 13, text: "card 13", group: 1 },
-        { id: 14, text: "card 14", group: 2 },
-        { id: 15, text: "card 15", group: 3 },
-        { id: 16, text: "card 16", group: 4 },
+        { id: 1, text: "A", group: 1 },
+        { id: 2, text: "B", group: 2 },
+        { id: 3, text: "C", group: 3 },
+        { id: 4, text: "D", group: 4 },
+        { id: 5, text: "A", group: 1 },
+        { id: 6, text: "B", group: 2 },
+        { id: 7, text: "C", group: 3 },
+        { id: 8, text: "D", group: 4 },
+        { id: 9, text: "A", group: 1 },
+        { id: 10, text: "B", group: 2 },
+        { id: 11, text: "C", group: 3 },
+        { id: 12, text: "D", group: 4 },
+        { id: 13, text: "A", group: 1 },
+        { id: 14, text: "B", group: 2 },
+        { id: 15, text: "C", group: 3 },
+        { id: 16, text: "D", group: 4 },
       ];
+
   }
 
   getCardPositionClasses(index){
@@ -94,7 +92,7 @@ class Game {
   }
 
   selectCard(card){
-    if(this.selections.cards.length < 4 && !this.isCardAlreadySelected(card)){
+    if(this.selections.cards.length < 4  && !this.isCardAlreadySelected(card)){
       if(this.isCardAlreadySelected(card)){
         console.log("already selected");
       }
@@ -113,9 +111,35 @@ class Game {
     let selectedSets = new Set(groups);
     if(selectedSets.size === 1){
       console.log("all same set!");
+      return true;
     } else {
       console.log("cards don't match");
+      return false;
     }
+  }
+
+  positionSortedCards(){
+
+    let freeRow = (this.isRowSorted.indexOf(false)) + 1;
+    this.isRowSorted[freeRow-1] = true;
+    if(freeRow > 0 && freeRow < 3){
+      this.selections.cards.forEach( card => {
+        let element = document.getElementById(card.id);
+        element.classList.add(`row_${freeRow}`);
+        element.classList.remove('selected');
+        element.classList.add('correct');
+      })
+    } else if (freeRow == 3) {
+      this.selections.cards.forEach( card => {
+        let element = document.getElementById(card.id);
+        element.classList.add(`row_${freeRow}`);
+      })
+      let cards = document.getElementsByClassName('card')
+      for(let i=0; i < cards.length; i++){
+        cards[i].classList.add('correct')
+      }
+    }
+
   }
 
 }
