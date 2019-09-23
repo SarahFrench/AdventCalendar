@@ -84,8 +84,20 @@ class Game {
     this.selections.cardSelected = false;
   }
 
+  isCardAlreadySelected(card){
+    if(this.selections.cards.length == 0){
+      return false
+    } else {
+      let searchForCard = this.selections.cards.filter(x => x.id == parseInt(card.id) );
+      return searchForCard.length > 0 ? true : false;
+    }
+  }
+
   selectCard(card){
-    if(this.selections.cards.length < 4){
+    if(this.selections.cards.length < 4 && !this.isCardAlreadySelected(card)){
+      if(this.isCardAlreadySelected(card)){
+        console.log("already selected");
+      }
       let selectedCardData = this.cards.filter(x => x.id == parseInt(card.id) )[0];
       this.selections.cards.push(selectedCardData);
     }
