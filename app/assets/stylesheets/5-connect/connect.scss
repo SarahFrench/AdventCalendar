@@ -22,7 +22,10 @@
   width: 100%;
   min-height: 150px;
   height: 100%;
+}
 
+.selected {
+  background-color: red;
 }
 
 //could nth child stuff be used to make this?
