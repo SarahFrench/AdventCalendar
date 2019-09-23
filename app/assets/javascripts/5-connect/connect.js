@@ -2,14 +2,12 @@ document.addEventListener("DOMContentLoaded", function(){
   let wall = document.getElementById('wall');
   let cardElements = document.getElementsByClassName('card');
   let coren = new Game;
-  for(let i=0; i<cardElements.length; i++){
-    let cardData = coren.cards[i];
-    let cardClasses = coren.getCardPositionClasses(i);
-    cardElements[i].innerText = cardData.text;
-    cardElements[i].id = cardData.id;
-    // cardElements[i].classList.add(cardClasses.row);
-    // cardElements[i].classList.add(cardClasses.col);
-    cardElements[i].addEventListener('click', function(event){
+  coren.cards.forEach(function(card, index) {
+    let el = document.createElement('div');
+    el.id = card.id;
+    el.classList.add('card');
+    el.innerText = card.text;
+    el.addEventListener('click', function(event){
       if(coren.selections.cards.length < 3){
         coren.selectCard(event.target);
       } else {
@@ -20,17 +18,8 @@ document.addEventListener("DOMContentLoaded", function(){
         setTimeout(function(){coren.resetSelectedCards(), 3000});
       }
     })
-  }
-  // coren.cards.forEach(function(card, index) {
-  //   let classes = getCardPositionClasses(index);
-  //   let el = new element TODO: find out syntax for making a new element of type Node
-  //   el.classList.add(classes.row);
-  //   el.classList.add(classes.col);
-  //   el.addEventListener('click', function(event){
-  //       selectCard(event.target);
-  //   })
-  //   wall.appendChild(el);
-  // })
+    wall.appendChild(el);
+  })
 })
 
 class Game {
