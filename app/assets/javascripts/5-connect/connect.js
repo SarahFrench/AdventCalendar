@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function(){
       if(coren.selections.cards.length < 4){
         coren.selectCard(event.target);
       } else {
+        coren.areCardsSameGroup();
         coren.resetSelectedCards();
         coren.selectCard(event.target);
       }
@@ -42,32 +43,30 @@ class Game {
         cardSelected: false,
         cards: []
       };
-      this.cards = [
-          { id: 1, text: "card 1", set: 1 },
-          { id: 2, text: "card 2", set: 2 },
-          { id: 3, text: "card 3", set: 3 },
-          { id: 4, text: "card 4", set: 4 },
-          { id: 5, text: "card 5", set: 1 },
-          { id: 6, text: "card 6", set: 2 },
-          { id: 7, text: "card 7", set: 3 },
-          { id: 8, text: "card 8", set: 4 },
-          { id: 9, text: "card 9", set: 1 },
-          { id: 10, text: "card 10", set: 2 },
-          { id: 11, text: "card 11", set: 3 },
-          { id: 12, text: "card 12", set: 4 },
-          { id: 13, text: "card 13", set: 1 },
-          { id: 14, text: "card 14", set: 2 },
-          { id: 15, text: "card 15", set: 3 },
-          { id: 16, text: "card 16", set: 4 },
-        ];
+    this.cards = [
+        { id: 1, text: "card 1", group: 1 },
+        { id: 2, text: "card 2", group: 2 },
+        { id: 3, text: "card 3", group: 3 },
+        { id: 4, text: "card 4", group: 4 },
+        { id: 5, text: "card 5", group: 1 },
+        { id: 6, text: "card 6", group: 2 },
+        { id: 7, text: "card 7", group: 3 },
+        { id: 8, text: "card 8", group: 4 },
+        { id: 9, text: "card 9", group: 1 },
+        { id: 10, text: "card 10", group: 2 },
+        { id: 11, text: "card 11", group: 3 },
+        { id: 12, text: "card 12", group: 4 },
+        { id: 13, text: "card 13", group: 1 },
+        { id: 14, text: "card 14", group: 2 },
+        { id: 15, text: "card 15", group: 3 },
+        { id: 16, text: "card 16", group: 4 },
+      ];
   }
 
   getCardPositionClasses(index){
     let col, row;
     col = (index%4)+1;
     row = (Math.ceil((index-3)/4))+1;
-    console.log('col=' + col);
-    console.log('row=' + row);
     return {
       col: `col_${col}`,
       row: `row_${row}`
@@ -76,8 +75,8 @@ class Game {
 
   resetSelectedCards(){
     // depend on HTML being set up
-    this.selections.cards.forEach(function(cardID){
-      let element = document.getElementById(cardID);
+    this.selections.cards.forEach(function(card){
+      let element = document.getElementById(card.id);
       element.classList.remove('selected');
 
     })
@@ -87,9 +86,24 @@ class Game {
 
   selectCard(card){
     if(this.selections.cards.length < 4){
-      this.selections.cards.push(card.id)
+      let selectedCardData = this.cards.filter(x => x.id == parseInt(card.id) )[0];
+      this.selections.cards.push(selectedCardData);
     }
     card.classList.add('selected');
+  }
+
+  areCardsSameGroup(){
+    let groups = []
+    this.selections.cards.forEach( card => {
+      console.log('card group=' + card.group);
+      groups.push(card.group);
+    })
+    let selectedSets = new Set(groups);
+    if(selectedSets.size === 1){
+      console.log("all same set!");
+    } else {
+      console.log("cards don't match");
+    }
   }
 
 }
