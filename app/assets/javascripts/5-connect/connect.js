@@ -30,22 +30,22 @@ class Game {
         cards: []
       };
     this.cards = [
-        { id: 1, text: "A", group: 1 },
-        { id: 2, text: "B", group: 2 },
-        { id: 3, text: "C", group: 3 },
-        { id: 4, text: "D", group: 4 },
-        { id: 5, text: "A", group: 1 },
-        { id: 6, text: "B", group: 2 },
-        { id: 7, text: "C", group: 3 },
-        { id: 8, text: "D", group: 4 },
-        { id: 9, text: "A", group: 1 },
-        { id: 10, text: "B", group: 2 },
-        { id: 11, text: "C", group: 3 },
-        { id: 12, text: "D", group: 4 },
-        { id: 13, text: "A", group: 1 },
-        { id: 14, text: "B", group: 2 },
-        { id: 15, text: "C", group: 3 },
-        { id: 16, text: "D", group: 4 },
+        { id: 1, text: "exceptionally, especially, exceedingly", group: 1 },
+        { id: 2, text: "cable cars", group: 2 },
+        { id: 3, text: "bicycle", group: 3 },
+        { id: 4, text: "axes", group: 4 },
+        { id: 5, text: "quality", group: 1 },
+        { id: 6, text: "Bruce Forsyth", group: 2 },
+        { id: 7, text: "walking tour", group: 3 },
+        { id: 8, text: "pharaoh", group: 4 },
+        { id: 9, text: "dusk", group: 1 },
+        { id: 10, text: "surgery on mice", group: 2 },
+        { id: 11, text: "brunch", group: 3 },
+        { id: 12, text: "yogi", group: 4 },
+        { id: 13, text: "dear gentlemen", group: 1 },
+        { id: 14, text: "harvesting personal data", group: 2 },
+        { id: 15, text: "champagne", group: 3 },
+        { id: 16, text: "pottery", group: 4 }
       ];
 
   }
@@ -108,7 +108,6 @@ class Game {
   }
 
   positionSortedCards(){
-
     let freeRow = (this.isRowSorted.indexOf(false)) + 1;
     this.isRowSorted[freeRow-1] = true;
     if(freeRow > 0 && freeRow < 3){
@@ -128,6 +127,9 @@ class Game {
         cards[i].classList.add('correct')
       }
     }
+  }
+
+  checkAnswer(){
 
   }
 
