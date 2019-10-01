@@ -1,24 +1,24 @@
 document.addEventListener("DOMContentLoaded", function(){
   let wall = document.getElementById('wall');
-  let cardElements = document.getElementsByClassName('card');
   let coren = new Game;
   coren.cards.forEach(function(card, index) {
-    let el = document.createElement('div');
-    el.id = card.id;
-    el.classList.add('card');
-    el.innerText = card.text;
-    el.addEventListener('click', function(event){
+    let cardElement = document.createElement('div');
+    cardElement.id = card.id;
+    cardElement.classList.add('card');
+    cardElement.innerText = card.text;
+    cardElement.addEventListener('click', function(event){
       if(coren.selections.cards.length < 3){
         coren.selectCard(event.target);
       } else {
         coren.selectCard(event.target);
         if(coren.areCardsSameGroup()){
             coren.positionSortedCards();
+
         }
         setTimeout(function(){coren.resetSelectedCards(), 3000});
       }
     })
-    wall.appendChild(el);
+    wall.appendChild(cardElement);
   })
 })
 
