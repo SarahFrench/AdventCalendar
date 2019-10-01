@@ -20,6 +20,11 @@ document.addEventListener("DOMContentLoaded", function(){
     })
     wall.appendChild(cardElement);
   })
+  let button = document.getElementById('checkButton');
+  button.addEventListener('click', function(){
+    console.log('click');
+    coren.checkAnswer();
+  })
 })
 
 class Game {
@@ -149,8 +154,15 @@ class Game {
     }
   }
 
-  checkAnswer(){
+  getTextInput(){
+    let input = document.getElementById('input').value;
+    return input;
+  }
 
+  checkAnswer(){
+    let row = this.currentRowToConnect;
+    let question = this.sortedRowInfo[row-1].question;
+    console.log(this.getTextInput());
   }
 
 }
