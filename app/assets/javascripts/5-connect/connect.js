@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function(){
 
 class Game {
   constructor(){
+    this.currentRowToConnect = 1;
+    this.questionsSorted = new Set([]);
+    this.sortedRowInfo = [{ row: 1, question:0}, { row: 2, question:0}, { row: 3, question:0}, { row: 4, question:0}];
     this.isRowSorted = [false,false,false];
     this.selections = {
         cardSelected: false,
@@ -107,9 +110,25 @@ class Game {
     }
   }
 
+  updateGameStats(freeRow){
+    if (!this.questionsSorted.has(this.selections.cards[0].group)){
+      this.questionsSorted.add(this.selections.cards[0].group);
+      this.sortedRowInfo[freeRow-1] = {row: freeRow, question: this.selections.cards[0].group};
+    } else {
+      //adding 4th question
+      for (let i=1; i <= 4; i++){
+        if (!this.questionsSorted.has(i)){
+          this.questionsSorted.add(i);
+          this.sortedRowInfo[freeRow-1] = {row: freeRow, question: i}
+        }
+      }
+    }
+    this.isRowSorted[freeRow-1] = true;
+  }
+
   positionSortedCards(){
     let freeRow = (this.isRowSorted.indexOf(false)) + 1;
-    this.isRowSorted[freeRow-1] = true;
+    this.updateGameStats(freeRow);
     if(freeRow > 0 && freeRow < 3){
       this.selections.cards.forEach( card => {
         let element = document.getElementById(card.id);
@@ -122,6 +141,7 @@ class Game {
         let element = document.getElementById(card.id);
         element.classList.add(`row_${freeRow}`);
       })
+      this.updateGameStats(freeRow+1);
       let cards = document.getElementsByClassName('card')
       for(let i=0; i < cards.length; i++){
         cards[i].classList.add('correct')
