@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("turbolinks:load", function(){
   let wall = document.getElementById('wall');
   let coren = new Game;
   coren.cards.forEach(function(card, index) {
