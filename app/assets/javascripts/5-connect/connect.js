@@ -13,7 +13,6 @@ document.addEventListener("turbolinks:load", function(){
         coren.selectCard(event.target);
         if(coren.areCardsSameGroup()){
             coren.positionSortedCards();
-
         }
         setTimeout(function(){coren.resetSelectedCards(), 3000});
       }
@@ -29,9 +28,16 @@ document.addEventListener("turbolinks:load", function(){
 
 class Game {
   constructor(){
+    this.answers = {
+      1: "vvv good Sunday evening my bois,vvv good evening mah bois,vvv good evening my bois,vvv good",
+      2: "hinge,early dating,dating app,dating	",
+      3: "new years day,January first,anniversary",
+      4: "edgy dates,dates",
+
+    };
     this.currentRowToConnect = 1;
     this.questionsSorted = new Set([]);
-    this.sortedRowInfo = [{ row: 1, question:0}, { row: 2, question:0}, { row: 3, question:0}, { row: 4, question:0}];
+    this.sortedRowInfo = [{ row: 1, question:0, answerSubmitted:""}, { row: 2, question:0, answerSubmitted:""}, { row: 3, question:0, answerSubmitted:""}, { row: 4, question:0, answerSubmitted:""}];
     this.isRowSorted = [false,false,false];
     this.selections = {
         cardSelected: false,
@@ -147,11 +153,31 @@ class Game {
         element.classList.add(`row_${freeRow}`);
       })
       this.updateGameStats(freeRow+1);
+      this.addRowClassLastFourCards();
       let cards = document.getElementsByClassName('card')
       for(let i=0; i < cards.length; i++){
         cards[i].classList.add('correct')
       }
+      this.showTextInputField();
+      this.highlightRowToConnect();
     }
+  }
+
+  addRowClassLastFourCards(){
+    let cards = document.getElementsByClassName('card');
+    let lastFour = [];
+    for(let i=0; i < cards.length; i++){
+      if(!/row_/.test(cards[i].classList.value)){
+        lastFour.push(cards[i]);
+      }
+    }
+    lastFour.forEach(card => {
+      card.classList.add('row_4');
+    })
+  }
+
+  showTextInputField(){
+    document.getElementById('connect').style.visibility = 'visible';
   }
 
   getTextInput(){
@@ -159,10 +185,47 @@ class Game {
     return input;
   }
 
+  removeHighlightRowToConnect(){
+    let cardsConnect = document.getElementsByClassName('row_' + this.currentRowToConnect);
+    for(let i=0; i < cardsConnect.length; i++){
+      cardsConnect[i].classList.remove('highlight');
+    }
+  }
+
+  highlightRowToConnect(){
+    let cardsConnect = document.getElementsByClassName('row_' + this.currentRowToConnect);
+    for(let i=0; i < cardsConnect.length; i++){
+      cardsConnect[i].classList.add('highlight');
+    }
+  }
+
+  updateText(){
+    document.getElementById('connect-text');
+  }
+
   checkAnswer(){
+    let answers = this.answers[`${this.currentRowToConnect}`].split(',');
     let row = this.currentRowToConnect;
     let question = this.sortedRowInfo[row-1].question;
-    console.log(this.getTextInput());
+    let submission = this.getTextInput();
+    let correct = false;
+
+    answers.forEach( ans => {
+      if ((new RegExp(ans)).test(submission)){
+        correct = true;
+      };
+    })
+
+    if(correct){
+      console.log("MATCH");
+      this.removeHighlightRowToConnect();
+      this.currentRowToConnect = this.currentRowToConnect + 1;
+      if (this.currentRowToConnect < 5){
+        this.highlightRowToConnect();
+      }
+    } else {
+      console.log("NOT MATCH");
+    }
   }
 
 }

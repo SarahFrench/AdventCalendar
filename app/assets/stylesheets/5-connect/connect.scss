@@ -1,6 +1,13 @@
+body {
+  background: #A9A9A9;
+}
+
 .wall__container {
   width: 80vw;
   height: 40vw;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wall {
@@ -17,7 +24,7 @@
 }
 
 .card {
-  border: solid 1px black;
+  // border: solid 1px black;
   min-width: 200px;
   width: 100%;
   min-height: 150px;
@@ -25,6 +32,15 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 10px;
+  font-size: 2em;
+  font-family: sans-serif;
+  background-color: #bfeef5;
+
+
+  &.highlight {
+    box-shadow: 0 0 0 3px yellow;
+  }
 }
 
 .selected {
@@ -32,7 +48,26 @@
 }
 
 .correct {
-  background-color: blue;
+
+  color: white;
+
+  &.row_1{
+    background-color: #054870;
+  }
+
+  &.row_2{
+    background-color: #067c5d;
+  }
+
+  &.row_3{
+    background-color: #562043;
+  }
+
+  &.row_4{
+    background-color: #056e7c;
+  }
+
+  // background-color: blue;
 }
 
 //could nth child stuff be used to make this?
@@ -72,4 +107,11 @@
     grid-column-start: col-3;
     grid-column-end:col-4;
   }
+}
+
+#connect {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 }
