@@ -1,6 +1,6 @@
 let isHugoHappy = false;
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("turbolinks:load", function() {
   if (document.getElementById('eyebrows')) {
 
     showIntroMessage();
