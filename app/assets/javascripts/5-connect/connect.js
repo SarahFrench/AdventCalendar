@@ -37,7 +37,9 @@ class Game {
     };
     this.currentRowToConnect = 1;
     this.questionsSorted = new Set([]);
-    this.sortedRowInfo = [{ row: 1, question:0, answerSubmitted:""}, { row: 2, question:0, answerSubmitted:""}, { row: 3, question:0, answerSubmitted:""}, { row: 4, question:0, answerSubmitted:""}];
+    this.promptsByRow = {2:"Great! Now, row 2: ", 3:"Row 3: ", 4:"FINAL ROW 4 MAH BOIS:"};
+    this.answersByQuestion = {1:"Answer: vvv good (Sunday) evening mah bois", 2:"Answer: Things we talked about on Hinge", 3:"Answer: Things from our date on New Years Day", 4:"Answer: Edgy dates"};
+    this.sortedRowInfo = [{ row: 1, question:0}, { row: 2, question:0}, { row: 3, question:0}, { row: 4, question:0}];
     this.isRowSorted = [false,false,false];
     this.selections = {
         cardSelected: false,
@@ -185,6 +187,11 @@ class Game {
     return input;
   }
 
+  clearTextInput(){
+    let input = document.getElementById('input');
+    input.value = "";
+  }
+
   removeHighlightRowToConnect(){
     let cardsConnect = document.getElementsByClassName('row_' + this.currentRowToConnect);
     for(let i=0; i < cardsConnect.length; i++){
@@ -199,17 +206,23 @@ class Game {
     }
   }
 
-  updateText(){
-    document.getElementById('connect-text');
+  updatePromptText(text){
+    let prompt = document.getElementById('prompt-text');
+    prompt.innerText = text;
+  }
+
+  updateAnswerText(text){
+    let answer = document.getElementById('answer-text');
+    answer.innerText = text;
   }
 
   checkAnswer(){
-    let answers = this.answers[`${this.currentRowToConnect}`].split(',');
     let row = this.currentRowToConnect;
     let question = this.sortedRowInfo[row-1].question;
+    let answers = this.answers[question].split(',');
     let submission = this.getTextInput();
     let correct = false;
-
+    console.log(answers);
     answers.forEach( ans => {
       if ((new RegExp(ans)).test(submission)){
         correct = true;
@@ -219,12 +232,18 @@ class Game {
     if(correct){
       console.log("MATCH");
       this.removeHighlightRowToConnect();
-      this.currentRowToConnect = this.currentRowToConnect + 1;
+      this.currentRowToConnect = row + 1;
       if (this.currentRowToConnect < 5){
         this.highlightRowToConnect();
+        this.updatePromptText(this.promptsByRow[`${this.currentRowToConnect}`]);
+      } else {
+        this.updatePromptText("You win!")
       }
+      this.updateAnswerText(this.answersByQuestion[question]);
+      this.clearTextInput();
     } else {
       console.log("NOT MATCH");
+      this.updateAnswerText("Nuh-uh, incorrect");
     }
   }
 
