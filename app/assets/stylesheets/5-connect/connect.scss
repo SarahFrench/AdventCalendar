@@ -2,9 +2,13 @@ h1.connect{
   text-align: center;
 }
 
+.open-sans{
+  font-family: 'Open Sans', serif;
+}
+
 .wall__container {
-  width: 80vw;
-  height: 40vw;
+  width: 60vw;
+  height: 30vw;
   margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
@@ -26,13 +30,13 @@ h1.connect{
 .card {
   min-width: 200px;
   width: 100%;
-  min-height: 150px;
+  min-height: 110px;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 10px;
-  font-size: 2em;
+  font-size: 1.5em;
   font-family: sans-serif;
   background-color: #bfeef5;
 
@@ -110,4 +114,16 @@ h1.connect{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+input.input-connect {
+  height: 40px;
+  width: 200px;
+  padding: 0px 10px;
+  border-radius: 30px;
+}
+
+button.button-connect {
+  height: 40px;
+  border-radius: 30px;
 }
