@@ -30,9 +30,9 @@ class Game {
   constructor(){
     this.answers = {
       1: "vvv good Sunday evening my bois,vvv good evening mah bois,vvv good evening my bois,vvv good",
-      2: "hinge,early dating,dating app,dating	",
-      3: "new years day,January first,anniversary",
-      4: "edgy dates,dates",
+      2: "hinge,early dating,dating app,dating chat,Hinge,chat,messages",
+      3: "new years day,January first,anniversary, new years,1st, 4th date, date 4",
+      4: "edgy dates,dates, we did",
 
     };
     this.currentRowToConnect = 1;
