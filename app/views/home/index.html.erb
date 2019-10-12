@@ -59,7 +59,7 @@
       dayLinks[i].addEventListener("click", function(event){
         let number = event.target.id.match(/\d+/)[0];
         if(number <= <%= Time.now.day%>){
-          document.getElementById("window_" + i).classList.add("open");
+          document.getElementById("window_" + number).classList.add("open");
           updateAdventPlace(number);
         }
       })
