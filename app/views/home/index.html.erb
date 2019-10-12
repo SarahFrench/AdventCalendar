@@ -24,7 +24,8 @@
                  7, 15, 4, 14, 2] %>
 <% date_order.each do |i| %>
   <div class="window" id="window_<%=i%>">
-    <a href="/days/<%= i %>">Challenge <%= i %></a>
+    <%= render "panel" %>
+    <a class="day-link" id="day-link_<%=i%>" href="/days/<%= i %>">Challenge <%= i %></a>
   </div>
 <% end %>
 </div>
@@ -53,12 +54,12 @@
   })
 
   document.addEventListener("DOMContentLoaded", function(){
-    let windows = document.getElementsByClassName('window');
-    for(let i=0; i < windows.length; i++ ){
-      windows[i].addEventListener("click", function(event){
+    let dayLinks = document.getElementsByClassName('day-link');
+    for(let i=0; i < dayLinks.length; i++ ){
+      dayLinks[i].addEventListener("click", function(event){
         let number = event.target.id.match(/\d+/)[0];
         if(number <= <%= Time.now.day%>){
-          event.target.classList.add("open");
+          document.getElementById("window_" + i).classList.add("open");
           updateAdventPlace(number);
         }
       })

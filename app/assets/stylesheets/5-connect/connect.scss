@@ -1,6 +1,17 @@
+h1.connect{
+  text-align: center;
+}
+
+.open-sans{
+  font-family: 'Open Sans', serif;
+}
+
 .wall__container {
-  width: 80vw;
-  height: 40vw;
+  width: 60vw;
+  height: 30vw;
+  margin-bottom: 50px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wall {
@@ -17,11 +28,22 @@
 }
 
 .card {
-  border: solid 1px black;
   min-width: 200px;
   width: 100%;
-  min-height: 150px;
+  min-height: 110px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 1.5em;
+  font-family: sans-serif;
+  background-color: #bfeef5;
+
+
+  &.highlight {
+    box-shadow: 0 0 0 3px hotpink;
+  }
 }
 
 .selected {
@@ -29,10 +51,26 @@
 }
 
 .correct {
-  background-color: blue;
+
+  color: white;
+
+  &.row_1{
+    background-color: #054870;
+  }
+
+  &.row_2{
+    background-color: #067c5d;
+  }
+
+  &.row_3{
+    background-color: #562043;
+  }
+
+  &.row_4{
+    background-color: #056e7c;
+  }
 }
 
-//could nth child stuff be used to make this?
 .row {
   &_1 {
     grid-row-start: row-0;
@@ -69,4 +107,23 @@
     grid-column-start: col-3;
     grid-column-end:col-4;
   }
+}
+
+#connect {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input.input-connect {
+  height: 40px;
+  width: 200px;
+  padding: 0px 10px;
+  border-radius: 30px;
+}
+
+button.button-connect {
+  height: 40px;
+  border-radius: 30px;
 }

@@ -20,7 +20,22 @@
 }
 
 .window {
-  background-color: white;
+  background-color: #272d3a;
+
+  & svg {
+    height: inherit;
+    width: inherit;
+  }
+
+  & a {
+    position: relative;
+    top: -60%;
+    left: 37%;
+
+    &.day-link{
+      color: #434d65;
+    }
+  }
 
   &.open {
     opacity: 0;
