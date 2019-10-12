@@ -1,6 +1,8 @@
+let coren;
+
 document.addEventListener("turbolinks:load", function(){
   let wall = document.getElementById('wall');
-  let coren = new Game;
+  coren = new Game;
   coren.cards.forEach(function(card, index) {
     let cardElement = document.createElement('div');
     cardElement.id = card.id;
@@ -24,7 +26,20 @@ document.addEventListener("turbolinks:load", function(){
     console.log('click');
     coren.checkAnswer();
   })
-})
+});
+
+function skip(){
+  let row = coren.currentRowToConnect;
+  let question = coren.sortedRowInfo[row-1].question;
+  coren.removeHighlightRowToConnect();
+  coren.currentRowToConnect = row + 1;
+  if (coren.currentRowToConnect < 5){
+    coren.highlightRowToConnect();
+    coren.updatePromptText(coren.promptsByRow[`${coren.currentRowToConnect}`]);
+  } else {
+    coren.updatePromptText("You win!")
+  }
+};
 
 class Game {
   constructor(){
