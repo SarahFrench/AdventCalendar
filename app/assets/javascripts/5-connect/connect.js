@@ -11,10 +11,12 @@ document.addEventListener("turbolinks:load", function(){
         coren.selectCard(event.target);
       } else {
         coren.selectCard(event.target);
-        if(coren.areCardsSameGroup()){
+        if(coren.selections.cards.length === 4 && coren.areCardsSameGroup()){
             coren.positionSortedCards();
+            setTimeout(function(){coren.resetSelectedCards(), 3000});
+        } else if (coren.selections.cards.length === 4 && !coren.areCardsSameGroup()){
+          setTimeout(function(){coren.resetSelectedCards(), 3000});
         }
-        setTimeout(function(){coren.resetSelectedCards(), 3000});
       }
     })
     wall.appendChild(cardElement);
@@ -29,19 +31,6 @@ document.addEventListener("turbolinks:load", function(){
     coren.skip();
   });
 });
-
-// function skip(){
-//   let row = coren.currentRowToConnect;
-//   let question = coren.sortedRowInfo[row-1].question;
-//   coren.removeHighlightRowToConnect();
-//   coren.currentRowToConnect = row + 1;
-//   if (coren.currentRowToConnect < 5){
-//     coren.highlightRowToConnect();
-//     coren.updatePromptText(coren.promptsByRow[`${coren.currentRowToConnect}`]);
-//   } else {
-//     coren.updatePromptText("You win!")
-//   }
-// };
 
 class Game {
   constructor(){
@@ -115,9 +104,6 @@ class Game {
 
   selectCard(card){
     if(this.selections.cards.length < 4  && !this.isCardAlreadySelected(card)){
-      if(this.isCardAlreadySelected(card)){
-        console.log("already selected");
-      }
       let selectedCardData = this.cards.filter(x => x.id == parseInt(card.id) )[0];
       this.selections.cards.push(selectedCardData);
     }
