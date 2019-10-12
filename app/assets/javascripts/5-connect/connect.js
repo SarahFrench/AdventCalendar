@@ -1,8 +1,6 @@
-let coren;
-
 document.addEventListener("turbolinks:load", function(){
   let wall = document.getElementById('wall');
-  coren = new Game;
+  let coren = new Game;
   coren.cards.forEach(function(card, index) {
     let cardElement = document.createElement('div');
     cardElement.id = card.id;
@@ -21,25 +19,29 @@ document.addEventListener("turbolinks:load", function(){
     })
     wall.appendChild(cardElement);
   })
-  let button = document.getElementById('checkButton');
-  button.addEventListener('click', function(){
-    console.log('click');
+  let checkButton = document.getElementById('checkButton');
+  checkButton.addEventListener('click', function(){
     coren.checkAnswer();
-  })
+  });
+
+  let skipButton = document.getElementById('skipButton');
+  skipButton.addEventListener('click', function(){
+    coren.skip();
+  });
 });
 
-function skip(){
-  let row = coren.currentRowToConnect;
-  let question = coren.sortedRowInfo[row-1].question;
-  coren.removeHighlightRowToConnect();
-  coren.currentRowToConnect = row + 1;
-  if (coren.currentRowToConnect < 5){
-    coren.highlightRowToConnect();
-    coren.updatePromptText(coren.promptsByRow[`${coren.currentRowToConnect}`]);
-  } else {
-    coren.updatePromptText("You win!")
-  }
-};
+// function skip(){
+//   let row = coren.currentRowToConnect;
+//   let question = coren.sortedRowInfo[row-1].question;
+//   coren.removeHighlightRowToConnect();
+//   coren.currentRowToConnect = row + 1;
+//   if (coren.currentRowToConnect < 5){
+//     coren.highlightRowToConnect();
+//     coren.updatePromptText(coren.promptsByRow[`${coren.currentRowToConnect}`]);
+//   } else {
+//     coren.updatePromptText("You win!")
+//   }
+// };
 
 class Game {
   constructor(){
@@ -259,6 +261,19 @@ class Game {
     } else {
       console.log("NOT MATCH");
       this.updateAnswerText("Nuh-uh, incorrect");
+    }
+  }
+
+  skip(){
+    let row = this.currentRowToConnect;
+    let question = this.sortedRowInfo[row-1].question;
+    this.removeHighlightRowToConnect();
+    this.currentRowToConnect = row + 1;
+    if (this.currentRowToConnect < 5){
+      this.highlightRowToConnect();
+      this.updatePromptText(this.promptsByRow[`${this.currentRowToConnect}`]);
+    } else {
+      this.updatePromptText("You win!")
     }
   }
 
