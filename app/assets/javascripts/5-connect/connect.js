@@ -233,7 +233,7 @@ class Game {
       this.currentRowToConnect = row + 1;
       if (this.currentRowToConnect < 5){
         this.highlightRowToConnect();
-        this.updatePromptText(this.promptsByRow[`${this.currentRowToConnect}`]);
+        this.updatePromptText(this.promptsByRow[this.currentRowToConnect]);
       } else {
         this.updatePromptText("You win!")
       }
@@ -251,9 +251,13 @@ class Game {
     this.currentRowToConnect = row + 1;
     if (this.currentRowToConnect < 5){
       this.highlightRowToConnect();
-      this.updatePromptText(this.promptsByRow[`${this.currentRowToConnect}`]);
+      this.updatePromptText(this.promptsByRow[this.currentRowToConnect]);
+      this.updateAnswerText(this.answersByQuestion[question]);
+      this.clearTextInput();
     } else {
-      this.updatePromptText("You win!")
+      this.updatePromptText("You win!");
+      this.updateAnswerText(this.answersByQuestion[question]);
+      this.clearTextInput();
     }
   }
 
