@@ -113,15 +113,12 @@ class Game {
   areCardsSameGroup(){
     let groups = []
     this.selections.cards.forEach( card => {
-      console.log('card group=' + card.group);
       groups.push(card.group);
     })
     let selectedSets = new Set(groups);
     if(selectedSets.size === 1){
-      console.log("all same set!");
       return true;
     } else {
-      console.log("cards don't match");
       return false;
     }
   }
@@ -225,7 +222,6 @@ class Game {
     let answers = this.answers[question].split(',');
     let submission = this.getTextInput();
     let correct = false;
-    console.log(answers);
     answers.forEach( ans => {
       if ((new RegExp(ans)).test(submission)){
         correct = true;
@@ -233,7 +229,6 @@ class Game {
     })
 
     if(correct){
-      console.log("MATCH");
       this.removeHighlightRowToConnect();
       this.currentRowToConnect = row + 1;
       if (this.currentRowToConnect < 5){
@@ -245,7 +240,6 @@ class Game {
       this.updateAnswerText(this.answersByQuestion[question]);
       this.clearTextInput();
     } else {
-      console.log("NOT MATCH");
       this.updateAnswerText("Nuh-uh, incorrect");
     }
   }
