@@ -1,8 +1,69 @@
+<div class="svg-container">
+  <svg id="house" class="svg" opacity="0" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <%= render "pink" %>
+  <%= render "orange" %>
+  <%= render "yellow" %>
+  <%= render "green" %>
+  <%= render "dark-blue" %>
+  <%= render "light-blue" %>
 
-<h1>Home</h1>
+  <%= render "house-lines" %>
 
-<table>
-<% (1..25).each do |i| %>
-  <a href="/days/<%= i %>">Challenge <%= i %></a>
+  <%= render "white-50" %>
+  <%= render "white-100" %>
+  </svg>
+</div>
+
+
+
+<div id="advent-home" class="window-container">
+<% date_order = [11, 12, 5, 10, 3,
+                 9, 21, 23, 22, 6,
+                 20, 1, 24, 8, 18,
+                 13, 19, 25, 17, 16,
+                 7, 15, 4, 14, 2] %>
+<% date_order.each do |i| %>
+  <div class="window" id="window_<%=i%>">
+    <%= render "panel" %>
+    <a class="day-link" id="day-link_<%=i%>" href="/days/<%= i %>">Challenge <%= i %></a>
+  </div>
 <% end %>
-</table>
+</div>
+
+
+
+
+<script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function(){
+    document.body.style.backgroundColor = '#435A6F'
+    let house = document.getElementById('house');
+    let height = window.screen.availHeight;
+    // house.setAttribute('viewBox', `${-(height * 0.2)} 0 ${height} ${height/2}` )
+    house.setAttribute('viewBox', '0 0 500 400' )
+    house.setAttribute('height', '100vh')
+    house.classList.add('animated');
+    house.classList.add('fadeIn');
+    house.setAttribute('opacity', 1);
+
+    let dates = JSON.parse( window.localStorage.getItem("advent") );
+    for(let i=1; i <= 25; i++){
+      if(dates[i] === true){
+        document.getElementById(`window_${i}`).classList.add("open");
+      }
+    }
+  })
+
+  document.addEventListener("DOMContentLoaded", function(){
+    let dayLinks = document.getElementsByClassName('day-link');
+    for(let i=0; i < dayLinks.length; i++ ){
+      dayLinks[i].addEventListener("click", function(event){
+        let number = event.target.id.match(/\d+/)[0];
+        if(number <= <%= Time.now.day%>){
+          document.getElementById("window_" + i).classList.add("open");
+          updateAdventPlace(number);
+        }
+      })
+    }
+  })
+
+</script>
