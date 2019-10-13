@@ -13,6 +13,9 @@
   </head>
 
   <body>
+    <% if request.fullpath != "/" %>
+      <%= render "layouts/back-button" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
