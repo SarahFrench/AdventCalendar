@@ -1,7 +1,13 @@
 <div id="menu-area" class="sideMenu">
-  <a href="javascript:void(0)" class="close" onclick="menuClose()"><i class="fa fa-window-close"></i></a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <i class="fa fa-window-close close" onclick="menuClose()"></i>
+
+  <a href="#" class="menu-link pad-right-1em" >About</a>
+
+  <hr class="menu-horizontal-rule">
+
+  <div class="menu-links-container">
+    <% for i in (1..Time.now.day)%>
+      <a href="<%="/days/#{i}"%> " class="menu-link" ><%= "Day #{i}"%> </a>
+    <% end %>
+  </div>
 </div>
