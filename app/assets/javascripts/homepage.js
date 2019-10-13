@@ -32,4 +32,14 @@ if(window.location.pathname === "/"){
     }
   }
 
+  var menuOpen = function() {
+    console.log('open');
+    document.getElementById('menu-area').style.width = '20%';
+  }
+
+  var menuClose = function() {
+    console.log('close');
+    document.getElementById('menu-area').style.width = '0%';
+  }
+
 }
