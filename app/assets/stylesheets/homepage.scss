@@ -29,8 +29,9 @@
 
   & a {
     position: relative;
-    top: -60%;
-    left: 37%;
+    position: relative;
+    left: 42%;
+    top: -75%;
 
     &.day-link{
       color: #434d65;
@@ -40,4 +41,9 @@
   &.open {
     opacity: 0;
   }
+}
+
+.day-link{
+  font-size: 3em;
+  font-family: 'Vidaloka', cursive;
 }

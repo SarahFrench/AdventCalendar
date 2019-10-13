@@ -1,3 +1,6 @@
+<link href="https://fonts.googleapis.com/css?family=Vidaloka&display=swap" rel="stylesheet">
+
+
 <div class="svg-container">
   <svg id="house" class="svg" opacity="0" viewBox="0 0 800 800" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <%= render "pink" %>
@@ -25,7 +28,7 @@
 <% date_order.each do |i| %>
   <div class="window" id="window_<%=i%>">
     <%= render "panel" %>
-    <a class="day-link" id="day-link_<%=i%>" href="/days/<%= i %>">Challenge <%= i %></a>
+    <a class="day-link" id="day-link_<%=i%>" href="/days/<%= i %>"><%= i %></a>
   </div>
 <% end %>
 </div>
