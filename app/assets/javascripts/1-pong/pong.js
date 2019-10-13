@@ -1,6 +1,7 @@
-if(/days\/1/.test(window.location.href)){
 
-  document.addEventListener("turbolinks:load", function() {
+
+document.addEventListener("turbolinks:load", function() {
+  if(/days\/1/.test(window.location.href)){
 
     let page = document.getElementsByTagName("body")[0].getAttribute('data-page');
 
@@ -169,6 +170,5 @@ if(/days\/1/.test(window.location.href)){
     })
 
     canvas.addEventListener('click', event => { pong.start()})
-
-  })
-}
+  }
+})
