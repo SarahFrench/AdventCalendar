@@ -55,7 +55,8 @@
   position: absolute;
   left: 0;
   top: 0;
-  background: white;
+  background: inherit;
+  opacity: 0.5;
 
   display: flex;
   flex-direction: column;
@@ -63,7 +64,7 @@
   align-items: flex-end;
 }
 
-.buttonTopRight {
+.button-top-right {
 
     text-align: center;
     position: absolute;
@@ -71,11 +72,19 @@
     left: 0;
     height: 50px;
     width: 50px;
-    background-color: grey;
+    background-color: inherit;
     opacity: 0.5;
     font-size: 2em;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    & i.menu-button {
+      color: white;
+    }
+
+    & i.back-button {
+      color: black;
+    }
 }

@@ -35,11 +35,13 @@ if(window.location.pathname === "/"){
   var menuOpen = function() {
     console.log('open');
     document.getElementById('menu-area').style.width = '20%';
+    document.getElementById('menu-button').style.visibility = "hidden";
   }
 
   var menuClose = function() {
     console.log('close');
     document.getElementById('menu-area').style.width = '0%';
+    document.getElementById('menu-button').style.visibility = "visible";
   }
 
 }
