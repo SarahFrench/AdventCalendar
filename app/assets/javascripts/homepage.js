@@ -1,5 +1,6 @@
-document.addEventListener("DOMContentLoaded", function() {
-    if(document.getElementById('advent-home')){
+if(window.location.pathname === "/"){
+
+  document.addEventListener("DOMContentLoaded", function() {
     if(window.localStorage.hasOwnProperty("advent")){
       console.log(window.localStorage.getItem("advent"));
     } else {
@@ -13,21 +14,22 @@ document.addEventListener("DOMContentLoaded", function() {
       }
       window.localStorage.setItem("advent", JSON.stringify(dates) )
     }
-  }
-})
+  })
 
-function updateAdventPlace(number){
-  if(number){
-    number = number.toString();
-    let dates = JSON.parse( window.localStorage.getItem("advent") );
-    if(typeof dates[number] == 'boolean'){
-      dates[number] = true;
-      console.log("updating");
-      window.localStorage.setItem("advent", JSON.stringify(dates))
+  function updateAdventPlace(number){
+    if(number){
+      number = number.toString();
+      let dates = JSON.parse( window.localStorage.getItem("advent") );
+      if(typeof dates[number] == 'boolean'){
+        dates[number] = true;
+        console.log("updating");
+        window.localStorage.setItem("advent", JSON.stringify(dates))
+      } else {
+        console.log("incorrect number");
+      }
     } else {
-      console.log("incorrect number");
+      console.log("argument passed was bad");
     }
-  } else {
-    console.log("argument passed was bad");
   }
+
 }

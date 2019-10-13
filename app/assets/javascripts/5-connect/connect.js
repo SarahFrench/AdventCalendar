@@ -1,4 +1,4 @@
-if(/days\/5/.test(window.location.href)){
+if(window.location.pathname === "/days/5"){
 
   document.addEventListener("turbolinks:load", function(){
       let wall = document.getElementById('wall');
