@@ -1,5 +1,4 @@
   document.addEventListener("DOMContentLoaded", function() {
-    if(window.location.pathname === "/"){
 
       if(window.localStorage.hasOwnProperty("advent")){
         console.log(window.localStorage.getItem("advent"));
@@ -14,7 +13,6 @@
         }
         window.localStorage.setItem("advent", JSON.stringify(dates) )
       }
-    }
   })
 
   function updateAdventPlace(number){
