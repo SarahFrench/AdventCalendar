@@ -1,24 +1,8 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+To test a branch that isn't master you can push to Heroku's master branch
 
-Things you may want to cover:
+$ git push heroku add-audio:master
 
-* Ruby version
+This is bad practice
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+When you next need to push local master to heroku you'll need to force push
