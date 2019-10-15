@@ -1,8 +1,7 @@
 let isHugoHappy = false;
 
 document.addEventListener("turbolinks:load", function() {
-  if (document.getElementById('eyebrows')) {
-
+  if(window.location.pathname === "/days/3"){
     showIntroMessage();
     setTimeout(hideIntroMessage, 5000);
     setTimeout(function(){
