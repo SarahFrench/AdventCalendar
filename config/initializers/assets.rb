@@ -12,6 +12,9 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 Rails.application.config.assets.precompile += %w[
-  local-storage.js
-  1-pong/*
+  homepage/*.js
+  1-pong/*.js
+  3-eyebrows/*.js
+  5-connect/*.js
+  6-audio/*.js
 ]
