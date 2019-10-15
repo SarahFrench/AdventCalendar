@@ -1,6 +1,10 @@
 require_relative 'boot'
 
 require 'rails/all'
+# can pick and choose what to use
+# use code from https://github.com/rails/rails/blob/master/railties/lib/rails/all.rb
+# but you'll need to remove all references to what you remove elsewhere in project
+
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
