@@ -5,8 +5,7 @@ class ChallengesController < ApplicationController
     2 => 'test',
     3 => 'eyebrows',
     4 => 'vue',
-    5 => 'connect',
-    6 => 'audio'
+    5 => 'connect'
   }
 
 # final version of controller that responds to what day it is
