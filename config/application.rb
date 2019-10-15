@@ -1,6 +1,21 @@
 require_relative 'boot'
 
-require 'rails/all'
+# require 'rails/all
+# instead of above, use code from https://github.com/rails/rails/blob/master/railties/lib/rails/all.rb
+# deleted stuff that's not needed for this project
+require "rails"
+
+%w(
+  action_controller/railtie
+  action_view/railtie
+  rails/test_unit/railtie
+  sprockets/railtie
+).each do |railtie|
+  begin
+    require railtie
+  rescue LoadError
+  end
+end
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
