@@ -1,5 +1,5 @@
 
-document.addEventListener("turbolinks:load", function(){
+document.addEventListener("DOMContentLoaded", function(){
   if(window.location.pathname === "/days/5"){
       let wall = document.getElementById('wall');
       let coren = new Game;

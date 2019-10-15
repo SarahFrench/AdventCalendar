@@ -1,6 +1,6 @@
 
 
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   if(/days\/1/.test(window.location.href)){
 
     let page = document.getElementsByTagName("body")[0].getAttribute('data-page');

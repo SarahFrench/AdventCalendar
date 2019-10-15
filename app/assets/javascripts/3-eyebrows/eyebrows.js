@@ -1,6 +1,6 @@
 let isHugoHappy = false;
 
-document.addEventListener("turbolinks:load", function() {
+document.addEventListener("DOMContentLoaded", function() {
   if(window.location.pathname === "/days/3"){
     showIntroMessage();
     setTimeout(hideIntroMessage, 5000);
