@@ -5,8 +5,8 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore audio files
-
-
+/app/assets/audios/*.m4a
+/app/assets/audios/*.mp3
 
 # Ignore bundler config.
 /.bundle
