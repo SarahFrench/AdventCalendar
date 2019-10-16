@@ -4,4 +4,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :challenges, only: [:show], path: '/days'
 
+
+  get '/delete-local-storage', to: 'home#delete-local-storage'
+
+
 end
