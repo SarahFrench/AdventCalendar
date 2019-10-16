@@ -21,21 +21,23 @@
 
 .window {
   background-color: #272d3a;
+  background-image: "ENV['ADVENT_WINDOW_BORDER']"
+  // background-image: url("https://res.cloudinary.com/dl1rwtqzi/image/upload/v1571259311/blue-lines_qamko8.png");
+  background-repeat: round;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
-  & svg {
-    height: inherit;
-    width: inherit;
-  }
-
-  & a {
-    position: relative;
-    position: relative;
-    left: 42%;
-    top: -75%;
-
-    &.day-link{
-      color: #434d65;
-    }
+  & a.day-link{
+      color: white;
+      font-size: 3em;
+      opacity: 0.5;
+      font-family: 'Vidaloka', cursive;
+      @media screen and (any-hover: none) {
+        //target mobile devices
+        font-size: 9em;
+      }
   }
 
   &.open {
@@ -43,15 +45,11 @@
   }
 }
 
-.day-link{
-  font-size: 3em;
-  font-family: 'Vidaloka', cursive;
-}
 
 .sideMenu {
   width: 0%;
   height: 100%;
-  overflow: hidden;
+  overflow: scroll;
   position: absolute;
   left: 0;
   top: 0;
@@ -71,6 +69,12 @@
     left: 0;
     height: 50px;
     width: 50px;
+    @media screen and (any-hover: none) {
+      //target mobile devices
+      height: 100px;
+      width: 100px;
+      font-size: 5em;
+    }
     background-color: inherit;
     opacity: 0.5;
     font-size: 2em;
@@ -103,9 +107,12 @@
   font-family: 'Vidaloka', cursive;
   font-size: 1.5em;
   text-decoration: none;
-  margin-left: auto;
   opacity: 1;
   margin-top: 5px;
+  @media screen and (any-hover: none) {
+    //target mobile devices
+    font-size: 3em;
+  }
 }
 
 .menu-horizontal-rule {
@@ -125,6 +132,11 @@
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+  @media screen and (any-hover: none) {
+    // target mobile devices
+    display: flex;
+    flex-direction: column;
+  }
   width: 80%;
   margin-right: 16px;
 }
