@@ -21,7 +21,7 @@
 
 .window {
   background-color: #272d3a;
-  background-image: "ENV['ADVENT_WINDOW_BORDER']"
+  background-image: "ENV['ADVENT_WINDOW_BORDER']";
   // background-image: url("https://res.cloudinary.com/dl1rwtqzi/image/upload/v1571259311/blue-lines_qamko8.png");
   background-repeat: round;
   display: flex;
