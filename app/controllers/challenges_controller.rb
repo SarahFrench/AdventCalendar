@@ -2,7 +2,7 @@ class ChallengesController < ApplicationController
 
   CHALLENGES = {
     1 => 'pong',
-    2 => 'test',
+    2 => 'icebox',
     3 => 'eyebrows',
     4 => 'vue',
     5 => 'connect',
