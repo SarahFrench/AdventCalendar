@@ -1,0 +1,42 @@
+section.about{
+  margin-bottom: 32px;
+
+  & p {
+    font-family: sans-serif;
+  }
+}
+
+h1.about{
+  color: white;
+  font-family: 'Vidaloka', cursive;
+  text-align: center;
+  opacity: 1;
+  @media screen and (any-hover: none) {
+    font-size: 4em;
+  }
+}
+
+h2.about{
+  color: white;
+  font-family: 'Vidaloka', cursive;
+  @media screen and (any-hover: none) {
+    font-size: 4em;
+  }
+}
+
+p.about{
+  color: white;
+}
+
+div.about__container{
+  margin-top: 32px;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 10px;
+  padding: 16px;
+  @media screen and (any-hover: none) {
+    margin-left: 5em;
+    margin-right: 5em;
+  }
+  background-color: rgba(67, 90, 111, 0.7);
+}
