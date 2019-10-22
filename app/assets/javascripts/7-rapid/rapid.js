@@ -4,7 +4,9 @@ document.addEventListener('DOMContentLoaded', function(){
     firstClick: 0,
     numberOfClicks: 0
   }
-  document.addEventListener('click', function(event){
+  let button = document.getElementById('rapid-click');
+
+  button.addEventListener('click', function(event){
     if(game.firstClick === 0){
       game.firstClick = event.timeStamp;
       console.log("first click at " + game.firstClick)
