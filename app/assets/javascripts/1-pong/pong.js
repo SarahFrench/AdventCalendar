@@ -95,12 +95,12 @@ document.addEventListener("DOMContentLoaded", function() {
         if(player.left < ball.right && player.right > ball.left && player.top < ball.bottom && player.bottom > ball.top){
           const len = ball.vel.len;
           ball.vel.x = -ball.vel.x;
-          console.log('vel x: ' + ball.vel.x);
-          ball.vel.y = -ball.vel.y;
-          console.log('vel y: ' + ball.vel.y);
+          // console.log('vel x: ' + ball.vel.x);
+          ball.vel.y = ball.vel.y;
+          // console.log('vel y: ' + ball.vel.y);
           ball.vel.y += 300 * (Math.random() - 0.5);
           ball.vel.len = len * 1.05
-          console.log('len: ' + ball.vel.len);
+          // console.log('len: ' + ball.vel.len);
         }
       }
 
