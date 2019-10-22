@@ -1,7 +1,8 @@
-
+document.addEventListener("touchstart", function() {
+  alert("Sorry, this page doesn't work on mobile :(")
+})
 
 document.addEventListener("DOMContentLoaded", function() {
-  if(/days\/1/.test(window.location.href)){
 
     let page = document.getElementsByTagName("body")[0].getAttribute('data-page');
 
@@ -53,9 +54,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     class Player extends Rectange {
-      constructor(){
-        super(20,100);
+      constructor(name){
+        super(10,100);
         this.score = 0;
+        this.name = name;
       }
     }
 
@@ -67,8 +69,8 @@ document.addEventListener("DOMContentLoaded", function() {
         this.ball = new Ball;
 
         this.players = [
-          new Player,
-          new Player,
+          new Player("Player1"),
+          new Player("Player2"),
         ]
 
         this.players[0].pos.x = 40;
@@ -93,14 +95,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
       collide(player, ball){
         if(player.left < ball.right && player.right > ball.left && player.top < ball.bottom && player.bottom > ball.top){
+          console.log(player.name);
+          this.updateScoreElement(player.name);
           const len = ball.vel.len;
           ball.vel.x = -ball.vel.x;
-          console.log('vel x: ' + ball.vel.x);
-          ball.vel.y = -ball.vel.y;
-          console.log('vel y: ' + ball.vel.y);
+          // console.log('vel x: ' + ball.vel.x);
+          ball.vel.y = ball.vel.y;
+          // console.log('vel y: ' + ball.vel.y);
           ball.vel.y += 300 * (Math.random() - 0.5);
           ball.vel.len = len * 1.05
-          console.log('len: ' + ball.vel.len);
+          // console.log('len: ' + ball.vel.len);
         }
       }
 
@@ -133,6 +137,27 @@ document.addEventListener("DOMContentLoaded", function() {
           this.ball.vel.y = 300 * (Math.random() > 0.5 ? 1: -1);
           this.ball.vel.len = 200;
         }
+      }
+
+      updateScoreElement(playerName){
+        if(playerName === "Player1"){
+          let score = parseInt(document.getElementById(playerName).innerText);
+          console.log(score);
+          ++score;
+          document.getElementById(playerName).innerText = score;
+          if(this.newHighScore(score)){
+            document.getElementById(playerName).style.color = "red";
+          }
+        }
+      }
+
+      newHighScore(score){
+        let sarahScore = parseInt(document.getElementById("SarahScore").innerText);
+        return score > sarahScore;
+      }
+
+      resetScoreElement(){
+          document.getElementById("Player1").innerText="0";
       }
 
       update(dt){
@@ -169,6 +194,8 @@ document.addEventListener("DOMContentLoaded", function() {
       };
     })
 
-    canvas.addEventListener('click', event => { pong.start()})
-  }
+    canvas.addEventListener('click', event => {
+      pong.resetScoreElement();
+      pong.start()
+    })
 })
