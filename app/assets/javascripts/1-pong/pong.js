@@ -1,7 +1,6 @@
 
 
 document.addEventListener("DOMContentLoaded", function() {
-  if(/days\/1/.test(window.location.href)){
 
     let page = document.getElementsByTagName("body")[0].getAttribute('data-page');
 
@@ -170,5 +169,4 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     canvas.addEventListener('click', event => { pong.start()})
-  }
 })
