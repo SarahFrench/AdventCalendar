@@ -52,9 +52,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     class Player extends Rectange {
-      constructor(){
-        super(20,100);
+      constructor(name){
+        super(10,100);
         this.score = 0;
+        this.name = name;
       }
     }
 
@@ -66,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
         this.ball = new Ball;
 
         this.players = [
-          new Player,
-          new Player,
+          new Player("Player1"),
+          new Player("Player2"),
         ]
 
         this.players[0].pos.x = 40;
@@ -92,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       collide(player, ball){
         if(player.left < ball.right && player.right > ball.left && player.top < ball.bottom && player.bottom > ball.top){
+          console.log(player.name);
+          this.updateScoreElement(player.name);
           const len = ball.vel.len;
           ball.vel.x = -ball.vel.x;
           // console.log('vel x: ' + ball.vel.x);
@@ -134,6 +137,27 @@ document.addEventListener("DOMContentLoaded", function() {
         }
       }
 
+      updateScoreElement(playerName){
+        if(playerName === "Player1"){
+          let score = parseInt(document.getElementById(playerName).innerText);
+          console.log(score);
+          ++score;
+          document.getElementById(playerName).innerText = score;
+          if(this.newHighScore(score)){
+            document.getElementById(playerName).style.color = "red";
+          }
+        }
+      }
+
+      newHighScore(score){
+        let sarahScore = parseInt(document.getElementById("SarahScore").innerText);
+        return score > sarahScore;
+      }
+
+      resetScoreElement(){
+          document.getElementById("Player1").innerText="0";
+      }
+
       update(dt){
         this.ball.pos.x += this.ball.vel.x * dt;
         this.ball.pos.y += this.ball.vel.y * dt;
@@ -168,5 +192,8 @@ document.addEventListener("DOMContentLoaded", function() {
       };
     })
 
-    canvas.addEventListener('click', event => { pong.start()})
+    canvas.addEventListener('click', event => {
+      pong.resetScoreElement();
+      pong.start()
+    })
 })
