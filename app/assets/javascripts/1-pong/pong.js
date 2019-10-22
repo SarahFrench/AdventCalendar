@@ -200,8 +200,6 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
     canvas.addEventListener("touchstart", function(event) {
-      if(event.target.id === 'pong'){
         alert("Sorry, this page doesn't work on mobile :(");
-      }
     })
 })
