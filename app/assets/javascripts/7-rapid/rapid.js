@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function(){
         while(game.audioPlaying){
           for(let i=0; i < game.numberOfClicks; i++){
             console.log(i);
-            setTimeout(function(){console.log(audio.currentTime);audio.currentTime = 4; audio.play()}, 2000)
+            setTimeout(function(){console.log(audio.currentTime);audio.currentTime = 3; audio.play()}, 1000*i)
           }
           game.audioPlaying = false;
         }
