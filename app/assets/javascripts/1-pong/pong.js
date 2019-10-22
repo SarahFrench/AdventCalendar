@@ -1,7 +1,3 @@
-document.addEventListener("touchstart", function() {
-  alert("Sorry, this page doesn't work on mobile :(")
-})
-
 document.addEventListener("DOMContentLoaded", function() {
 
     let page = document.getElementsByTagName("body")[0].getAttribute('data-page');
@@ -197,5 +193,11 @@ document.addEventListener("DOMContentLoaded", function() {
     canvas.addEventListener('click', event => {
       pong.resetScoreElement();
       pong.start()
+    })
+
+    canvas.addEventListener("touchstart", function(event) {
+      if(event.target.id === 'pong'){
+        alert("Sorry, this page doesn't work on mobile :(");
+      }
     })
 })
