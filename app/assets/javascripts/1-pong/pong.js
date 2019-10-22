@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
 
-    let page = document.getElementsByTagName("body")[0].getAttribute('data-page');
-
     class Vector {
       constructor(x=0, y=0){
         this.x = x;
@@ -61,7 +59,6 @@ document.addEventListener("DOMContentLoaded", function() {
       constructor(canvas){
         this._canvas = canvas;
         this._context = canvas.getContext("2d");
-
         this.ball = new Ball;
 
         this.players = [
