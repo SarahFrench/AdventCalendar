@@ -1,4 +1,6 @@
-
+document.addEventListener("touchstart", function() {
+  alert("Sorry, this page doesn't work on mobile :(")
+})
 
 document.addEventListener("DOMContentLoaded", function() {
 
