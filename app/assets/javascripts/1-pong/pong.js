@@ -105,6 +105,12 @@ document.addEventListener("DOMContentLoaded", function() {
         this._context.fillStyle = '#FFF';
         this._context.fillRect(rectangle.left, rectangle.top,
                      rectangle.size.x, rectangle.size.y)
+         if(this.ball.vel.x === 0 && this.ball.vel.y === 0){
+           this._context.font = "24px Arial";
+           this._context.fillStyle = "#FFF";
+           this._context.fillText("Click to begin", (this._canvas.width/2)-70, (this._canvas.height/2)-30);
+
+         }
       }
 
       draw(){
@@ -129,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
           this.ball.vel.x = 300 * (Math.random() > 0.5 ? 1: -1);
           this.ball.vel.y = 300 * (Math.random() > 0.5 ? 1: -1);
           this.ball.vel.len = 200;
+
         }
       }
 
