@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', function(){
   let button = document.getElementById('rapid-click');
 
   button.addEventListener('click', function(event){
-    let audio = document.getElementById('audio');
+    let fartAudio = document.getElementById('audio-1');
+    let omgAudio = document.getElementById('audio-2');
     if(game.firstClick === 0){
       game.firstClick = event.timeStamp;
       console.log("first click at " + game.firstClick)
@@ -17,30 +18,32 @@ document.addEventListener('DOMContentLoaded', function(){
       if(event.timeStamp - game.firstClick < ONE_SECONDS_IN_MS){
         console.log("click within 10 seconds of first");
         game.numberOfClicks++;
-      } else if (audio.currentTime === 0) {
-        console.log("curr Time =" + audio.currentTime);
-        playAudioWithDelayedRepeat(audio, 1000, 500, game.numberOfClicks);
+      } else if (fartAudio.currentTime === 0) {
+        console.log("curr Time =" + fartAudio.currentTime);
+        playAudioWithDelayedRepeat(fartAudio, 500, 150, game.numberOfClicks, omgAudio);
       }
     }
   })
 })
 
-function playAudioWithDelayedRepeat(audio, delay, repeatDuration, numberRepeats){
+function playAudioWithDelayedRepeat(repeatAudio, delay, repeatDuration, numberRepeats, finalAudio){
   let audioPlaying = true
   let callback = function(){
     while(audioPlaying){
       for(let i=0; i < numberRepeats; i++){
         console.log(i);
         setTimeout(function(){
-          console.log("loop " + i + ": "+ audio.currentTime);
-          audio.currentTime = 0.9;
-          audio.play();
+          console.log("loop " + i + ": "+ repeatAudio.currentTime);
+          repeatAudio.currentTime = 0.6;
+          repeatAudio.play();
         }, (repeatDuration*i));
       }
       audioPlaying = false;
     }
+
   }
 
-  audio.play();
+  repeatAudio.play();
   setTimeout(callback, delay);
+  setTimeout(function(){finalAudio.play();}, delay+(repeatDuration*numberRepeats));
 }
