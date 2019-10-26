@@ -1,0 +1,10 @@
+.rapid-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg.rapid{
+  height: 75vh;
+  /* max-height: 75vh; */
+}

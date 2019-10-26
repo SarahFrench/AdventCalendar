@@ -20,11 +20,24 @@ document.addEventListener('DOMContentLoaded', function(){
         game.numberOfClicks++;
       } else if (fartAudio.currentTime === 0) {
         console.log("curr Time =" + fartAudio.currentTime);
+        liftOff();
         playAudioWithDelayedRepeat(fartAudio, 500, 150, game.numberOfClicks, omgAudio);
       }
     }
   })
 })
+
+function liftOff(){
+  let groundedSVGPaths = document.getElementsByClassName('grounded');
+  let flyingSVGPaths = document.getElementsByClassName('flying');
+  for (let i = 0; i < groundedSVGPaths.length; i++){
+    groundedSVGPaths[i].setAttribute('opacity', 0);
+  }
+  for (let i = 0; i < flyingSVGPaths.length; i++){
+    flyingSVGPaths[i].setAttribute('opacity', 1);
+  }
+
+}
 
 function playAudioWithDelayedRepeat(repeatAudio, delay, repeatDuration, numberRepeats, finalAudio){
   let audioPlaying = true
