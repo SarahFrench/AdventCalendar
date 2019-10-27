@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   const TEN_SECONDS_IN_MS = 10000;
+  const FIVE_SECONDS_IN_MS = 5000;
   const ONE_SECONDS_IN_MS = 1000;
 
   let game = {
@@ -15,13 +16,13 @@ document.addEventListener('DOMContentLoaded', function(){
       game.firstClick = event.timeStamp;
       console.log("first click at " + game.firstClick)
     } else {
-      if(event.timeStamp - game.firstClick < ONE_SECONDS_IN_MS){
+      if(event.timeStamp - game.firstClick < FIVE_SECONDS_IN_MS){
         console.log("click within 10 seconds of first");
         game.numberOfClicks++;
       } else if (fartAudio.currentTime === 0) {
         console.log("curr Time =" + fartAudio.currentTime);
         liftOff();
-        playAudioWithDelayedRepeat(fartAudio, 500, 150, game.numberOfClicks, omgAudio);
+        playAudioWithDelayedRepeat(fartAudio, 600, 300, game.numberOfClicks, omgAudio);
       }
     }
   })
@@ -65,9 +66,9 @@ function playAudioWithDelayedRepeat(repeatAudio, delay, repeatDuration, numberRe
       }
       audioPlaying = false;
     }
-
   }
 
+  repeatAudio.playbackRate = 0.5;
   repeatAudio.play();
   setTimeout(callback, delay);
   setTimeout(function(){finalAudio.play();}, delay+(repeatDuration*numberRepeats));
