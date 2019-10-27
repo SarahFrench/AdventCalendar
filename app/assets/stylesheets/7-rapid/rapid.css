@@ -1,10 +1,19 @@
-.rapid-container{
+.rapid__container{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+.rapid__clickbox{
+  width: 20vw;
+  height: 2em;
+  background-color: black;
+  font-family: monospace;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+}
+
 svg.rapid{
   height: 75vh;
-  /* max-height: 75vh; */
 }
