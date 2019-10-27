@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function(){
     let scoreElement = document.getElementById('player-score');
     if(game.firstClick === 0){
       game.firstClick = event.timeStamp;
+      game.numberOfClicks++;
       showScoreElements();
       updateScoreElement(game.numberOfClicks,scoreElement);
     } else {
