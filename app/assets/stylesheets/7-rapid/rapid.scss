@@ -14,11 +14,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (any-hover: none) {
+    width: 100vw;
+    height: 10vh;
+  }
 }
 
 svg.rapid{
   height: 70vh;
   max-height: 500px;
+  @media screen and (any-hover: none) {
+    max-height: 700px;
+  }
 }
 
 table.rapid{
@@ -38,6 +45,9 @@ table.rapid{
 h1.rapid__text, h3.rapid__text{
   font-size: 2em;
   text-align: center;
+  @media screen and (any-hover: none) {
+    font-size: 4em;
+  }
 }
 
 li.rapid__text{
