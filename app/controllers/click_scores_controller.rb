@@ -1,6 +1,5 @@
 class ClickScoresController < ApplicationController
   before_action :set_click_score, only: [:show, :edit, :update, :destroy]
-  # skip_before_action :verify_authenticity_token, only: [:create]
 
 
   # GET /click_scores
@@ -67,6 +66,10 @@ class ClickScoresController < ApplicationController
       format.html { redirect_to click_scores_url, notice: 'Click score was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def destroy_all
+    ClickScore.all.destroy_all
   end
 
   private
