@@ -1,0 +1,21 @@
+<%= form_with(model: click_score, local: true) do |form| %>
+  <% if click_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(click_score.errors.count, "error") %> prohibited this click_score from being saved:</h2>
+
+      <ul>
+      <% click_score.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= form.label :name, 'Name' %>
+    <%= form.text_field :name%>
+    <%= form.label :score, 'Score' %>
+    <%= form.text_field :score%>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

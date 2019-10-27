@@ -17,4 +17,5 @@ Rails.application.config.assets.precompile += %w[
   3-eyebrows/*.js
   5-connect/*.js
   6-audio/*.js
+  7-rapid/*.js
 ]
