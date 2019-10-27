@@ -8,12 +8,18 @@
   width: 20vw;
   height: 2em;
   background-color: black;
-  font-family: monospace;
   color: white;
   text-align: center;
   font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 svg.rapid{
   height: 75vh;
+}
+
+.rapid__text{
+  font-family: 'Staatliches', monospace;
 }
