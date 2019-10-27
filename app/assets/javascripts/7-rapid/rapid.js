@@ -39,6 +39,17 @@ function liftOff(){
 
 }
 
+function wobbleToilet(){
+  //I will never make a function with a better name in my life
+  let options = ["rotate(-15 250 350)", "rotate(10 200 500)", "rotate(-20 200 300)", "rotate(-5)"]
+  let rotator = document.getElementById('rotator');
+  rotator.setAttribute('transform', options[3]);
+  setTimeout(function(){rotator.setAttribute('transform', options[0])}, 100);
+  setTimeout(function(){rotator.setAttribute('transform', options[2])}, 200);
+  setTimeout(function(){rotator.setAttribute('transform', options[1])}, 300);
+  setTimeout(function(){rotator.setAttribute('transform', "rotate(0)")}, 400);
+}
+
 function playAudioWithDelayedRepeat(repeatAudio, delay, repeatDuration, numberRepeats, finalAudio){
   let audioPlaying = true
   let callback = function(){
@@ -49,6 +60,7 @@ function playAudioWithDelayedRepeat(repeatAudio, delay, repeatDuration, numberRe
           console.log("loop " + i + ": "+ repeatAudio.currentTime);
           repeatAudio.currentTime = 0.6;
           repeatAudio.play();
+          wobbleToilet();
         }, (repeatDuration*i));
       }
       audioPlaying = false;
