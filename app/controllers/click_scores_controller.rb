@@ -9,6 +9,11 @@ class ClickScoresController < ApplicationController
     @click_scores = ClickScore.all
   end
 
+  # GET /top-five-rapid-clicks.json
+  def top_five
+    @top_five = ClickScore.top_five
+  end
+
   # GET /click_scores/1
   # GET /click_scores/1.json
   def show
