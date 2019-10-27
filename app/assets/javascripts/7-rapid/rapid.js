@@ -1,4 +1,5 @@
 let score;
+let highScoresVisible = false;
 
 document.addEventListener('DOMContentLoaded', function(){
   const TEN_SECONDS_IN_MS = 10000;
@@ -104,21 +105,24 @@ async function manageTopFiveScores(newScore){
     document.getElementById('score-submit').style.display = "block";
   }
   //Display data
-  let scoreList = document.getElementById('scores-list');
-  topFive.forEach(score => {
-    let rowElement = document.createElement("tr");
-    let nameElement = document.createElement("td");
-    let scoreElement = document.createElement("td");
-    nameElement.innerText = score.name;
-    scoreElement.innerText = score.score;
-    rowElement.appendChild(nameElement);
-    rowElement.appendChild(scoreElement);
-    rowElement.classList.add("rapid__text");
-    if(score.name === "You"){
-      rowElement.style.color = "red";
-    }
-    scoreList.appendChild(rowElement);
-  })
+  if(!highScoresVisible){
+    let scoreList = document.getElementById('scores-list');
+    topFive.forEach(score => {
+      let rowElement = document.createElement("tr");
+      let nameElement = document.createElement("td");
+      let scoreElement = document.createElement("td");
+      nameElement.innerText = score.name;
+      scoreElement.innerText = score.score;
+      rowElement.appendChild(nameElement);
+      rowElement.appendChild(scoreElement);
+      rowElement.classList.add("rapid__text");
+      if(score.name === "You"){
+        rowElement.style.color = "red";
+      }
+      scoreList.appendChild(rowElement);
+    })
+    highScoresVisible = true;
+  }
 }
 
 function isNewHighscore(newScore, topFive){
