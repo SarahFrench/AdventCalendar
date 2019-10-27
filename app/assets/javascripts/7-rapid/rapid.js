@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function(){
       } else if (fartAudio.currentTime === 0) {
         liftOff();
         playAudioWithDelayedRepeat(fartAudio, 600, 300, game.numberOfClicks, omgAudio);
+        manageTopFiveScores(game.numberOfClicks);
       }
     }
   })
@@ -69,7 +70,78 @@ function playAudioWithDelayedRepeat(repeatAudio, delay, repeatDuration, numberRe
   setTimeout(function(){finalAudio.play();}, delay+(repeatDuration*numberRepeats));
 }
 
-function recordNewScore(name, score){
+async function manageTopFiveScores(newScore){
+  //Show header
+  document.getElementById('scoreboard').style.display = "block";
+
+  //Get top 5 data
+  let topFive = await getTopFiveScores();
+
+  //Is new score a highscore?
+  if(isNewHighscore(newScore,topFive)){
+    score = newScore;
+    topFive = insertNewHighscore(newScore,topFive);
+
+    //Show highscore submission
+    document.getElementById('score-submit').style.display = "block";
+  }
+  //Display data
+  let scoreList = document.getElementById('scores-list');
+  topFive.forEach(score => {
+    let rowElement = document.createElement("tr");
+    let nameElement = document.createElement("td");
+    let scoreElement = document.createElement("td");
+    nameElement.innerText = score.name;
+    scoreElement.innerText = score.score;
+    rowElement.appendChild(nameElement);
+    rowElement.appendChild(scoreElement);
+    rowElement.classList.add("rapid__text");
+    if(score.name === "You"){
+      rowElement.style.color = "red";
+    }
+    scoreList.appendChild(rowElement);
+  })
+}
+
+function isNewHighscore(newScore, topFive){
+  if(topFive.length < 5){
+    return true;
+  } else {
+    let smallestHighscore = topFive[4].score;
+    return newScore > smallestHighscore;
+  }
+}
+
+function insertNewHighscore(newScore, topFive){
+  let newScoreObject = {name: "You", score: newScore};
+  let newArray =[];
+  while (topFive.length > 0){
+    let record = topFive.shift();
+    if(record.score > newScoreObject.score){
+      newArray.push(record);
+    } else if (!newArray.includes(newScore)){
+      newArray.push(newScore);
+      newArray.push(record);
+    } else {
+      newArray.push(record);
+    }
+  }
+  if(topFive.length < 5 && !newArray.includes(newScore)){
+    //Scenario: score is highscore by default due to <5 highscores
+    newArray.push(newScore);
+  }
+
+  newArray[newArray.indexOf(newScore)] = newScoreObject;
+  let firstFivePositions = newArray.slice(0,5);
+  return firstFivePositions;
+}
+
+async function getTopFiveScores(){
+  const response = await fetch('/top-five-rapid-clicks.json', {
+      method: 'GET'
+    });
+    return await response.json();
+}
     let response = POSTRequest(name, score);
     response.then( json => {
       if(!jsonIsError(json)){
