@@ -73,3 +73,42 @@ function playAudioWithDelayedRepeat(repeatAudio, delay, repeatDuration, numberRe
   setTimeout(callback, delay);
   setTimeout(function(){finalAudio.play();}, delay+(repeatDuration*numberRepeats));
 }
+
+function recordNewScore(name, score){
+    let response = POSTRequest(name, score);
+    response.then( json => {
+      if(!jsonIsError(json)){
+        console.log("No error when logging Name: " + json.name + ", Score: " + json.score);
+      } else {
+        console.log("Error");
+        console.log(json);
+      }
+    });
+}
+
+function jsonIsError(json){
+  return (
+    (json.name === undefined || json.score === undefined) ||
+    (typeof json.name === 'array' || typeof json.score === 'array')
+  )
+}
+
+async function POSTRequest(name, score){
+  let csrfToken;
+  let metas= document.getElementsByTagName('meta');
+  for(let i=0; i < metas.length; i++){
+    if(metas[i].name === "csrf-token"){
+      csrfToken= metas[i].content;
+    }
+  }
+
+  const response = await fetch('/click_scores.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', 'X-CSRF-Token': `${csrfToken}`
+      },
+      body: `{"click_score":{"name":"${name}", "score":"${score}"}}`
+    });
+
+    return await response.json();
+}
