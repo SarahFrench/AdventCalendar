@@ -2,6 +2,8 @@ let score;
 let highScoresVisible = false;
 
 document.addEventListener('DOMContentLoaded', function(){
+  alert("This works best on a Desktop, and audio doesn't play in Safari because they block loading of audio and video files")
+
   const TEN_SECONDS_IN_MS = 10000;
   const FIVE_SECONDS_IN_MS = 5000;
   const ONE_SECONDS_IN_MS = 1000;
