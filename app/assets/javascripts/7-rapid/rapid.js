@@ -12,11 +12,15 @@ document.addEventListener('DOMContentLoaded', function(){
   button.addEventListener('click', function(event){
     let fartAudio = document.getElementById('audio-1');
     let omgAudio = document.getElementById('audio-2');
+    let scoreElement = document.getElementById('player-score');
     if(game.firstClick === 0){
       game.firstClick = event.timeStamp;
+      showScoreElements();
+      updateScoreElement(game.numberOfClicks,scoreElement);
     } else {
       if(event.timeStamp - game.firstClick < FIVE_SECONDS_IN_MS){
         game.numberOfClicks++;
+        updateScoreElement(game.numberOfClicks,scoreElement);
       } else if (fartAudio.currentTime === 0) {
         liftOff();
         playAudioWithDelayedRepeat(fartAudio, 600, 300, game.numberOfClicks, omgAudio);
@@ -36,6 +40,17 @@ function liftOff(){
     flyingSVGPaths[i].setAttribute('opacity', 1);
   }
 
+}
+
+function showScoreElements(){
+  let elements = document.getElementsByClassName('live-score');
+  for(let i=0; i < elements.length; i++){
+    elements[i].style.display = "block";
+  }
+}
+
+function updateScoreElement(score, scoreElement){
+  scoreElement.innerText = score;
 }
 
 function wobbleToilet(){
