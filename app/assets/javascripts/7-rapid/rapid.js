@@ -1,3 +1,5 @@
+let score;
+
 document.addEventListener('DOMContentLoaded', function(){
   const TEN_SECONDS_IN_MS = 10000;
   const FIVE_SECONDS_IN_MS = 5000;
@@ -157,13 +159,50 @@ async function getTopFiveScores(){
     });
     return await response.json();
 }
+
+
+function getName(){
+  let name = document.getElementById('player-name').value;
+  if(name === ""){
+    return false;
+  } else {
+    return name;
+  }
+}
+
+function showMessage(message){
+  let el = document.getElementById('message');
+  el.innerText = message;
+}
+
+function removeMessage(){
+  let message = document.getElementById('message');
+  message.innerText = "";
+}
+
+function disableSubmit(){
+  let button = document.getElementById('player-name-submit');
+  button.disabled = true;
+}
+
+function recordNewScore(){
+  let name = getName();
+  if(name){
+    removeMessage();
     let response = POSTRequest(name, score);
     response.then( json => {
       if(!jsonIsError(json)){
+        showMessage("Score recorded!");
+        disableSubmit();
       } else {
+        showMessage("Sorry, an error occurred...")
+        console.log("Error when saving high score:");
         console.log(json);
       }
     });
+  } else {
+    showMessage("Make sure you've entered a valid name")
+  }
 }
 
 function jsonIsError(json){
