@@ -1,0 +1,54 @@
+.rapid__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rapid__clickbox{
+  width: 20vw;
+  height: 2em;
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+svg.rapid{
+  height: 70vh;
+  max-height: 500px;
+}
+
+table.rapid{
+  width: -webkit-fill-available;
+}
+
+.rapid__text{
+  font-family: 'Staatliches', monospace;
+  font-size: 1.5em;
+
+  &--inline{
+    display: inline;
+    margin-right: 1em;
+  }
+}
+
+h1.rapid__text, h3.rapid__text{
+  font-size: 2em;
+  text-align: center;
+}
+
+li.rapid__text{
+  margin-left: 0;
+}
+
+#score-submit{
+  margin-top: 1em;
+}
+
+.rapid__highscores{
+  padding: 10px;
+  border: solid 2px red;
+}
