@@ -14,13 +14,10 @@ document.addEventListener('DOMContentLoaded', function(){
     let omgAudio = document.getElementById('audio-2');
     if(game.firstClick === 0){
       game.firstClick = event.timeStamp;
-      console.log("first click at " + game.firstClick)
     } else {
       if(event.timeStamp - game.firstClick < FIVE_SECONDS_IN_MS){
-        console.log("click within 10 seconds of first");
         game.numberOfClicks++;
       } else if (fartAudio.currentTime === 0) {
-        console.log("curr Time =" + fartAudio.currentTime);
         liftOff();
         playAudioWithDelayedRepeat(fartAudio, 600, 300, game.numberOfClicks, omgAudio);
       }
@@ -56,9 +53,7 @@ function playAudioWithDelayedRepeat(repeatAudio, delay, repeatDuration, numberRe
   let callback = function(){
     while(audioPlaying){
       for(let i=0; i < numberRepeats; i++){
-        console.log(i);
         setTimeout(function(){
-          console.log("loop " + i + ": "+ repeatAudio.currentTime);
           repeatAudio.currentTime = 0.6;
           repeatAudio.play();
           wobbleToilet();
@@ -78,9 +73,7 @@ function recordNewScore(name, score){
     let response = POSTRequest(name, score);
     response.then( json => {
       if(!jsonIsError(json)){
-        console.log("No error when logging Name: " + json.name + ", Score: " + json.score);
       } else {
-        console.log("Error");
         console.log(json);
       }
     });
