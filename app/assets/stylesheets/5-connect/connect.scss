@@ -9,9 +9,14 @@ h1.connect{
 .wall__container {
   width: 60vw;
   height: 30vw;
-  margin-bottom: 50px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 50px;
+
+  @media screen and (any-hover: none) {
+    width: 100%;
+    height: 50%;
+  }
 }
 
 .wall {
@@ -39,6 +44,10 @@ h1.connect{
   font-size: 1.5em;
   font-family: sans-serif;
   background-color: #bfeef5;
+
+  @media screen and (any-hover: none) {
+      font-size: 2em;
+    }
 
 
   &.highlight {
