@@ -35,7 +35,7 @@
       font-family: 'Vidaloka', cursive;
       @media screen and (any-hover: none) {
         //target mobile devices
-        font-size: 9em;
+        font-size: 3em;
       }
   }
 
@@ -48,6 +48,10 @@
 .sideMenu {
   width: 0%;
   height: 100%;
+  height: -webkit-fill-available;
+  @media screen and (any-hover: none) {
+
+  }
   overflow: scroll;
   position: absolute;
   left: 0;
@@ -70,9 +74,9 @@
     width: 50px;
     @media screen and (any-hover: none) {
       //target mobile devices
-      height: 100px;
-      width: 100px;
-      font-size: 5em;
+      height: 50px;
+      width: 50px;
+      font-size: 3em;
     }
     background-color: inherit;
     opacity: 0.5;
@@ -98,11 +102,14 @@
   text-decoration: none;
   padding-top: 16px;
   padding-bottom: 16px;
+
+  align-self: flex-end;
+
   @media screen and (any-hover: none) {
     //target mobile devices
-    height: 100px;
-    width: 100px;
-    font-size: 5em;
+    height: 50px;
+    width: 50px;
+    font-size: 3em;
   }
 }
 
@@ -115,7 +122,7 @@
   margin-top: 5px;
   @media screen and (any-hover: none) {
     //target mobile devices
-    font-size: 3em;
+    font-size: 2em;
   }
 }
 
@@ -130,6 +137,10 @@
 
 .pad-left{
   padding-left: 16px;
+}
+
+.pad-right{
+  padding-right: 16px;
 }
 
 .menu-links-container {
