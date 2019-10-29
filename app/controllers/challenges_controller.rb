@@ -4,7 +4,7 @@ class ChallengesController < ApplicationController
     1 => 'pong',
     2 => 'icebox',
     3 => 'eyebrows',
-    4 => 'vue',
+    4 => 'lent',
     5 => 'connect',
     6 => 'audio',
     7 => 'rapid'
