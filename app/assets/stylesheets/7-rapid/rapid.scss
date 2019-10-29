@@ -24,7 +24,7 @@ svg.rapid{
   height: 70vh;
   max-height: 500px;
   @media screen and (any-hover: none) {
-    max-height: 700px;
+    max-height: 400px;
   }
 }
 
@@ -42,11 +42,19 @@ table.rapid{
   }
 }
 
-h1.rapid__text, h3.rapid__text{
+h1.rapid__text{
+  font-size: 3em;
+  text-align: center;
+  @media screen and (any-hover: none) {
+    font-size: 3em;
+  }
+}
+
+h3.rapid__text{
   font-size: 2em;
   text-align: center;
   @media screen and (any-hover: none) {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 
