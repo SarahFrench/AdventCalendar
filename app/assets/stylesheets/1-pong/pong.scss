@@ -7,4 +7,16 @@
 .pong--font{
   font-family: 'Share Tech Mono', monospace;
   font-size: 2em;
+
+  @media screen and (any-hover: none) {
+    font-size: 1.5em;
+  }
+
+}
+
+@media screen and (any-hover: none) {
+  canvas{
+    width: 100vw;
+    margin-top: 3em;
+  }
 }
