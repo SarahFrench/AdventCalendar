@@ -1,20 +1,21 @@
 let isHugoHappy = false;
 
 document.addEventListener("DOMContentLoaded", function() {
-  if(window.location.pathname === "/days/3"){
-    showIntroMessage();
-    setTimeout(hideIntroMessage, 5000);
-    setTimeout(function(){
-      fadeIntoView(document.getElementById('hugo'));
-      let bottles = document.getElementsByClassName('bottle__svg');
-      for (let i = 0; i < bottles.length; i++){
-        fadeIntoView(bottles[i]);
-      }
-    }, 8000);
-    setTimeout(function(){
-      showPromptMessage(2000);
-    }, 9000);
-  }
+  document.addEventListener("touchstart", function(event) {
+    alert("Sorry, this page doesn't work on mobile :(");
+  })
+  showIntroMessage();
+  setTimeout(hideIntroMessage, 5000);
+  setTimeout(function(){
+    fadeIntoView(document.getElementById('hugo'));
+    let bottles = document.getElementsByClassName('bottle__svg');
+    for (let i = 0; i < bottles.length; i++){
+      fadeIntoView(bottles[i]);
+    }
+  }, 8000);
+  setTimeout(function(){
+    showPromptMessage(2000);
+  }, 9000);
 })
 
 function showIntroMessage(){
