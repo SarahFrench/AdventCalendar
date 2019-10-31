@@ -1,3 +1,13 @@
+body{
+  position:fixed;
+  margin: 0;
+}
+
 .vw100{
     width: 100vw;
+}
+
+.full-page-container{
+  width: 100vw;
+  height: 100vh;
 }

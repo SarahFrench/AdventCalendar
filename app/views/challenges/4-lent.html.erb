@@ -1,12 +1,12 @@
 <link href="https://fonts.googleapis.com/css?family=Kalam&display=swap" rel="stylesheet">
-
-<section id="photo-container" class="flex-column-centered">
-
-  <div class="polaroid flex-column-centered">
-    <%= image_tag ENV['LENT_IMG_URL']%>
-    <div class="polaroid__bottom">
-      <p>Check out the grammatical mistake you made in this Lent note.</p>
-      <p>It was a mistake right? Pls don't fart in me. 'On' is bad enough :p</p>
+<div class="full-page-container">
+  <section id="photo-container" class="flex-column-centered">
+    <div class="polaroid flex-column-centered">
+      <%= image_tag ENV['LENT_IMG_URL'], id:"photo"%>
+      <div class="polaroid__bottom">
+        <p>Check out the grammatical mistake you made in this Lent note.</p>
+        <p>It was a mistake right? Pls don't fart in me. 'On' is bad enough :p</p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
