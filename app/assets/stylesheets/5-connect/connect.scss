@@ -7,15 +7,15 @@ h1.connect{
 }
 
 .wall__container {
-  width: 60vw;
-  height: 30vw;
-  margin-left: auto;
-  margin-right: auto;
+  padding-left: 10vw;
+  padding-right: 10vw;
   margin-bottom: 50px;
 
   @media screen and (any-hover: none) {
-    width: 100%;
-    height: 50%;
+    width: 90vw;
+    height: auto;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -34,7 +34,7 @@ h1.connect{
 
 .card {
   width: 100%;
-  min-height: 100px;
+  min-height: 75px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -124,6 +124,11 @@ h1.connect{
   justify-content: center;
 }
 
+.input-container{
+  display: flex;
+  flex-direction: column;
+}
+
 input.input-connect {
   height: 40px;
   width: 200px;
@@ -134,4 +139,9 @@ input.input-connect {
 button.button-connect {
   height: 40px;
   border-radius: 30px;
+}
+
+#skipButton{
+  align-self: center;
+  margin-top: 1em;
 }
