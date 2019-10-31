@@ -1,7 +1,16 @@
+body{
+  position:fixed;
+}
+
 #hugo-container {
   min-width: 400px;
   margin-left: auto;
   margin-right: auto;
+
+  @media screen and (any-hover: none) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 
   & #hugo {
     z-index: 15;
@@ -60,11 +69,18 @@
 .bottle__svg {
   cursor: move;
   z-index: 10;
+  @media screen and (any-hover: none) {
+    width: 20vw;
+  }
 }
 
 .bottle__container {
   margin-left: 25px;
   margin-right: 25px;
+  @media screen and (any-hover: none) {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .spin--clockwise {
