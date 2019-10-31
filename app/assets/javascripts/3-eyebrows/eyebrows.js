@@ -188,11 +188,14 @@ function showThanksMessage(){
 function showPromptMessage(duration){
   let message1 = document.querySelector('#hugo-message #prompt-text-1');
   let message2 = document.querySelector('#hugo-message #prompt-text-2');
+  let message3 = document.querySelector('#hugo-message #prompt-text-3');
 
   message1.classList.add('animated');
   message1.classList.add('fadeIn');
   message2.classList.add('animated');
   message2.classList.add('fadeIn');
+  message3.classList.add('animated');
+  message3.classList.add('fadeIn');
 
   setTimeout(function(){
     message1.classList.add('animated');
@@ -201,11 +204,16 @@ function showPromptMessage(duration){
     message2.classList.add('animated');
     message2.classList.remove('fadeIn');
     message2.classList.add('fadeOut');
+    message3.classList.add('animated');
+    message3.classList.remove('fadeIn');
+    message3.classList.add('fadeOut');
     setTimeout(function () {
       message1.classList.remove('animated');
       message2.classList.remove('animated');
+      message3.classList.remove('animated');
       message1.classList.remove('fadeOut');
       message2.classList.remove('fadeOut');
+      message3.classList.remove('fadeOut');
     }, 1000);
   }, duration)
 }
