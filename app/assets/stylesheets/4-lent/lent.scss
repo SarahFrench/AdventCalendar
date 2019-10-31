@@ -4,12 +4,8 @@
   align-items: center;
 }
 
-img.lent{
-
-}
-
 .polaroid{
-  max-width: 600px;
+  max-width: 80vw;
   margin-top: 2em;
   @media screen and (any-hover: none) {
     max-width: 90vw;
@@ -28,15 +24,15 @@ img.lent{
     word-wrap: normal;
     font-family: 'Kalam', cursive;
     @media screen and (any-hover: none) {
-      max-width: 80vw;
-      font-size: 2em;
+      max-width: 95vw;
+      // font-size: 2em;
     }
   }
 
   & #photo{
     width: 500px;
     @media screen and (any-hover: none) {
-      width: 80vw;
+      max-width: 85vw;
     }
   }
 }

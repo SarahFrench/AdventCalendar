@@ -1,22 +1,27 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans|Sacramento&display=swap" rel="stylesheet">
 <%= javascript_include_tag '5-connect/connect.js' %>
+<div class="full-page-container">
 
-<h1 class="connect">
-  <span class="open-sans">Only Connect: </span>
-  <span style="color: hotpink;font-family: 'Sacramento', cursive;"> Romantic edition</span>
-</h1>
+  <h1 class="connect">
+    <p class="open-sans">Only Connect: </p>
+    <p style="margin-top: -1em;color: hotpink;font-family: 'Sacramento', cursive;"> Romantic edition</p>
+  </h1>
 
-<div class="wall__container">
-  <div id="wall" class="wall">
+  <div class="wall__container">
+    <div id="wall" class="wall">
 
+    </div>
   </div>
+  <section id="connect" style="visibility: hidden;">
+    <h3 id="answer-text" class="open-sans">Well done! Now it's time to say what the connections are:</h3>
+    <p id="prompt-text" class="open-sans">Row 1: </p>
+    <div class="input-container">
+      <div>
+        <input id="input" class="input-connect" type="text" name="answer" placeholder="What's the connection?" />
+        <button id="checkButton" class="button-connect">Check</button>
+      </div>
+      <button id="skipButton" class="button-connect" >I give up for this row :(</button>
+    </div>
+  </section>
+
 </div>
-<section id="connect" style="visibility: hidden;">
-  <h3 id="answer-text" class="open-sans">Well done! Now it's time to say what the connections are:</h3>
-  <p id="prompt-text" class="open-sans">Row 1: </p>
-  <div class="input-container">
-    <input id="input" class="input-connect" type="text" name="answer" placeholder="What's the connection?" />
-    <button id="checkButton" class="button-connect">Check</button>
-    <button id="skipButton" class="button-connect" >I give up :(</button>
-  </div>
-</section>

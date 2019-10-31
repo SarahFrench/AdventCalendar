@@ -6,36 +6,37 @@
   height: 100%;
   width: 100%;
 
-  margin-top: 64px;
+  margin-top: 3.5em;
   @media screen and (any-hover: none) {
-    margin-top: 4em;
+    margin-top: 2em;
   }
 }
 
 h1.poem{
   @media screen and (any-hover: none) {
-    font-size: 5em;
+    font-size: 2em;
   }
 }
 
 p.line{
   margin: 0;
   @media screen and (any-hover: none) {
-    font-size: 4em;
+    font-size: 2em;
   }
 }
 
 div.verse {
-  margin-bottom: 16px;
+  margin-bottom: 1em;
 
   @media screen and (any-hover: none) {
-    margin-bottom: 5em;
+    margin-bottom: 1.5em;
   }
 }
 
 .towel{
   float: right;
   width: 50%;
+  margin-top: -50px;
 
   @media screen and (any-hover: none) {
       width: 80%;
