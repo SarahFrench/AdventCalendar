@@ -36,6 +36,7 @@ div.verse {
 .towel{
   float: right;
   width: 50%;
+  margin-top: -50px;
 
   @media screen and (any-hover: none) {
       width: 80%;
