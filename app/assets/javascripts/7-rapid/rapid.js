@@ -23,10 +23,12 @@ document.addEventListener('DOMContentLoaded', function(){
       game.numberOfClicks++;
       showScoreElements();
       updateScoreElement(game.numberOfClicks,scoreElement);
+      swapColour(event.target);
     } else {
       if(event.timeStamp - game.firstClick < FIVE_SECONDS_IN_MS){
         game.numberOfClicks++;
         updateScoreElement(game.numberOfClicks,scoreElement);
+        swapColour(event.target);
       } else if (fartAudio.currentTime === 0) {
         liftOff();
         playAudioWithDelayedRepeat(fartAudio, 600, 300, game.numberOfClicks, omgAudio);
@@ -35,6 +37,10 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   })
 })
+
+function swapColour(target){
+  target.style.backgroundColor = (target.style.backgroundColor === 'black') ? 'red' : 'black';
+}
 
 function liftOff(){
   let groundedSVGPaths = document.getElementsByClassName('grounded');
