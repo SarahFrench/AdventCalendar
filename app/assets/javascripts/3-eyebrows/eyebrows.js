@@ -1,9 +1,6 @@
 let isHugoHappy = false;
 
 document.addEventListener("DOMContentLoaded", function() {
-  document.addEventListener("touchstart", function(event) {
-    alert("Sorry, this page doesn't work on mobile :(");
-  })
   showIntroMessage();
   setTimeout(hideIntroMessage, 5000);
   setTimeout(function(){
@@ -16,6 +13,60 @@ document.addEventListener("DOMContentLoaded", function() {
   setTimeout(function(){
     showPromptMessage(2000);
   }, 9000);
+})
+
+//drag and drop with mouse on desktop
+document.addEventListener("drop", function(event){
+  if (!isHugoHappy && event.target.classList.contains('hugo')){
+    var data = event.dataTransfer.getData("id");
+    var data2 = event.dataTransfer.getData("classes");
+    if (data === 'favourite'){
+      makeHugoSVGHappy();
+      moveFragrance();
+      showHeartRings();
+      showThanksMessage();
+      isHugoHappy = true;
+    } else if (/good/.test(data2)){
+      angryShake();
+      showNoThanksMessage(2000);
+      setTimeout(swapToNeutralEyes, 2000);
+    } else {
+      swapToAngryEyes()
+      angryShake();
+      showRejectionMessage(2000);
+      setTimeout(swapToNeutralEyes, 2000);
+    }
+  }
+});
+
+//touchstart on mobile
+document.addEventListener("DOMContentLoaded", function() {
+  //foreach frag touchstart event listener
+  let bottleContainers = document.getElementsByClassName('bottle__container');
+  for(let i=0; i < bottleContainers.length; i++){
+    bottleContainers[i].addEventListener('touchstart', function(){
+
+      if (!isHugoHappy){
+        // event.target.classList.contains('hugo')
+        if (event.target.classList.contains('fav-fragrance')){
+          makeHugoSVGHappy();
+          moveFragrance();
+          showHeartRings();
+          showThanksMessage();
+          isHugoHappy = true;
+        } else if (event.target.classList.contains('good-fragrance')){
+          angryShake();
+          showNoThanksMessage(2000);
+          setTimeout(swapToNeutralEyes, 2000);
+        } else if (event.target.classList.contains('bad-fragrance')) {
+          swapToAngryEyes()
+          angryShake();
+          showRejectionMessage(2000);
+          setTimeout(swapToNeutralEyes, 2000);
+        }
+      }
+    })
+  }
 })
 
 function showIntroMessage(){
@@ -267,26 +318,3 @@ function showNoThanksMessage(duration){
     }, 1000);
   }, duration)
 }
-
-document.addEventListener("drop", function(event){
-  if (!isHugoHappy && event.target.classList.contains('hugo')){
-    var data = event.dataTransfer.getData("id");
-    var data2 = event.dataTransfer.getData("classes");
-    if (data === 'favourite'){
-      makeHugoSVGHappy();
-      moveFragrance();
-      showHeartRings();
-      showThanksMessage();
-      isHugoHappy = true;
-    } else if (/good/.test(data2)){
-      angryShake();
-      showNoThanksMessage(2000);
-      setTimeout(swapToNeutralEyes, 2000);
-    } else {
-      swapToAngryEyes()
-      angryShake();
-      showRejectionMessage(2000);
-      setTimeout(swapToNeutralEyes, 2000);
-    }
-  }
-});
