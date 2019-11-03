@@ -44,6 +44,10 @@ function addLineChart(word, stats){
 };
 
 document.addEventListener('DOMContentLoaded', function(event){
+  const lovePotion = document.getElementById('love-potion');
+  lovePotion.addEventListener('click', function(event){
+    easterEgg(event.target);
+  })
   const buttons = document.getElementsByClassName('answer-button');
   for(let i=0; i < buttons.length; i++){
     buttons[i].addEventListener('click', function(){
@@ -52,6 +56,16 @@ document.addEventListener('DOMContentLoaded', function(event){
   }
 })
 
+function easterEgg(element){
+  const stats = getStats('runescape');
+  stats.then(stats =>{
+    const percentages = calcPercentages(stats);
+    let el = document.createElement('p');
+    el.id = `answer-runescape`
+    el.innerText = `Mentions of "Runescape" by Sarah: ${formatPercentageString(percentages.sarah)} Hugo: ${formatPercentageString(percentages.hugo)}`
+    element.parentNode.appendChild(el);
+  })
+}
 
 function processAnswer(element){
   //get the query param from button ID
@@ -77,7 +91,7 @@ function processAnswer(element){
 
 function showAnswerOnPage(element, correctAnswer, word, percentages, wasUserCorrect){
   correctAnswer = correctAnswer[0].toUpperCase() + correctAnswer.slice(1)
-  let el = document.createElement('p');
+  let el = document.createElement('div');
   el.id = `answer-${word}`
   let responseText = "";
   if(wasUserCorrect){
