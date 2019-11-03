@@ -7,7 +7,8 @@ class ChallengesController < ApplicationController
     4 => 'lent',
     5 => 'connect',
     6 => 'audio',
-    7 => 'rapid'
+    7 => 'rapid',
+    8 => 'whatsapp'
   }
 
 # final version of controller that responds to what day it is

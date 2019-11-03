@@ -1,0 +1,2 @@
+class WhatsappStat < ApplicationRecord
+end

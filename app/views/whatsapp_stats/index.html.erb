@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Whatsapp Stats</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="2"></th>
+      <th>Phrase</th>
+      <th>hugo_frequency</th>
+      <th>sarah_frequency</th>
+      <th>months_frequency</th>
+      <th>hugo_months_frequency</th>
+      <th>sarah_months_frequency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @whatsapp_stats.each do |whatsapp_stat| %>
+      <tr>
+        <td><%= link_to 'Edit', edit_whatsapp_stat_path(whatsapp_stat) %></td>
+        <td><%= link_to 'Destroy', whatsapp_stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td><%=whatsapp_stat.phrase%></td>
+        <td><%=whatsapp_stat.hugo_frequency%></td>
+        <td><%=whatsapp_stat.sarah_frequency%></td>
+        <td><%=whatsapp_stat.months_frequency%></td>
+        <td><%=whatsapp_stat.hugo_months_frequency%></td>
+        <td><%=whatsapp_stat.sarah_months_frequency%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Whatsapp Stat', new_whatsapp_stat_path %>

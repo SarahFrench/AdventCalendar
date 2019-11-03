@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_27_104936) do
+ActiveRecord::Schema.define(version: 2019_11_03_103305) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 2019_10_27_104936) do
     t.datetime "updated_at", null: false
     t.integer "score"
     t.string "name"
+  end
+
+  create_table "whatsapp_stats", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "phrase"
+    t.integer "hugo_frequency"
+    t.integer "sarah_frequency"
+    t.string "months_frequency"
+    t.string "hugo_months_frequency"
+    t.string "sarah_months_frequency"
   end
 
 end
