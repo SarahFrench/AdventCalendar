@@ -146,7 +146,6 @@
 .menu-links-container {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
   @media screen and (any-hover: none) {
     // target mobile devices
     display: flex;
