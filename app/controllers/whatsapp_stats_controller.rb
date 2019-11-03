@@ -64,11 +64,11 @@ class WhatsappStatsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_whatsapp_stat
-      @whatsapp_stat = WhatsappStat.find(params[:id])
+      @whatsapp_stat = WhatsappStat.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def whatsapp_stat_params
-      params.require(:whatsapp_stat).permit(:phrase, :hugo_frequency, :sarah_frequency, :months_frequency, :hugo_months_frequency, :sarah_months_frequency)
+      params.require(:whatsapp_stat).permit(:phrase,:slug, :hugo_frequency, :sarah_frequency, :months_frequency, :hugo_months_frequency, :sarah_months_frequency)
     end
 end

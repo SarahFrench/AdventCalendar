@@ -7,6 +7,7 @@
     <tr>
       <th colspan="2"></th>
       <th>Phrase</th>
+      <th>slug</th>
       <th>hugo_frequency</th>
       <th>sarah_frequency</th>
       <th>months_frequency</th>
@@ -21,6 +22,7 @@
         <td><%= link_to 'Destroy', whatsapp_stat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
         <td><%=whatsapp_stat.phrase%></td>
+        <td><%=whatsapp_stat.slug%></td>
         <td><%=whatsapp_stat.hugo_frequency%></td>
         <td><%=whatsapp_stat.sarah_frequency%></td>
         <td><%=whatsapp_stat.months_frequency%></td>
