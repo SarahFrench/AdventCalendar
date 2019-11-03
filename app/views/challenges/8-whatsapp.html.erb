@@ -2,36 +2,57 @@
 <%= javascript_include_tag '8-whatsapp/whatsapp.js' %>
 
 <div class="container">
-  <div class="question">
+  <h1>Whatsapp Quiz</h1>
+  <h3>This is a quiz based on our whatsapp conversation from when we started dating up to now!</h3>
+  <h3>All you need to do is answer each question with either "Sarah" or "Hugo".</h3>
+  <h3>If you get it correct you'll see some extra ~*~data~*~</h3>
+  <div class="whatsapp-question">
     Who do you think posts the most GIFs in our Whatsapp chat?
   </div>
-  <div class="answer">
-    <button id="sarah-gif-button" class="answer-button" type="button" onlick="showAnswer(this);">Sarah</button>
-    <button id="hugo-gif-button" class="answer-button" type="button" onlick="showAnswer(this);">Hugo</button>
+  <div class="whatsapp-answer">
+    <button id="sarah-gif-button" class="answer-button" type="button" >Sarah</button>
+    <button id="hugo-gif-button" class="answer-button" type="button" >Hugo</button>
   </div>
-  <div class="question">
+  <canvas id="chart-gif" class="whatsapp-canvas"></canvas>
+
+
+  <div class="whatsapp-question">
     Who do you think has said the word "nerd" the most?
   </div>
-  <div class="answer">
-    <button id="sarah-nerd-button" class="answer-button" type="button" onlick="showAnswer(this);">Sarah</button>
-    <button id="hugo-nerd-button" class="answer-button" type="button" onlick="showAnswer(this);">Hugo</button>
+  <div class="whatsapp-answer">
+    <button id="sarah-nerd-button" class="answer-button" type="button" >Sarah</button>
+    <button id="hugo-nerd-button" class="answer-button" type="button" >Hugo</button>
   </div>
-  <div class="question">
+  <canvas id="chart-nerd" class="whatsapp-canvas"></canvas>
+
+
+  <div class="whatsapp-question">
     How about the phrase "I love you"?
     <small>ooh tense decision time</small>
   </div>
-  <div class="answer">
-    <button id="sarah-love-you-button" class="answer-button" type="button" onlick="showAnswer(this);">Sarah</button>
-    <button id="hugo-love-you-button" class="answer-button" type="button" onlick="showAnswer(this);">Hugo</button>
+  <div class="whatsapp-answer">
+    <button id="sarah-love-you-button" class="answer-button" type="button" >Sarah</button>
+    <button id="hugo-love-you-button" class="answer-button" type="button" >Hugo</button>
   </div>
-  <canvas id="myChart" style="width:50%;"></canvas>
+  <canvas id="chart-love-you" class="whatsapp-canvas"></canvas>
 
-  <div class="question">
+  <div class="whatsapp-question">
     Which one of us is the sweariest? Who do you think said the word "shit" the most?
     💩
   </div>
-  <div class="answer">
-    <button id="sarah-shit-button" class="answer-button" type="button" onlick="showAnswer(this);">Sarah</button>
-    <button id="hugo-shit-button" class="answer-button" type="button" onlick="showAnswer(this);">Hugo</button>
+  <div class="whatsapp-answer">
+    <button id="sarah-shit-button" class="answer-button" type="button" >Sarah</button>
+    <button id="hugo-shit-button" class="answer-button" type="button" >Hugo</button>
   </div>
+  <canvas id="chart-shit" class="whatsapp-canvas"></canvas>
+
+  <div class="whatsapp-question">
+    Which one of us says "REE" way too much?
+  </div>
+  <div class="whatsapp-answer">
+    <button id="sarah-ree-button" class="answer-button" type="button" >Sarah</button>
+    <button id="hugo-ree-button" class="answer-button" type="button" >Hugo</button>
+  </div>
+  <canvas id="chart-ree" class="whatsapp-canvas"></canvas>
+
 </div>
