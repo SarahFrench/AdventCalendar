@@ -28,3 +28,51 @@ document.addEventListener('DOMContentLoaded', function(){
   chart.canvas.parentNode.style.height = '200px';
   chart.canvas.parentNode.style.width = '500px';
 });
+
+document.addEventListener('DOMContentLoaded', function(event){
+  const buttons = document.getElementsByClassName('answer-button');
+  for(let i=0; i < buttons.length; i++){
+    buttons[i].addEventListener('click', function(){
+      showAnswer(buttons[i]);
+    })
+  }
+
+
+})
+
+
+function showAnswer(element){
+  const word = element.id.replace(/^\w+-/, "").replace(/-button$/, "");
+  if(!document.getElementById(`answer-${word}`)){
+    const stats = getStats(word);
+    stats.then( stats => {
+      const percentages = calcPercentages(stats);
+      answer = percentages.hugo > percentages.sarah ? "hugo" : "sarah";
+      console.log(percentages);
+      showAnswerOnPage(element, answer, word)
+    })
+  } else {
+    console.log("clicked already");
+  }
+}
+
+function showAnswerOnPage(element, answer, word){
+  let el = document.createElement('p');
+  el.id = `answer-${word}`
+  el.innerText = `The answer is ${answer}`;
+  element.parentNode.appendChild(el);
+}
+
+function calcPercentages(stats){
+  const total = (stats.hugo_frequency + stats.sarah_frequency) * 1.0;
+  const sarah_percent = stats.sarah_frequency/total;
+  const hugo_percent = stats.hugo_frequency/total;
+  return {hugo: hugo_percent, sarah: sarah_percent};
+}
+
+async function getStats(word){
+  const response = await fetch(`/whatsapp_stats/${word}.json`, {
+      method: 'GET'
+    });
+  return await response.json();
+}
