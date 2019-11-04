@@ -1,0 +1,46 @@
+.bo-jo-screenshot{
+  height: 50vh;
+  margin-top: -100px;
+
+  @media screen and (any-hover: none) {
+    height: 100vh;
+    margin-top: -150px;
+  }
+
+  @media only screen and (min-width: 700px) {
+    margin-top: -400px;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    margin-top: -300px;
+  }
+}
+
+.bo-jo-caption{
+  color: white;
+  font-weight: bold;
+  top: 500px;
+  position: relative;
+  width: 40vw;
+  text-align: center;
+  align-self: center;
+  background: rgba(50,50,50,0.8);
+  border-radius: 10px;
+  margin-bottom: 1em;
+
+  @media screen and (any-hover: none) {
+    width: 80vw;
+  }
+
+  @media only screen and (min-width: 700px) {
+    width: 50vw;
+    font-size: 2em;
+    top: 700px;
+  }
+
+  @media only screen and (min-width: 1000px) {
+    width: 50vw;
+    font-size: 2em;
+    top: 750px;
+  }
+}
