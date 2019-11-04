@@ -39,8 +39,8 @@ function addLineChart(word, stats){
         maintainAspectRatio: true
       }
   });
-  chart.canvas.parentNode.style.height = '200px';
-  chart.canvas.parentNode.style.width = '500px';
+  chart.canvas.parentNode.style.height = "50%";
+  chart.canvas.parentNode.style.width = "100%";
 };
 
 document.addEventListener('DOMContentLoaded', function(event){
