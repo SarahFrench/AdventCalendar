@@ -3,8 +3,40 @@
 }
 
 .full-page-container{
+  // TODO: Is this totally unnecessary? lol
   width: 100vw;
   height: 100vh;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.container{
+  padding-left: 20vw;
+  padding-right: 20vw;
+  @media only screen and (max-width: 600px) {
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+}
+
+.flex-column-centered{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mb {
+  &-1{
+    margin-bottom: 1em;
+  }
+  &-2{
+    margin-bottom: 2em;
+  }
+  &-3{
+    margin-bottom: 3em;
+  }
+}
+
+.d-block{
+  display: block;
 }

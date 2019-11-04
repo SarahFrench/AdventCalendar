@@ -3,5 +3,11 @@
 }
 
 .whatsapp-answer{
+  max-width: inherit;
   margin-bottom: 2em;
+  
+  & button.answer-button{
+    padding: 10px;
+    border-radius: 10px;
+  }
 }

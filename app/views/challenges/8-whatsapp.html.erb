@@ -1,11 +1,13 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 <%= javascript_include_tag '8-whatsapp/whatsapp.js' %>
 
-<div class="container">
+<div id="container" class="container flex-column-centered">
   <h1>Whatsapp Quiz</h1>
-  <h3>This is a quiz based on our whatsapp conversation from when we started dating up to now!</h3>
-  <h3>All you need to do is answer each question with either "Sarah" or "Hugo".</h3>
-  <h3>If you get it correct you'll see some extra ~*~data~*~</h3>
+  <div class="whatsapp-instructions mb-2">
+    <h3>This is a quiz based on our whatsapp conversation from when we started dating up to now!</h3>
+    <h3>All you need to do is answer each question with either "Sarah" or "Hugo".</h3>
+    <h3>If you get it correct you'll see some extra ~*~data~*~</h3>
+  </div>
   <div class="whatsapp-question">
     Who do you think posts the most GIFs in our Whatsapp chat?
   </div>
@@ -28,7 +30,7 @@
 
   <div class="whatsapp-question">
     How about the phrase "I love you"?
-    <small>ooh tense decision time</small>
+    <small class="d-block">ooh tense decision time</small>
   </div>
   <div class="whatsapp-answer">
     <button id="sarah-love-you-button" class="answer-button" type="button" >Sarah</button>
