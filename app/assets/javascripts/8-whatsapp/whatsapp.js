@@ -46,7 +46,9 @@ function addLineChart(word, stats){
 document.addEventListener('DOMContentLoaded', function(event){
   const lovePotion = document.getElementById('love-potion');
   lovePotion.addEventListener('click', function(event){
-    easterEgg(event.target);
+    if(!document.getElementById(`answer-runescape`)){
+      easterEgg(event.target);
+    }
   })
   const buttons = document.getElementsByClassName('answer-button');
   for(let i=0; i < buttons.length; i++){
