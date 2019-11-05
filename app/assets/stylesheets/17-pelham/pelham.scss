@@ -1,0 +1,10 @@
+#pelham-map {
+  width: 100%;
+  height: 60vh;
+  border-radius: 50px;
+  margin-top: 1em;
+  @media screen and (any-hover: none) {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
