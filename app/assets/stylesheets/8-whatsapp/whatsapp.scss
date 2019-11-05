@@ -24,6 +24,16 @@
   font-family: 'McLaren', sans-serif;
 }
 
+.whatsapp__easter-egg{
+  display: flex;
+  flex-direction: column;
+
+  img{
+    width: fit-content;
+    align-self: center;
+  }
+}
+
 .whatsapp__answer{
   display: flex;
   flex-direction: column;

@@ -62,8 +62,11 @@ function easterEgg(element){
     const percentages = calcPercentages(stats);
     let el = document.createElement('p');
     el.id = `answer-runescape`
+    el.classList.add("whatsapp__response-text-percentages");
     el.innerText = `Mentions of "Runescape" by Sarah: ${formatPercentageString(percentages.sarah)} Hugo: ${formatPercentageString(percentages.hugo)}`
     element.parentNode.appendChild(el);
+
+    addLineChart('runescape', stats);
   })
 }
 
