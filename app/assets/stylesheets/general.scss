@@ -49,6 +49,18 @@
   }
 }
 
+.mt {
+  &-1{
+    margin-top: 1em;
+  }
+  &-2{
+    margin-top: 2em;
+  }
+  &-3{
+    margin-top: 3em;
+  }
+}
+
 .d-block{
   display: block;
 }
@@ -63,4 +75,8 @@
 
 .bg-white{
   background: white;
+}
+
+.strike-through{
+  text-decoration: line-through;
 }
