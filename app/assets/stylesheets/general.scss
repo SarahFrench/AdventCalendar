@@ -11,11 +11,13 @@
 }
 
 .container{
-  padding-left: 20vw;
-  padding-right: 20vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding-bottom: 20vh;
   @media only screen and (max-width: 600px) {
-    padding-left: 10vw;
-    padding-right: 10vw;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding-bottom: 10vh;
   }
 }
 
@@ -47,4 +49,8 @@
 
 .sans-serif{
   font-family: sans-serif;
+}
+
+.bg-white{
+  background: white;
 }

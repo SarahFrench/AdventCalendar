@@ -23,13 +23,13 @@ function addLineChart(word, stats){
           labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'November'],
           datasets: [{
               label: 'Sarah',
-              backgroundColor: 'rgba(255,188,88,0.5)',
-              borderColor: 'rgb(255,188,88)',
+              backgroundColor: 'rgba(255, 158, 42,0.5)',
+              borderColor: 'rgb(255, 158, 42)',
               data: sarahData
           },{
               label: 'Hugo',
-              backgroundColor: 'rgba(88,155,255, 0.5)',
-              borderColor: 'rgb(88,155,255)',
+              backgroundColor: 'rgba(103, 114, 229, 0.5)',
+              borderColor: 'rgb(103, 114, 229)',
               data: hugoData
           }]
       },
