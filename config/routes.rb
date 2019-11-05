@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   resources :challenges, only: [:show], path: '/days'
 
+  get '/initialise-whatsapp-stats', to: 'whatsapp_stats#init'
   get '/delete-click-scores', to: 'click_scores#destroy_all'
   get '/delete-local-storage', to: 'home#delete-local-storage'
 end
