@@ -10,6 +10,7 @@ class ChallengesController < ApplicationController
     7 => 'rapid',
     8 => 'whatsapp',
     12 => 'bo-jo',
+    15 => 'limerick',
     17 => 'pelham'
   }
 
