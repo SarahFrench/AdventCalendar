@@ -1,80 +1,94 @@
+<link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 <%= javascript_include_tag '8-whatsapp/whatsapp.js' %>
 
 <div id="container" class="container flex-column-centered">
-  <h1>Whatsapp Quiz</h1>
-  <div class="whatsapp-instructions mb-2">
-    <h3>This is a quiz based on our whatsapp conversation from when we started dating up to now!</h3>
-    <h3>All you need to do is answer each question with either "Sarah" or "Hugo".</h3>
-    <h3>If you get it correct you'll see some extra ~*~data~*~</h3>
+  <h1 class="whatsapp--font">Whatsapp Quiz</h1>
+  <div class="whatsapp__instructions mb-2 sans-serif">
+    <p>This is a quiz based on our whatsapp conversation from when we started dating up to now!</p>
+    <p>All you need to do is answer each question with either "Sarah" or "Hugo".</p>
+    <p>If you get it correct you'll see some extra ~*~data~*~</p>
   </div>
-  <div class="whatsapp-question">
+  <div class="whatsapp__question sans-serif">
     Who do you think posts the most GIFs in our Whatsapp chat?
   </div>
-  <div class="whatsapp-answer">
-    <button id="sarah-gif-button" class="answer-button" type="button" >Sarah</button>
-    <button id="hugo-gif-button" class="answer-button" type="button" >Hugo</button>
+  <div class="whatsapp__answer sans-serif">
+    <div class="whatsapp__buttons">
+      <button id="sarah-gif-button" class="answer-button" type="button" >Sarah</button>
+      <button id="hugo-gif-button" class="answer-button" type="button" >Hugo</button>
+    </div>
   </div>
-  <div class="whatsapp-chart">
-    <canvas id="chart-gif" class="whatsapp-canvas"></canvas>
+  <div class="whatsapp__chart">
+    <canvas id="chart-gif" class="whatsapp__canvas"></canvas>
   </div>
 
-  <div class="whatsapp-question">
+  <div class="whatsapp__question sans-serif">
     Who do you think has said the word "nerd" the most?
   </div>
-  <div class="whatsapp-answer">
-    <button id="sarah-nerd-button" class="answer-button" type="button" >Sarah</button>
-    <button id="hugo-nerd-button" class="answer-button" type="button" >Hugo</button>
+  <div class="whatsapp__answer sans-serif">
+    <div class="whatsapp__buttons">
+      <button id="sarah-nerd-button" class="answer-button" type="button" >Sarah</button>
+      <button id="hugo-nerd-button" class="answer-button" type="button" >Hugo</button>
+    </div>
   </div>
-  <div class="whatsapp-chart">
-    <canvas id="chart-nerd" class="whatsapp-canvas"></canvas>
+  <div class="whatsapp__chart">
+    <canvas id="chart-nerd" class="whatsapp__canvas"></canvas>
   </div>
 
 
-  <div class="whatsapp-question">
+  <div class="whatsapp__question sans-serif">
     How about the phrase "I love you"?
-    <small class="d-block">ooh tense decision time</small>
+    <small class="d-block text-center">ooh tense decision time</small>
   </div>
-  <div class="whatsapp-answer">
-    <button id="sarah-love-you-button" class="answer-button" type="button" >Sarah</button>
-    <button id="hugo-love-you-button" class="answer-button" type="button" >Hugo</button>
+  <div class="whatsapp__answer sans-serif">
+    <div class="whatsapp__buttons">
+      <button id="sarah-love-you-button" class="answer-button" type="button" >Sarah</button>
+      <button id="hugo-love-you-button" class="answer-button" type="button" >Hugo</button>
+    </div>
   </div>
-  <div class="whatsapp-chart">
-    <canvas id="chart-love-you" class="whatsapp-canvas"></canvas>
+  <div class="whatsapp__chart">
+    <canvas id="chart-love-you" class="whatsapp__canvas"></canvas>
   </div>
 
-  <div class="whatsapp-question">
-    Which one of us is the sweariest? Who do you think said the word "shit" the most?
+  <div class="whatsapp__question sans-serif">
+    Which one of us is the sweariest?
+    Who do you think said the word "shit" the most?
     💩
   </div>
-  <div class="whatsapp-answer">
-    <button id="sarah-shit-button" class="answer-button" type="button" >Sarah</button>
-    <button id="hugo-shit-button" class="answer-button" type="button" >Hugo</button>
+  <div class="whatsapp__answer sans-serif">
+    <div class="whatsapp__buttons">
+      <button id="sarah-shit-button" class="answer-button" type="button" >Sarah</button>
+      <button id="hugo-shit-button" class="answer-button" type="button" >Hugo</button>
+    </div>
   </div>
-  <div class="whatsapp-chart">
-    <canvas id="chart-shit" class="whatsapp-canvas"></canvas>
+  <div class="whatsapp__chart">
+    <canvas id="chart-shit" class="whatsapp__canvas"></canvas>
   </div>
 
-  <div class="whatsapp-question">
+  <div class="whatsapp__question sans-serif">
     Which one of us says "REE" way too much?
   </div>
-  <div class="whatsapp-answer">
-    <button id="sarah-ree-button" class="answer-button" type="button" >Sarah</button>
-    <button id="hugo-ree-button" class="answer-button" type="button" >Hugo</button>
+  <div class="whatsapp__answer sans-serif">
+    <div class="whatsapp__buttons">
+      <button id="sarah-ree-button" class="answer-button" type="button" >Sarah</button>
+      <button id="hugo-ree-button" class="answer-button" type="button" >Hugo</button>
+      </div>
   </div>
-  <div class="whatsapp-chart">
-    <canvas id="chart-ree" class="whatsapp-canvas"></canvas>
+  <div class="whatsapp__chart">
+    <canvas id="chart-ree" class="whatsapp__canvas"></canvas>
   </div>
 
-  <div class="whatsapp-question">
+  <div class="whatsapp__question sans-serif">
     As a cute way to finish the quiz, who sends the most kisses like "xxx"?
   </div>
-  <div class="whatsapp-answer">
-    <button id="sarah-xxx-button" class="answer-button" type="button" >Sarah</button>
-    <button id="hugo-xxx-button" class="answer-button" type="button" >Hugo</button>
+  <div class="whatsapp__answer sans-serif">
+    <div class="whatsapp__buttons">
+      <button id="sarah-xxx-button" class="answer-button" type="button" >Sarah</button>
+      <button id="hugo-xxx-button" class="answer-button" type="button" >Hugo</button>
+    </div>
   </div>
-  <div class="whatsapp-chart">
-    <canvas id="chart-xxx" class="whatsapp-canvas"></canvas>
+  <div class="whatsapp__chart">
+    <canvas id="chart-xxx" class="whatsapp__canvas"></canvas>
   </div>
 
   <%= image_tag 'Love_potion.png', id:'love-potion' %>

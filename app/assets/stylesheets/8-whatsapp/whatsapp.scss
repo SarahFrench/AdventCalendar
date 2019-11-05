@@ -1,13 +1,49 @@
-.whatsapp-canvas{
+.whatsapp--font{
+  font-family: 'McLaren', cursive;
+}
+
+.whatsapp__instructions{
+  background-color: #EEEEEE ;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+
+.whatsapp__canvas{
   display: none;
 }
 
-.whatsapp-answer{
-  max-width: inherit;
+.whatsapp__buttons{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.whatsapp__question{
+  margin-bottom: 1em;
+}
+
+.whatsapp__answer{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
   margin-bottom: 2em;
-  
+
   & button.answer-button{
     padding: 10px;
     border-radius: 10px;
+    width: 100%;
+    align-self: center;
+    margin-left: 10px;
+    margin-right: 10px;
   }
+}
+
+.whatsapp__response-text-percentages{
+  text-align: center;
+}
+
+.whatsapp__response-percentages{
+  text-align: center;
+
 }

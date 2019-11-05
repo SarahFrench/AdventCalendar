@@ -39,8 +39,8 @@ function addLineChart(word, stats){
         maintainAspectRatio: true
       }
   });
-  chart.canvas.parentNode.style.height = "50%";
-  chart.canvas.parentNode.style.width = "100%";
+  chart.canvas.parentNode.style.height = "40%";
+  chart.canvas.parentNode.style.width = "80%";
 };
 
 document.addEventListener('DOMContentLoaded', function(event){
@@ -101,9 +101,10 @@ function showAnswerOnPage(element, correctAnswer, word, percentages, wasUserCorr
     el.classList.add('incorrect');
     responseText = "Incorrect... ";
   }
-  el.innerHTML = `<p> ${responseText} The answer is ${correctAnswer} </p>`;
-  el.innerHTML += `<p> Sarah: ${formatPercentageString(percentages.sarah)} Hugo: ${formatPercentageString(percentages.hugo)} </p>`;
-  element.parentNode.appendChild(el);
+  el.innerHTML = `<p class="whatsapp__response-text-percentages"> ${responseText} The answer is ${correctAnswer} </p>`;
+  el.innerHTML += `<p class="whatsapp__response-percentages"> Sarah: ${formatPercentageString(percentages.sarah)} Hugo: ${formatPercentageString(percentages.hugo)} </p>`;
+  let grandParent = element.parentNode.parentNode;
+  grandParent.appendChild(el);
 }
 
 function formatPercentageString(percentage){
