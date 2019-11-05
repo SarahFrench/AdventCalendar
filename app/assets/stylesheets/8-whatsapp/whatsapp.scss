@@ -1,0 +1,69 @@
+.whatsapp--font{
+  font-family: 'McLaren', sans-serif;
+}
+
+.whatsapp__instructions{
+  border: solid 2px #71828a ;
+  border-radius: 10px;
+  padding: 1em;
+}
+
+
+.whatsapp__canvas{
+  display: none;
+}
+
+.whatsapp__buttons{
+  display: flex;
+  flex-direction: row;
+
+}
+
+.whatsapp__question{
+  margin-bottom: 1em;
+  font-family: 'McLaren', sans-serif;
+}
+
+.whatsapp__easter-egg{
+  display: flex;
+  flex-direction: column;
+
+  img{
+    width: fit-content;
+    align-self: center;
+  }
+}
+
+.whatsapp__answer{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-bottom: 2em;
+
+  & button.answer-button{
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    align-self: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1em;
+    &.sarah{
+      background-color: rgba(255, 158, 42,0.5);
+      border: solid 2px #ff9e2a;
+    }
+    &.hugo{
+      background-color: rgba(103, 114, 229, 0.5);
+      border: solid 2px #6772e5;
+    }
+  }
+}
+
+.whatsapp__response-text-percentages{
+  text-align: center;
+}
+
+.whatsapp__response-percentages{
+  text-align: center;
+
+}

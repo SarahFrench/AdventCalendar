@@ -89,7 +89,7 @@ class Game {
     // depend on HTML being set up
     this.selections.cards.forEach(function(card){
       let element = document.getElementById(card.id);
-      element.classList.remove('selected');
+      element.classList.remove('card__selected');
 
     })
     this.selections.cards = [];
@@ -110,7 +110,7 @@ class Game {
       let selectedCardData = this.cards.filter(x => x.id == parseInt(card.id) )[0];
       this.selections.cards.push(selectedCardData);
     }
-    card.classList.add('selected');
+    card.classList.add('card__selected');
   }
 
   areCardsSameGroup(){
@@ -149,8 +149,8 @@ class Game {
       this.selections.cards.forEach( card => {
         let element = document.getElementById(card.id);
         element.classList.add(`row_${freeRow}`);
-        element.classList.remove('selected');
-        element.classList.add('correct');
+        element.classList.remove('card__selected');
+        element.classList.add('card__correct');
       })
     } else if (freeRow == 3) {
       this.selections.cards.forEach( card => {
@@ -161,7 +161,7 @@ class Game {
       this.addRowClassLastFourCards();
       let cards = document.getElementsByClassName('card')
       for(let i=0; i < cards.length; i++){
-        cards[i].classList.add('correct')
+        cards[i].classList.add('card__correct')
       }
       this.showTextInputField();
       this.highlightRowToConnect();

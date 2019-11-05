@@ -1,0 +1,30 @@
+<%= form_with(model: whatsapp_stat, local: true) do |form| %>
+  <% if whatsapp_stat.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(whatsapp_stat.errors.count, "error") %> prohibited this whatsapp_stat from being saved:</h2>
+
+      <ul>
+      <% whatsapp_stat.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <%= form.label :name, 'phrase' %>
+    <%= form.text_field :phrase%>
+    <%= form.label :name, 'slug' %>
+    <%= form.text_field :slug%>
+    <%= form.label :score, 'hugo_frequency' %>
+    <%= form.text_field :hugo_frequency%>
+    <%= form.label :score, 'sarah_frequency' %>
+    <%= form.text_field :sarah_frequency%>
+    <%= form.label :score, 'months_frequency' %>
+    <%= form.text_field :months_frequency%>
+    <%= form.label :score, 'hugo_months_frequency' %>
+    <%= form.text_field :hugo_months_frequency%>
+    <%= form.label :score, 'sarah_months_frequency' %>
+    <%= form.text_field :sarah_months_frequency%>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
