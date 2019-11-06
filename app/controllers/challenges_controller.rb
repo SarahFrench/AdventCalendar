@@ -11,7 +11,8 @@ class ChallengesController < ApplicationController
     8 => 'whatsapp',
     12 => 'bo-jo',
     15 => 'limerick',
-    17 => 'pelham'
+    17 => 'pelham',
+    20 => 'crossword'
   }
 
 # final version of controller that responds to what day it is
