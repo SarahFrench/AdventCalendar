@@ -35,4 +35,9 @@ class ChallengesController < ApplicationController
     end
   end
 
+  def check_crossword
+    binding.pry
+    # params.require(:challenge).permit()
+  end
+
 end
