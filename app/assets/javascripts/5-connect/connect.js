@@ -1,39 +1,37 @@
 
 document.addEventListener("DOMContentLoaded", function(){
-  if(window.location.pathname === "/days/5"){
-      let wall = document.getElementById('wall');
-      let coren = new Game;
-      coren.cards.forEach(function(card, index) {
-        let cardElement = document.createElement('div');
-        cardElement.id = card.id;
-        cardElement.classList.add('card');
-        cardElement.innerText = card.text;
-        cardElement.addEventListener('click', function(event){
-          const isNotAlreadySorted = !event.target.classList.contains('card__correct');
-          if(coren.selections.cards.length < 3 && isNotAlreadySorted){
-            coren.selectCard(event.target);
-          } else if(isNotAlreadySorted) {
-            coren.selectCard(event.target);
-            if(coren.selections.cards.length === 4 && coren.areCardsSameGroup()){
-                coren.positionSortedCards();
-                setTimeout(function(){coren.resetSelectedCards(), 3000});
-            } else if (coren.selections.cards.length === 4 && !coren.areCardsSameGroup()){
-              setTimeout(function(){coren.resetSelectedCards(), 3000});
-            }
-          }
-        })
-        wall.appendChild(cardElement);
-      })
-      let checkButton = document.getElementById('checkButton');
-      checkButton.addEventListener('click', function(){
-        coren.checkAnswer();
-      });
+  let wall = document.getElementById('wall');
+  let coren = new Game;
+  coren.cards.forEach(function(card, index) {
+    let cardElement = document.createElement('div');
+    cardElement.id = card.id;
+    cardElement.classList.add('card');
+    cardElement.innerText = card.text;
+    cardElement.addEventListener('click', function(event){
+      const isNotAlreadySorted = !event.target.classList.contains('card__correct');
+      if(coren.selections.cards.length < 3 && isNotAlreadySorted){
+        coren.selectCard(event.target);
+      } else if(isNotAlreadySorted) {
+        coren.selectCard(event.target);
+        if(coren.selections.cards.length === 4 && coren.areCardsSameGroup()){
+            coren.positionSortedCards();
+            setTimeout(function(){coren.resetSelectedCards(), 3000});
+        } else if (coren.selections.cards.length === 4 && !coren.areCardsSameGroup()){
+          setTimeout(function(){coren.resetSelectedCards(), 3000});
+        }
+      }
+    })
+    wall.appendChild(cardElement);
+  })
+  let checkButton = document.getElementById('checkButton');
+  checkButton.addEventListener('click', function(){
+    coren.checkAnswer();
+  });
 
-      let skipButton = document.getElementById('skipButton');
-      skipButton.addEventListener('click', function(){
-        coren.skip();
-      });
-  }
+  let skipButton = document.getElementById('skipButton');
+  skipButton.addEventListener('click', function(){
+    coren.skip();
+  });
 });
 
 class Game {
