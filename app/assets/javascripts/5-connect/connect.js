@@ -9,9 +9,10 @@ document.addEventListener("DOMContentLoaded", function(){
         cardElement.classList.add('card');
         cardElement.innerText = card.text;
         cardElement.addEventListener('click', function(event){
-          if(coren.selections.cards.length < 3){
+          const isNotAlreadySorted = !event.target.classList.contains('card__correct');
+          if(coren.selections.cards.length < 3 && isNotAlreadySorted){
             coren.selectCard(event.target);
-          } else {
+          } else if(isNotAlreadySorted) {
             coren.selectCard(event.target);
             if(coren.selections.cards.length === 4 && coren.areCardsSameGroup()){
                 coren.positionSortedCards();
