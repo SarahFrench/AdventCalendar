@@ -39,10 +39,10 @@ document.addEventListener("DOMContentLoaded", function(){
 class Game {
   constructor(){
     this.answers = {
-      1: "vvv good Sunday evening my bois,vvv good evening mah bois,vvv good evening my bois,vvv good",
-      2: "hinge,early dating,dating app,dating chat,Hinge,chat,messages",
-      3: "new years day,January first,anniversary, new years,1st, 4th date, date 4",
-      4: "edgy dates,dates, we did",
+      1: [/^v{1,10}\s+(good|gd)\s+(Sunday|Sun)*\s*(eve|evening)*\s*(mah|my)*\s*(bois|boys|boiz)*$/i, 'vvv good Sunday evening my bois','vvv good evening mah bois','vvv good evening my bois','vvv good'],
+      2: ['hinge','early dating','dating app','dating chat','hinge','chat','messages'],
+      3: ['new years day','nyd','January','Jan','anniversary','new years','1st','4th date','date 4' ],
+      4: ['edgy dates','dates', 'we did', 'date', 'activities'],
 
     };
     this.currentRowToConnect = 1;
@@ -223,11 +223,13 @@ class Game {
   checkAnswer(){
     let row = this.currentRowToConnect;
     let question = this.sortedRowInfo[row-1].question;
-    let answers = this.answers[question].split(',');
+    let answers = this.answers[question];
     let submission = this.getTextInput();
     let correct = false;
     answers.forEach( ans => {
-      if ((new RegExp(ans, 'i')).test(submission)){
+      if(ans instanceof RegExp && ans.test(submission)){
+        correct = true;
+      } else if (new RegExp(ans, 'i').test(submission)) {
         correct = true;
       };
     })
