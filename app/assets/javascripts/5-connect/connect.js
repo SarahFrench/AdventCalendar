@@ -226,7 +226,7 @@ class Game {
     let submission = this.getTextInput();
     let correct = false;
     answers.forEach( ans => {
-      if ((new RegExp(ans)).test(submission)){
+      if ((new RegExp(ans, 'i')).test(submission)){
         correct = true;
       };
     })
