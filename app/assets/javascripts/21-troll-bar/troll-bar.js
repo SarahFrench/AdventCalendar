@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const SPEED = 10;
 
   const stageOne = function(delay) {
+    //adjust progress bar value
       setTimeout(function(){
         if(bar.value < 80){
           bar.value = bar.value + Math.floor(SPEED*Math.random());
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function(){
   };
 
   const stageTwo = function(){
+    //rm progress and add bootstrap spinner in its place
     let el = document.createElement('div');
     el.id = "progress_2";
     el.classList.add('flex-column-centered');
@@ -42,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   function replaceSpinnerWithHeart(){
+    //being cheeky
     const HEART = `<svg id="heart" class="troll-bar__heart" viewBox="0 0 225 225" version="1.1" xmlns="http://www.w3.org/2000/svg"><path fill="#dc3545"  stroke="none" opacity="1" d="M 68.5 31 Q 93.6 33.9 105 50.5 L 112.5 61 Q 119.5 49.5 129.5 41 Q 139.3 32.3 156.5 31 Q 158.2 33.7 164.5 32 L 173.5 35 Q 184.6 39.9 192 48.5 Q 204.8 62.8 204 90.5 L 202 100.5 L 197 113.5 Q 188.1 129.6 174.5 141 L 132.5 173 L 116 188.5 L 112.5 193 L 100.5 180 L 56.5 146 L 39 129.5 Q 30.4 119.6 25 106.5 L 21 90.5 L 21 78.5 L 25 62.5 Q 29.5 50.5 38.5 43 L 51.5 35 L 60.5 32 Q 66.8 33.7 68.5 31 Z "/></svg>`;
 
     let spinner = document.getElementsByClassName('spinner-border')[0];
@@ -53,6 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   for(let i = 0; i < 1000; i++){
+    //loop that increments progress. Need overkill due to random values used
     if(bar.value < 100){
       stageOne(i*1000);
     }
