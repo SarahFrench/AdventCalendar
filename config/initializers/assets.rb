@@ -19,4 +19,5 @@ Rails.application.config.assets.precompile += %w[
   6-audio/*.js
   7-rapid/*.js
   8-whatsapp/*.js
+  20-crossword/*.js
 ]
