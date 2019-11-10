@@ -1,0 +1,13 @@
+.samoyeds__container{
+  display: grid;
+  grid-template-columns: [col-0] 25vw [col-1] 25vw [col-2] 25vw [col-3] 25vw [col-4];
+  grid-template-rows: [row-0] 25vh [row-1] 25vh [row-2] 25vh [row-3] 25vh [row-4];
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.samoyeds__image{
+  width: 25vw;
+  height: 25vh;
+  background: center;
+}
