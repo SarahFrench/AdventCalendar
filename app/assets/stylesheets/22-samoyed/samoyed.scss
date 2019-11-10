@@ -4,10 +4,23 @@
   grid-template-rows: [row-0] 25vh [row-1] 25vh [row-2] 25vh [row-3] 25vh [row-4];
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+  @media screen and (any-hover: none) {
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
 }
 
 .samoyeds__image{
   width: 25vw;
   height: 25vh;
   background: center;
+}
+
+.samoyeds__font{
+  font-family: 'Sunshiney', cursive;
+}
+
+h1.samoyeds__font{
+  text-align: center;
+  font-size: 3em;
 }
