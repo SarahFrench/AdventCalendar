@@ -23,6 +23,95 @@ class ChallengesController < ApplicationController
     "letter-3" => "c",
     "letter-4" => "k",
     "letter-5" => "y",
+    "letter-6" => "e",
+    "letter-7" => "s",
+    "letter-8" => "e",
+    "letter-9" => "d",
+    "letter-10" => "g",
+    "letter-11" => "y",
+    "letter-12" => "m",
+    "letter-13" => "b",
+    "letter-14" => "h",
+    "letter-15" => "k",
+    "letter-16" => "e",
+    "letter-17" => "a",
+    "letter-18" => "e",
+    "letter-19" => "j",
+    "letter-20" => "e",
+    "letter-21" => "n",
+    "letter-22" => "r",
+    "letter-23" => "a",
+    "letter-24" => "r",
+    "letter-25" => "d",
+    "letter-26" => "l",
+    "letter-27" => "v",
+    "letter-28" => "e",
+    "letter-29" => "g",
+    "letter-30" => "a",
+    "letter-31" => "n",
+    "letter-32" => "k",
+    "letter-33" => "e",
+    "letter-34" => "t",
+    "letter-35" => "o",
+    "letter-36" => "o",
+    "letter-37" => "i",
+    "letter-38" => "r",
+    "letter-39" => "c",
+    "letter-40" => "p",
+    "letter-41" => "l",
+    "letter-42" => "u",
+    "letter-43" => "m",
+    "letter-44" => "f",
+    "letter-45" => "u",
+    "letter-46" => "n",
+    "letter-47" => "k",
+    "letter-48" => "f",
+    "letter-49" => "a",
+    "letter-50" => "r",
+    "letter-51" => "t",
+    "letter-52" => "s",
+    "letter-53" => "k",
+    "letter-54" => "i",
+    "letter-55" => "n",
+    "letter-56" => "d",
+    "letter-57" => "u",
+    "letter-58" => "v",
+    "letter-59" => "e",
+    "letter-60" => "t",
+    "letter-61" => "a",
+    "letter-62" => "e",
+    "letter-63" => "c",
+    "letter-64" => "h",
+    "letter-65" => "a",
+    "letter-66" => "r",
+    "letter-67" => "i",
+    "letter-68" => "t",
+    "letter-69" => "y",
+    "letter-70" => "s",
+    "letter-71" => "h",
+    "letter-72" => "o",
+    "letter-73" => "p",
+    "letter-74" => "s",
+    "letter-75" => "c",
+    "letter-76" => "a",
+    "letter-77" => "i",
+    "letter-78" => "b",
+    "letter-79" => "o",
+    "letter-80" => "r",
+    "letter-81" => "o",
+    "letter-82" => "u",
+    "letter-83" => "g",
+    "letter-84" => "h",
+    "letter-85" => "m",
+    "letter-86" => "m",
+    "letter-87" => "o",
+    "letter-88" => "l",
+    "letter-89" => "y",
+    "letter-90" => "i",
+    "letter-91" => "e",
+    "letter-92" => "c",
+    "letter-93" => "d",
+    "letter-94" => "o"
   }
 
 # final version of controller that responds to what day it is
@@ -46,18 +135,15 @@ class ChallengesController < ApplicationController
   end
 
   def check_crossword
-    params_answers = permit_params.to_h
+    params_answers = permit_params_crossword.to_h
     params_answers.map {|key,value| !!key.match(/letter-\d{1,2}/) }
 
-    puts params_answers
-
-    if(params['letter-1'] == "r")
+    if(all_correct_answers?)
       redirect_to root_path
     else
-      redirect_to days_path
+      puts params.values
+      redirect_back(fallback_location: '/days/20')
     end
-    # binding.pry
-    # params.require(:challenge).permit()
   end
 
   def permit_params_crossword
@@ -65,6 +151,10 @@ class ChallengesController < ApplicationController
     params.delete(:controller)
     params.delete(:action)
     params.permit(params.keys)
+  end
+
+  def all_correct_answers?
+    params === CROSSWORD_ANSWERS
   end
 
 end
