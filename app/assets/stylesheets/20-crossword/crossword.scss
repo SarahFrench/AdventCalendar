@@ -1,10 +1,25 @@
+.crossword__flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  @media screen and (any-hover: none) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .crossword__container{
   display: grid;
-  grid-template-columns: [col-0] 5% [col-1] 5% [col-2] 5% [col-3] 5% [col-4] 5% [col-5] 5% [col-6] 5% [col-7] 5% [col-8] 5% [col-9] 5% [col-10] 5% [col-11] 5% [col-12] 5% [col-13] 5% [col-14] 5% [col-15] 5% [col-16] 5% [col-17] 5% [col-18];
-  grid-template-rows: [row-0] 5% [row-1] 5% [row-2] 5% [row-3] 5% [row-4] 5% [row-5] 5% [row-6] 5% [row-7] 5% [row-8] 5% [row-9] 5% [row-10] 5% [row-11] 5% [row-12] 5% [row-13] 5% [row-14] 5% [row-15] 5% [row-16] 5% [row-17] 5% [row-18];
+  grid-template-columns: [col-0] 2vw [col-1] 2vw [col-2] 2vw [col-3] 2vw [col-4] 2vw [col-5] 2vw [col-6] 2vw [col-7] 2vw [col-8] 2vw [col-9] 2vw [col-10] 2vw [col-11] 2vw [col-12] 2vw [col-13] 2vw [col-14] 2vw [col-15] 2vw [col-16] 2vw [col-17] 2vw [col-18];
+  grid-template-rows: [row-0] 2vw [row-1] 2vw [row-2] 2vw [row-3] 2vw [row-4] 2vw [row-5] 2vw [row-6] 2vw [row-7] 2vw [row-8] 2vw [row-9] 2vw [row-10] 2vw [row-11] 2vw [row-12] 2vw [row-13] 2vw [row-14] 2vw [row-15] 2vw [row-16] 2vw [row-17] 2vw [row-18];
+  @media screen and (any-hover: none) {
+    grid-template-columns: [col-0] 5vw [col-1] 5vw [col-2] 5vw [col-3] 5vw [col-4] 5vw [col-5] 5vw [col-6] 5vw [col-7] 5vw [col-8] 5vw [col-9] 5vw [col-10] 5vw [col-11] 5vw [col-12] 5vw [col-13] 5vw [col-14] 5vw [col-15] 5vw [col-16] 5vw [col-17] 5vw [col-18];
+    grid-template-rows: [row-0] 5vw [row-1] 5vw [row-2] 5vw [row-3] 5vw [row-4] 5vw [row-5] 5vw [row-6] 5vw [row-7] 5vw [row-8] 5vw [row-9] 5vw [row-10] 5vw [row-11] 5vw [row-12] 5vw [row-13] 5vw [row-14] 5vw [row-15] 5vw [row-16] 5vw [row-17] 5vw [row-18];
+
+  }
   grid-auto-rows: 0.5em;
   grid-auto-columns: 0.5em;
-  grid-gap: 0px;
+  grid-gap: 2px;
   width: 40vw;
   height: 40vw;
 
@@ -13,20 +28,48 @@
     height: 100vw;
   }
 
-  & input{
-    border: solid 1px black;
-  }
-
 }
 
 .crossword__box{
   width: 100%;
   height: 100%;
+  border: solid 1px black;
+  font-family: 'Indie Flower', serif;
+  font-size: 1.5em;
 }
 
 .crossword__clues{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+
+  width: 40vw;
+  @media screen and (any-hover: none) {
+    width: 100vw;
+  }
+
+  & p {
+    font-family: sans-serif;
+  }
+}
+
+.crossword__heading{
+  & p{
+    font-family: sans-serif;
+  }
+}
+
+.crossword__message{
+  margin-top: 4em;
+  width: 40vw;
+  @media screen and (any-hover: none) {
+    width: 100vw;
+  }
+  font-family: sans-serif;
+
+}
+
+.crossword__font{
+  font-family: 'Indie Flower', serif;
 }
 
 // .across{
@@ -43,4 +86,17 @@
 
 .highlight{
   background-color: yellow;
+}
+
+.submit-button{
+  margin-top: 2em;
+  grid-column: col-0/col-18;
+  height: 3em;
+  text-align: center;
+  border: solid 2px black;
+}
+
+.clue-list{
+  padding-left: 0.5em;
+  padding-right: 0.5em;
 }

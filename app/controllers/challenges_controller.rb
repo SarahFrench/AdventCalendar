@@ -128,6 +128,10 @@ class ChallengesController < ApplicationController
   def show
     day_of_month = params[:id].to_i
     if day_of_month < (30)
+      if (CHALLENGES[day_of_month] === 'crossword')
+        @old_answers = session[:old_answers]
+        @correct_answers = CROSSWORD_ANSWERS
+      end
       render "#{day_of_month}-#{CHALLENGES[day_of_month]}"
     else
       redirect_to root_path
@@ -136,12 +140,11 @@ class ChallengesController < ApplicationController
 
   def check_crossword
     params_answers = permit_params_crossword.to_h
-    params_answers.map {|key,value| !!key.match(/letter-\d{1,2}/) }
 
     if(all_correct_answers?)
       redirect_to root_path
     else
-      puts params.values
+      session[:old_answers] = params_answers
       redirect_back(fallback_location: '/days/20')
     end
   end
@@ -155,6 +158,10 @@ class ChallengesController < ApplicationController
 
   def all_correct_answers?
     params === CROSSWORD_ANSWERS
+  end
+
+  def return_answers
+    permit_params_crossword.to_h
   end
 
 end
