@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   document.addEventListener('scroll', function(){
     let lastPosition = scrollPositions.slice(-1)[0];
-    if(window.scrollY > lastPosition && (window.scrollY - lastPosition) > 200  ){
+    if(window.scrollY > lastPosition && (window.scrollY - lastPosition) > (window.visualViewport.height/6)  ){
       scrollPositions.push(window.scrollY);
       addSamoyeds(4, container);
     }
