@@ -9,6 +9,11 @@ document.addEventListener('DOMContentLoaded', function(){
     })
   }
 
+  let removeHighlightButton = document.getElementById('remove-highlight');
+  removeHighlightButton.addEventListener('click', function(){
+    removeHighlight();
+  })
+
   function addHighlight(group){
     let boxes = document.getElementsByClassName(group)
 

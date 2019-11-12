@@ -38,6 +38,13 @@
   font-size: 1.5em;
 }
 
+.crossword__button--style{
+  border: 0;
+  background-color: #b0e0e6;
+  height: 3em;
+  border-radius: 10px;
+}
+
 .crossword__clues{
   display: flex;
   flex-direction: column;
@@ -93,7 +100,6 @@
   grid-column: col-0/col-18;
   height: 3em;
   text-align: center;
-  border: solid 2px black;
 }
 
 .clue-list{

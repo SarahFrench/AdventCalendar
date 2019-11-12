@@ -352,13 +352,15 @@
     <div class="crossword__box bg-black"></div>
     <div class="crossword__box bg-black"></div>
     <div class="crossword__box bg-black"></div>
-    <input class="submit-button" type="submit" value="Check answers">
+    <input class="submit-button crossword__button--style" type="submit" value="Check answers">
   </form>
   <% if show_message? %>
     <p class="text-center crossword__message">You made some mistakes, but I left the correct letters in place</p>
   <% end %>
   </div>
   <div class="crossword__clues mt-1">
+    <button id="remove-highlight" class="crossword__button--style" type="button">Remove highlight</button>
+
       <div class="clue-list">
         <p class="text-center"><b>Down</b></p>
         <p id='clue-down-1' class="clue">1 : A place we nearly visited</p>
