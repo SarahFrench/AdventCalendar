@@ -11,8 +11,6 @@ function convertStatsToArray(stats){
 function addLineChart(word, stats){
   let sarahData = convertStatsToArray(stats.sarah_months_frequency)
   let hugoData = convertStatsToArray(stats.hugo_months_frequency)
-  console.log(sarahData);
-  console.log(hugoData);
   var ctx = document.getElementById(`chart-${word}`).getContext('2d');
   var chart = new Chart(ctx, {
       // The type of chart we want to create
@@ -89,8 +87,6 @@ function processAnswer(element){
         showChart(word, stats);
       }
     })
-  } else {
-    console.log("clicked already");
   }
 }
 

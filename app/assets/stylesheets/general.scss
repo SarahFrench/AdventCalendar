@@ -1,3 +1,10 @@
+body{
+  @media screen and (any-hover: none) {
+    margin: 0;
+  }
+}
+
+
 .vw100{
     width: 100vw;
 }

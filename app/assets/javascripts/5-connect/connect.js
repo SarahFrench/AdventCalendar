@@ -1,47 +1,46 @@
 
 document.addEventListener("DOMContentLoaded", function(){
-  if(window.location.pathname === "/days/5"){
-      let wall = document.getElementById('wall');
-      let coren = new Game;
-      coren.cards.forEach(function(card, index) {
-        let cardElement = document.createElement('div');
-        cardElement.id = card.id;
-        cardElement.classList.add('card');
-        cardElement.innerText = card.text;
-        cardElement.addEventListener('click', function(event){
-          if(coren.selections.cards.length < 3){
-            coren.selectCard(event.target);
-          } else {
-            coren.selectCard(event.target);
-            if(coren.selections.cards.length === 4 && coren.areCardsSameGroup()){
-                coren.positionSortedCards();
-                setTimeout(function(){coren.resetSelectedCards(), 3000});
-            } else if (coren.selections.cards.length === 4 && !coren.areCardsSameGroup()){
-              setTimeout(function(){coren.resetSelectedCards(), 3000});
-            }
-          }
-        })
-        wall.appendChild(cardElement);
-      })
-      let checkButton = document.getElementById('checkButton');
-      checkButton.addEventListener('click', function(){
-        coren.checkAnswer();
-      });
+  let wall = document.getElementById('wall');
+  let coren = new Game;
+  coren.cards.forEach(function(card, index) {
+    let cardElement = document.createElement('div');
+    cardElement.id = card.id;
+    cardElement.classList.add('card');
+    cardElement.innerText = card.text;
+    cardElement.addEventListener('click', function(event){
+      const isNotAlreadySorted = !event.target.classList.contains('card__correct');
+      if(coren.selections.cards.length < 3 && isNotAlreadySorted){
+        coren.selectCard(event.target);
+      } else if(isNotAlreadySorted) {
+        coren.selectCard(event.target);
+        if(coren.selections.cards.length === 4 && coren.areCardsSameGroup()){
+            coren.positionSortedCards();
+            setTimeout(function(){coren.resetSelectedCards(), 3000});
+        } else if (coren.selections.cards.length === 4 && !coren.areCardsSameGroup()){
+          setTimeout(function(){coren.resetSelectedCards(), 3000});
+        }
+      }
+    })
+    wall.appendChild(cardElement);
+  })
+  let checkButton = document.getElementById('checkButton');
+  checkButton.addEventListener('click', function(){
+    coren.checkAnswer();
+  });
 
-      let skipButton = document.getElementById('skipButton');
-      skipButton.addEventListener('click', function(){
-        coren.skip();
-      });
-  }
+  let skipButton = document.getElementById('skipButton');
+  skipButton.addEventListener('click', function(){
+    coren.skip();
+  });
 });
 
 class Game {
   constructor(){
     this.answers = {
-      1: "vvv good Sunday evening my bois,vvv good evening mah bois,vvv good evening my bois,vvv good",
-      2: "hinge,early dating,dating app,dating chat,Hinge,chat,messages",
-      3: "new years day,January first,anniversary, new years,1st, 4th date, date 4",
-      4: "edgy dates,dates, we did",
+      1: [/^v{1,10}\s+(good|gd)\s+(Sunday|Sun)*\s*(eve|evening)*\s*(mah|my)*\s*(bois|boys|boiz)*$/i, 'vvv good Sunday evening my bois','vvv good evening mah bois','vvv good evening my bois','vvv good'],
+      2: ['hinge','early dating','dating app','dating chat','hinge','chat','messages'],
+      3: ['new years day','nyd','January','Jan','anniversary','new years','1st','4th date','date 4' ],
+      4: ['edgy dates','dates', 'we did', 'date', 'activities'],
 
     };
     this.currentRowToConnect = 1;
@@ -222,11 +221,13 @@ class Game {
   checkAnswer(){
     let row = this.currentRowToConnect;
     let question = this.sortedRowInfo[row-1].question;
-    let answers = this.answers[question].split(',');
+    let answers = this.answers[question];
     let submission = this.getTextInput();
     let correct = false;
     answers.forEach( ans => {
-      if ((new RegExp(ans)).test(submission)){
+      if(ans instanceof RegExp && ans.test(submission)){
+        correct = true;
+      } else if (new RegExp(ans, 'i').test(submission)) {
         correct = true;
       };
     })
