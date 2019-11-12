@@ -20,3 +20,7 @@ Audio and other media hosted at [Cloudinary](https://cloudinary.com) and URLs fo
 ```
 
 ALSO learned that for editing records in the DB you need to have the CSRF token included in the headers, else you get a `422 (unprocessable entity)` error from the server
+
+20191110
+Learned that .getElementById / ClassName returns a live HTMLCollection, and this behaves differently to a normal array of elements. If you have a collection from getElementsClassName and remove a class from an element in there, the list updates. This means for loops to cycle through all elements with that class will only see alternate elements!
+Instead use a while loop (while there's still el with that class) - https://clubmate.fi/remove-a-class-name-from-multiple-elements-with-pure-javascript/
