@@ -4,7 +4,7 @@
   <p class="text-center">Wassuuuuuup I made a crossword! Hopefully it's not too easy or hard</p>
   <small class="d-block text-center">This was hard to style for use on mobiles, so maybe try on Desktop?</small>
 </div>
-<div class="crossword__flex">
+<div id='responsive-container' class="">
   <section class="mt-1">
     <form class="crossword__container mt-1" method="POST" action="/days/check-crossword">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>

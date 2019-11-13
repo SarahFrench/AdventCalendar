@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', function(){
+  let responsiveContainer = document.getElementById('responsive-container');
+  if (window.orientation !== undefined) {
+    //column on mobile
+    responsiveContainer.classList.add("crossword__flex--column");
+  } else {
+    //row on desktop
+    responsiveContainer.classList.add("crossword__flex--row");
+  }
+})
+
+
+document.addEventListener('DOMContentLoaded', function(){
   let clues = document.getElementsByClassName('clue');
   for(let i=0; i < clues.length; i++){
     clues[i].addEventListener('click', function(event){
