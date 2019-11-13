@@ -29,6 +29,10 @@
     height: 100vw;
   }
 
+  & input{
+    text-align: center;
+  }
+
 }
 
 .crossword__box{
@@ -40,6 +44,7 @@
   font-family: 'Indie Flower', serif;
   font-size: 1.5em;
   @media screen and (any-hover: none) {
+    padding-top: -10px;
     font-size: 1em;
   }
 }
