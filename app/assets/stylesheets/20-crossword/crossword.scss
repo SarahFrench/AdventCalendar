@@ -39,6 +39,9 @@
   border: solid 1px black;
   font-family: 'Indie Flower', serif;
   font-size: 1.5em;
+  @media screen and (any-hover: none) {
+    font-size: 1em;
+  }
 }
 
 .crossword__button--style{
