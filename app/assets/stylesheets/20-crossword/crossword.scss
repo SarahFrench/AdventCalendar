@@ -35,6 +35,12 @@
 
 }
 
+.crossword__buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
 .crossword__box{
   justify-self: stretch;
   padding: 0;
@@ -55,6 +61,7 @@
   background-color: #b0e0e6;
   height: 3em;
   border-radius: 10px;
+  min-width: 150px;
 }
 
 .crossword__clues{
@@ -118,4 +125,8 @@
 .clue-list{
   padding-left: 0.5em;
   padding-right: 0.5em;
+}
+
+form.crossword__container input[type=text] {
+  text-transform: capitalize;
 }

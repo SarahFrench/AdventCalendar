@@ -133,6 +133,7 @@ class ChallengesController < ApplicationController
       if (CHALLENGES[day_of_month] === 'crossword')
         @old_answers = session[:old_answers]
         @correct_answers = CROSSWORD_ANSWERS
+        @crossword_message = session[:crossword_message]
       end
       render "#{day_of_month}-#{CHALLENGES[day_of_month]}"
     else
@@ -141,14 +142,23 @@ class ChallengesController < ApplicationController
   end
 
   def check_crossword
-    params_answers = permit_params_crossword.to_h
+    answers = return_answers
 
-    if(all_correct_answers?)
-      redirect_to root_path
+    if(all_correct_answers?(answers))
+      session[:crossword_message] = "🎉 Well done! You completed the crossword 🎉"
+      session[:old_answers] = answers
+      redirect_to '/days/20'
     else
-      session[:old_answers] = params_answers
+      session[:old_answers] = answers
+      session[:crossword_message] = "You made some mistakes, but I left the correct letters in place"
       redirect_back(fallback_location: '/days/20')
     end
+  end
+
+  def forget_crossword_answers
+    session.delete(:old_answers)
+    session.delete(:crossword_message)
+    redirect_to '/days/20'
   end
 
   def permit_params_crossword
@@ -156,14 +166,20 @@ class ChallengesController < ApplicationController
     params.delete(:controller)
     params.delete(:action)
     params.permit(params.keys)
+    # params.keys.each do |key|
+    #   params[key] = params[key].downcase
+    # end
   end
 
-  def all_correct_answers?
-    params === CROSSWORD_ANSWERS
+  def all_correct_answers?(answers)
+    answers === CROSSWORD_ANSWERS
   end
 
   def return_answers
-    permit_params_crossword.to_h
+    answers = permit_params_crossword.to_h
+    answers.each do |k,v|
+      answers[k] = v.downcase
+    end
   end
 
 end

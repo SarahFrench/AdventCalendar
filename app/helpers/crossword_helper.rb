@@ -8,8 +8,4 @@ module CrosswordHelper
     end
   end
 
-  def show_message?
-    @correct_answers && @old_answers
-  end
-
 end

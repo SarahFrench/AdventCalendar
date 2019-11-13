@@ -2,11 +2,10 @@
 <div class="crossword__heading">
   <h1 class="crossword__font text-center">Crossword</h1>
   <p class="text-center">Wassuuuuuup I made a crossword! Hopefully it's not too easy or hard</p>
-  <small class="text-center">This was hard to style for use on mobiles, so maybe try on Desktop?</small>
-  <p class="text-center">(Also, if you click on a clue it'll highlight the relevant boxes)</p>
+  <small class="d-block text-center">This was hard to style for use on mobiles, so maybe try on Desktop?</small>
 </div>
 <div class="crossword__flex">
-  <div class="vw100-on-mobile">
+  <section class="mt-1">
     <form class="crossword__container mt-1" method="POST" action="/days/check-crossword">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
 
@@ -355,13 +354,20 @@
     <div class="crossword__box bg-black"></div>
     <input class="submit-button crossword__button--style" type="submit" value="Check answers">
   </form>
-  <p class="text-center">👀</p>
-  <% if show_message? %>
-    <p class="text-center crossword__message">You made some mistakes, but I left the correct letters in place</p>
-  <% end %>
-  </div>
-  <div class="crossword__clues mt-1">
-    <button id="remove-highlight" class="crossword__button--style" type="button">Remove highlight</button>
+    <div class="">
+      <% if @crossword_message %>
+        <p class="text-center crossword__message"><%= @crossword_message %></p>
+      <% else %>
+        <p class="text-center crossword__message"> 👀Get answering!  👀</p>
+      <% end %>
+    </div>
+  </section>
+  <section class="crossword__clues mt-1">
+    <p class="text-center">Click on a clue it'll highlight the relevant boxes</p>
+    <div class="crossword__buttons">
+      <a href="/rm-crossword-info" style="width:inherit;"><button id="remove-answers" class="crossword__button--style" type="button" style="width:inherit;">Clear answers</button></a>
+      <button id="remove-highlight" class="crossword__button--style" type="button">Remove highlight</button>
+    </div>
 
       <div class="clue-list">
         <p class="text-center"><b>Down</b></p>
@@ -385,7 +391,6 @@
         <p id='clue-across-12' class="clue">12 : If I every lose you in Kentish Town I'll probably find you in the...</p>
         <p id='clue-across-15' class="clue">15 : If you can't stand the heat, keep out of the _______ kitchen</p>
       </div>
-  </div>
-</div>
+  </section>
 
 <%= javascript_include_tag '20-crossword/crossword.js' %>

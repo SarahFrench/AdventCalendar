@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
   resources :challenges, only: [:show], path: '/days'
 
+  get '/rm-crossword-info', to: 'challenges#forget_crossword_answers'
   post '/days/check-crossword', to: 'challenges#check_crossword'
   get '/initialise-whatsapp-stats', to: 'whatsapp_stats#init'
   get '/delete-click-scores', to: 'click_scores#destroy_all'
