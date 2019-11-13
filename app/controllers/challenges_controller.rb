@@ -11,6 +11,7 @@ class ChallengesController < ApplicationController
     6 => 'audio',
     7 => 'rapid',
     8 => 'whatsapp',
+    9 => 'wide',
     12 => 'bo-jo',
     15 => 'limerick',
     17 => 'pelham',
