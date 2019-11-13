@@ -5,7 +5,7 @@
   <p class="text-center">(Also, if you click on a clue it'll highlight the relevant boxes)</p>
 </div>
 <div class="crossword__flex">
-  <div>
+  <div class="vw100-on-mobile">
     <form class="crossword__container mt-1" method="POST" action="/days/check-crossword">
     <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
 

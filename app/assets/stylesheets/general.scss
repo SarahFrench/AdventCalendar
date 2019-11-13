@@ -9,6 +9,12 @@ body{
     width: 100vw;
 }
 
+.vw100-on-mobile{
+  @media screen and (any-hover: none) {
+    width: 100vw;
+  }
+}
+
 .full-page-container{
   // TODO: Is this totally unnecessary? lol
   width: 100vw;
