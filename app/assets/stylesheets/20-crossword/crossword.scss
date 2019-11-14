@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: [col-0] 2vw [col-1] 2vw [col-2] 2vw [col-3] 2vw [col-4] 2vw [col-5] 2vw [col-6] 2vw [col-7] 2vw [col-8] 2vw [col-9] 2vw [col-10] 2vw [col-11] 2vw [col-12] 2vw [col-13] 2vw [col-14] 2vw [col-15] 2vw [col-16] 2vw [col-17] 2vw [col-18];
   grid-template-rows: [row-0] 2vw [row-1] 2vw [row-2] 2vw [row-3] 2vw [row-4] 2vw [row-5] 2vw [row-6] 2vw [row-7] 2vw [row-8] 2vw [row-9] 2vw [row-10] 2vw [row-11] 2vw [row-12] 2vw [row-13] 2vw [row-14] 2vw [row-15] 2vw [row-16] 2vw [row-17] 2vw [row-18];
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     padding-left: 5vw;
     padding-right: 5vw;
     grid-template-columns: [col-0] 5vw [col-1] 5vw [col-2] 5vw [col-3] 5vw [col-4] 5vw [col-5] 5vw [col-6] 5vw [col-7] 5vw [col-8] 5vw [col-9] 5vw [col-10] 5vw [col-11] 5vw [col-12] 5vw [col-13] 5vw [col-14] 5vw [col-15] 5vw [col-16] 5vw [col-17] 5vw [col-18];
@@ -26,7 +26,7 @@
   width: 40vw;
   height: 40vw;
 
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     width: 100vw;
     height: 100vw;
   }
