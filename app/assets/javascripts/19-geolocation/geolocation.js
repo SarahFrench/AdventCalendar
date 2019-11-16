@@ -27,31 +27,47 @@ let locationCoords = getLocation();
 
 
 //FIX BELOW
-locationCoords.then(position => {
-  let string = "";
-  if(
-    (position.coords.latitude > 51.354803 && position.coords.latitude < 51.545299)
-    &&
-    (position.coords.longitude > -0.145377 && position.coords.longitude < -0.137245)
-  ){
-    string = "Kentish Town";
-  } else if(
-      (position.coords.latitude > 51.353577 && position.coords.latitude < 51.354803)
+locationCoords
+  .then(position => {
+    let string = "";
+    if(
+      (position.coords.latitude > 51.354803 && position.coords.latitude < 51.545299)
       &&
-      (position.coords.longitude > -0.100475 && position.coords.longitude < -0.097943)
+      (position.coords.longitude > -0.145377 && position.coords.longitude < -0.137245)
     ){
-      string = "Croydon";
+      string = "in Kentish Town";
     } else if(
-        (position.coords.latitude > 51.545299 && position.coords.latitude < 51.354803)
+        (position.coords.latitude > 51.353577 && position.coords.latitude < 51.354803)
         &&
-        (position.coords.longitude > -0.027369 && position.coords.longitude < -0.277072)
+        (position.coords.longitude > -0.100475 && position.coords.longitude < -0.097943)
       ){
-        string = "London";
-      }
+        string = "in Croydon";
+      } else if(
+          (position.coords.latitude > 51.545299 && position.coords.latitude < 51.354803)
+          &&
+          (position.coords.longitude > -0.027369 && position.coords.longitude < -0.277072)
+        ){
+          string = "travelling through London";
+        }
 
-    return string;
-})
-.then(location => {
-  console.log(location);
-  document.getElementsByTagName('h2')[0].innerText = `Are you in ${location}?`;
-})
+      return string;
+  })
+  .then(location => {
+    console.log(location);
+    let locationText = document.getElementById('location');
+    locationText.innerText = `Are you ${location}?`;
+    locationText.style.visibility = "visible";
+
+    setTimeout(function(){
+      let messageText = document.getElementById('message');
+      messageText.innerText = "I'm always watching...";
+      messageText.style.visibility = "visible";
+    }, 2000);
+  })
+  .catch( error => {
+    setTimeout(function(){
+      let messageText = document.getElementById('message');
+      messageText.innerText = "I'm always watching...";
+      messageText.style.visibility = "visible";
+    }, 2000);
+  })
