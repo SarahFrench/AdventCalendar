@@ -34,24 +34,30 @@ locationCoords
   .then(position => {
     let string = "";
     if(
-      (position.coords.latitude > 51.354803 && position.coords.latitude < 51.545299)
+      (position.coords.latitude > 51.545341 && position.coords.latitude < 51.550892)
       &&
-      (position.coords.longitude > -0.145377 && position.coords.longitude < -0.137245)
+      (position.coords.longitude > -0.143788 && position.coords.longitude < -0.139293)
     ){
       string = "Are you in Kentish Town?";
     } else if(
-        (position.coords.latitude > 51.353577 && position.coords.latitude < 51.354803)
+        (position.coords.latitude > 51.352095 && position.coords.latitude < 51.357107)
         &&
-        (position.coords.longitude > -0.100475 && position.coords.longitude < -0.097943)
+        (position.coords.longitude > -0.103072 && position.coords.longitude < -0.094135)
       ){
         string = "Are you in Croydon?";
       } else if(
-          (position.coords.latitude > 51.545299 && position.coords.latitude < 51.354803)
+          (position.coords.latitude > 51.500019 && position.coords.latitude < 51.507345)
           &&
-          (position.coords.longitude > -0.027369 && position.coords.longitude < -0.277072)
+          (position.coords.longitude > -0.090555 && position.coords.longitude < -0.079676)
         ){
-          string = "Are you travelling through London?";
-        } else {
+          string = "Are you travelling through London Bridge?";
+        } else if(
+            (position.coords.latitude > 50.332942 && position.coords.latitude < 50.373735 )
+            &&
+            (position.coords.longitude > -4.499282 && position.coords.longitude < -4.397229)
+          ){
+            string = "Are you in Looe?";
+          } else {
           string = "I don't known where you are right now, but...";
         }
 
