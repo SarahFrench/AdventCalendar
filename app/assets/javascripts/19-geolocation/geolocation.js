@@ -1,3 +1,6 @@
+//When at South Croydon station: latitude: 51.376596, longitude: -0.0922664
+
+
 // Kentish Town coords
 // 51.545299, -0.145377
 // 51.550847, -0.137245
@@ -35,27 +38,29 @@ locationCoords
       &&
       (position.coords.longitude > -0.145377 && position.coords.longitude < -0.137245)
     ){
-      string = "in Kentish Town";
+      string = "Are you in Kentish Town?";
     } else if(
         (position.coords.latitude > 51.353577 && position.coords.latitude < 51.354803)
         &&
         (position.coords.longitude > -0.100475 && position.coords.longitude < -0.097943)
       ){
-        string = "in Croydon";
+        string = "Are you in Croydon?";
       } else if(
           (position.coords.latitude > 51.545299 && position.coords.latitude < 51.354803)
           &&
           (position.coords.longitude > -0.027369 && position.coords.longitude < -0.277072)
         ){
-          string = "travelling through London";
+          string = "Are you travelling through London?";
+        } else {
+          string = "I don't known where you are right now, but...";
         }
 
       return string;
   })
-  .then(location => {
+  .then(message => {
     console.log(location);
     let locationText = document.getElementById('location');
-    locationText.innerText = `Are you ${location}?`;
+    locationText.innerText = message;
     locationText.style.visibility = "visible";
 
     setTimeout(function(){
@@ -65,7 +70,7 @@ locationCoords
   .catch( error => {
     setTimeout(function(){
       let messageText = document.getElementById('message');
-      messageText.innerText = "I'm always watching...";
+      messageText.innerText = "I'm always watching.";
       messageText.style.visibility = "visible";
     }, 2000);
   })
