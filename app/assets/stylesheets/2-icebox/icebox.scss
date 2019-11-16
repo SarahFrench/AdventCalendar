@@ -7,20 +7,20 @@
   width: 100%;
 
   margin-top: 3.5em;
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     margin-top: 2em;
   }
 }
 
 h1.poem{
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     font-size: 2em;
   }
 }
 
 p.line{
   margin: 0;
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     font-size: 2em;
   }
 }
@@ -28,7 +28,7 @@ p.line{
 div.verse {
   margin-bottom: 1em;
 
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     margin-bottom: 1.5em;
   }
 }
@@ -38,7 +38,7 @@ div.verse {
   width: 50%;
   margin-top: -50px;
 
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
       width: 80%;
   }
 }

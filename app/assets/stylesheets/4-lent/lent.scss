@@ -1,7 +1,7 @@
 .polaroid{
   max-width: 80vw;
   margin-top: 2em;
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     max-width: 90vw;
     margin-top: 5em;
   }
@@ -17,7 +17,7 @@
     padding: 1em;
     word-wrap: normal;
     font-family: 'Kalam', cursive;
-    @media screen and (any-hover: none) {
+    @media screen and (max-width: 800px) {
       max-width: 95vw;
       // font-size: 2em;
     }
@@ -25,7 +25,7 @@
 
   & #photo{
     width: 500px;
-    @media screen and (any-hover: none) {
+    @media screen and (max-width: 800px) {
       max-width: 85vw;
     }
   }

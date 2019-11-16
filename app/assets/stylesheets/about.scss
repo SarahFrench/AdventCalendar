@@ -11,7 +11,7 @@ h1.about{
   font-family: 'Vidaloka', cursive;
   text-align: center;
   opacity: 1;
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     font-size: 3em;
   }
 }
@@ -19,7 +19,7 @@ h1.about{
 h2.about{
   color: white;
   font-family: 'Vidaloka', cursive;
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     font-size: 2em;
   }
 }
@@ -34,7 +34,7 @@ div.about__container{
   margin-right: 20%;
   border-radius: 10px;
   padding: 16px;
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     margin-left: 1em;
     margin-right: 1em;
   }

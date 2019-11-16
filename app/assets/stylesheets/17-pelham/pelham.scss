@@ -3,7 +3,7 @@
   height: 60vh;
   border-radius: 50px;
   margin-top: 1em;
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     margin-left: 0;
     margin-right: 0;
   }

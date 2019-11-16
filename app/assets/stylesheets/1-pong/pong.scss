@@ -8,13 +8,13 @@
   font-family: 'Share Tech Mono', monospace;
   font-size: 2em;
 
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     font-size: 1.5em;
   }
 
 }
 
-@media screen and (any-hover: none) {
+@media screen and (max-width: 800px) {
   canvas{
     width: 100vw;
     margin-top: 3em;
