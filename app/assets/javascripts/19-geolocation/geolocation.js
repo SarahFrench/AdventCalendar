@@ -59,9 +59,7 @@ locationCoords
     locationText.style.visibility = "visible";
 
     setTimeout(function(){
-      let messageText = document.getElementById('message');
-      messageText.innerText = "I'm always watching...";
-      messageText.style.visibility = "visible";
+      document.getElementById('message').style.visibility = "visible";
     }, 2000);
   })
   .catch( error => {
