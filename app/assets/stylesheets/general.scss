@@ -1,5 +1,5 @@
 body{
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     margin: 0;
   }
 }
@@ -10,7 +10,7 @@ body{
 }
 
 .vw100-on-mobile{
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     width: 100vw;
   }
 }
@@ -24,7 +24,7 @@ body{
 }
 
 .d-block-on-mobile{
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     display: block
   }
 }
@@ -39,7 +39,7 @@ body{
   padding-left: 5vw;
   padding-right: 5vw;
   padding-bottom: 10vh;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 700px) {
     margin-left: 2vw;
     margin-right: 2vw;
     padding-left: 1vw;

@@ -11,7 +11,7 @@ h1.connect{
   padding-right: 10vw;
   margin-bottom: 50px;
 
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
     width: 90vw;
     height: auto;
     padding-left: 0;
@@ -44,7 +44,7 @@ h1.connect{
   font-family: sans-serif;
   background-color: #bfeef5;
 
-  @media screen and (any-hover: none) {
+  @media screen and (max-width: 800px) {
       font-size: 1em;
     }
 
