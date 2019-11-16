@@ -1,6 +1,7 @@
 <%= javascript_include_tag '19-geolocation/geolocation.js' %>
 
-<div class="full-page-container geolocation__image">
+<div class="full-page-container geolocation__image flex-column-centered">
   <h1 class="geolocation__header">Hi Hugo</h1>
-  <h2 class="geolocation__message"> </h2>
+  <h2 id="location" class="geolocation__header" style="visibility: hidden;"> </h2>
+  <h2 id="message" class="geolocation__header geolocation__message-bottom" style="visibility: hidden;"> </h2>
 </div>

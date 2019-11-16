@@ -4,9 +4,19 @@
 }
 
 .geolocation__header{
-  color: red;
+  align-self: center;
+  font-family: sans-serif;
+  color: black;
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: fit-content;
 }
 
-.geolocation__message{
-  color: red;
+.geolocation__message-bottom{
+  position: fixed;
+  bottom: 0;
 }
