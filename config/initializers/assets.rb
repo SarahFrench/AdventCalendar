@@ -19,6 +19,7 @@ Rails.application.config.assets.precompile += %w[
   6-audio/*.js
   7-rapid/*.js
   8-whatsapp/*.js
+  19-geolocation/*.js
   20-crossword/*.js
   21-troll-bar/*.js
   22-samoyed/*.js

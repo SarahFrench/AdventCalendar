@@ -15,6 +15,7 @@ class ChallengesController < ApplicationController
     12 => 'bo-jo',
     15 => 'limerick',
     17 => 'pelham',
+    19 => 'geolocation',
     20 => 'crossword',
     21 => 'troll-bar',
     22 => 'samoyed'
