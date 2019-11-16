@@ -51,4 +51,7 @@ locationCoords.then(position => {
 
     return string;
 })
-.then(x => console.log(x))
+.then(location => {
+  console.log(location);
+  document.getElementsByTagName('h2')[0].innerText = `Are you in ${location}?`;
+})
