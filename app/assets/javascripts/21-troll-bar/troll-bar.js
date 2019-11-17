@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function(){
   const stageOne = function(delay) {
     //adjust progress bar value
       setTimeout(function(){
-        if(bar.value < 80){
+        if(bar.value < 90){
           bar.value = bar.value + Math.floor(SPEED*Math.random());
         } else {
           bar.value = bar.value*1.01;
