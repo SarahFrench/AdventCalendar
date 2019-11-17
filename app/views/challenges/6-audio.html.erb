@@ -1,8 +1,37 @@
-<h1>Audio</h1>
-<%# <%= audio_tag "audiofile.m4a", id: 'audio' %> %>
-<%= audio_tag ENV['TEST_AUDIO_FILE_URL'], id: 'audio' %>
+<%= audio_tag ENV['NEPHEW_AUDIO_FILE_URL'], id: 'audio' %>
+<link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
+<%= javascript_include_tag '6-audio/audio.js' %>
 
 
-<div class="button">
-  <p>Click here</p>
+<div class="container flex-column-centered audio__container">
+  <h1 class="audio__header audio__font">Cute Audio Quiz</h1>
+  <p class="audio__font audio__grey">Make sure your sound is on!</p>
+
+  <button id="audio-button" class="audio__button audio__font" type="button">
+    <i class="fa fa-volume-up" aria-hidden="true"></i>
+    Click here
+  </button>
+  <h2 id="notice" class="audio__font audio__grey text-center"><%= notice %></h2>
+
+  <div id="audio-answer-form" class="audio__form" style="visibility:hidden;">
+    <%= form_with(model: @audio_quiz_answer, local: true) do |form| %>
+    <div class="field audio__field">
+      <%= form.label :who, class:"audio__label d-block-on-mobile"%>
+      <%= form.text_field :who, class:"audio__textfield" %>
+    </div>
+
+    <div class="field audio__field">
+      <%= form.label :called, class:"audio__label d-block-on-mobile" %>
+      <%= form.text_field :called, class:"audio__textfield" %>
+    </div>
+
+    <div class="actions d-flex">
+      <%= form.submit 'Submit',  :class => 'audio__submit' %>
+    </div>
+    <% end %>
+  </div>
+  <div id="easter-egg-container" class="flex-column-centered audio__easteregg-container">
+    <%= audio_tag ENV['TEST_AUDIO_FILE_URL'], id: 'audio-easteregg' %>
+    <i id="easter-egg" class="fa fa-gift audio__easteregg" aria-hidden="true"></i>
+  </div>
 </div>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Audio Quiz Answers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Who</th>
+      <th>Called</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @audio_quiz_answers.each do |audio_quiz_answer| %>
+      <tr>
+        <td><%= audio_quiz_answer.who %></td>
+        <td><%= audio_quiz_answer.called %></td>
+        <td><%= link_to 'Destroy', audio_quiz_answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
