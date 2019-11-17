@@ -28,7 +28,7 @@
                  7, 15, 4, 14, 2] %>
 <% date_order.each do |i| %>
   <div class="window" id="window_<%=i%>">
-    <a class="day-link" id="day-link_<%=i%>" href="/days/<%= i %>"><%= i %></a>
+    <a class="day-link" id="day-link_<%=i%>" href="<%=window_link(i)%>"><%= i %></a>
   </div>
 <% end %>
 </div>

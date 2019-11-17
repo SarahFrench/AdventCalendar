@@ -18,7 +18,8 @@ class ChallengesController < ApplicationController
     19 => 'geolocation',
     20 => 'crossword',
     21 => 'troll-bar',
-    22 => 'samoyed'
+    22 => 'samoyed',
+    25 => 'xmas-day'
   }
 
   CROSSWORD_ANSWERS = {

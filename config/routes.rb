@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/initialise-whatsapp-stats', to: 'whatsapp_stats#init'
   get '/delete-click-scores', to: 'click_scores#destroy_all'
   get '/delete-local-storage', to: 'home#delete-local-storage'
+  get '/youve-been-bad', to: 'home#youve-been-bad'
 end
