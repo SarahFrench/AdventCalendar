@@ -11,15 +11,17 @@ div.xmas__container{
   margin-left: 20%;
   margin-right: 20%;
   border-radius: 10px;
-  padding: 16px;
+  padding: 3em;
+
   @media screen and (max-width: 800px) {
     margin-left: 1em;
     margin-right: 1em;
+    padding: 2em 1em;
   }
   background-color: rgba(184, 241, 241, 0.3);
 }
 
-.xmas_message{
+.xmas_message--header{
   color: white;
   font-family: 'Vidaloka', cursive;
   text-align: center;
@@ -27,4 +29,9 @@ div.xmas__container{
   @media screen and (max-width: 800px) {
     font-size: 2em;
   }
+}
+
+.xmas_message--body{
+  color: white;
+  font-family: sans-serif;
 }
