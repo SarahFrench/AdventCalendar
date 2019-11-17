@@ -16,6 +16,7 @@ Rails.application.config.assets.paths << "#{Rails.root}/app/assets/videos"
 # folder are already added.
 Rails.application.config.assets.precompile += %w[
   homepage/*.js
+  easter-eggs/*.js
   1-pong/*.js
   3-eyebrows/*.js
   5-connect/*.js
