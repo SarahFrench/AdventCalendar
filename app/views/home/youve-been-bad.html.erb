@@ -1,5 +1,7 @@
-<div class="youve-been-bad__container full-page-container">
-  <button id="been-bad-button" type="button" name="button">click me</button>
+<div class="flex-column-centered full-page-container">
+  <div class="mt-3">
+    <button id="been-bad-button" class="youve-been-bad__button" type="button" name="button">click me</button>
+  </div>
   <%= video_tag ENV['YOUVE_BEEN_BAD_VIDEO_URL'], id:"been-bad-video", class:"video__sizing", style:"display:none;" %>
 </div>
 
