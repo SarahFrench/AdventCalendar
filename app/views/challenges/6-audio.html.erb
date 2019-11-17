@@ -5,7 +5,7 @@
 
 <div class="container flex-column-centered audio__container">
   <h1 class="audio__header audio__font">Cute Audio Quiz</h1>
-  <p class="audio__font audio__grey">Make sure your sound is on!</p>
+  <h2 class="audio__font audio__grey">Make sure your sound is on!</h2>
 
   <button id="audio-button" class="audio__button audio__font" type="button">
     <i class="fa fa-volume-up" aria-hidden="true"></i>
@@ -32,6 +32,6 @@
   </div>
   <div id="easter-egg-container" class="flex-column-centered audio__easteregg-container">
     <%= audio_tag ENV['TEST_AUDIO_FILE_URL'], id: 'audio-easteregg' %>
-    <i id="easter-egg" class="fa fa-gift audio__easteregg" aria-hidden="true"></i>
+    <p class="two-em"><i id="easter-egg" class="fa fa-gift audio__easteregg" aria-hidden="true"></i></p>
   </div>
 </div>

@@ -5,8 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Who</th>
-      <th>Called</th>
+      <th>Who is your new girlfriend?</th>
+      <th>And what is she called?</th>
+      <th>When</th>
       <th></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= audio_quiz_answer.who %></td>
         <td><%= audio_quiz_answer.called %></td>
+        <td><%= audio_quiz_answer.created_at %></td>
         <td><%= link_to 'Destroy', audio_quiz_answer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
