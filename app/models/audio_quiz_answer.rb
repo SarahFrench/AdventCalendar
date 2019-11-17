@@ -1,0 +1,2 @@
+class AudioQuizAnswer < ApplicationRecord
+end
