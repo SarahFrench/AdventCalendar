@@ -1,22 +1,3 @@
-//When at South Croydon station: latitude: 51.376596, longitude: -0.0922664
-
-
-// Kentish Town coords
-// 51.545299, -0.145377
-// 51.550847, -0.137245
-
-
-//Croydon coords
-// 51.354803, -0.100475
-// 51.353577, -0.097943
-
-//Inbetween limits
-// Latitude
-// 51.545299  51.354803
-// Longitude
-// west  -0.277072
-// east -0.027369
-
 function getLocation(){
   return new Promise((resolve, reject)=>{
     navigator.geolocation.getCurrentPosition(function(position){
@@ -29,7 +10,6 @@ function getLocation(){
 let locationCoords = getLocation();
 
 
-//FIX BELOW
 locationCoords
   .then(position => {
     let string = "";
@@ -58,7 +38,7 @@ locationCoords
           ){
             string = "Are you in Looe?";
           } else {
-          string = "I don't known where you are right now, but...";
+          string = "I don't know where you are right now, but...";
         }
 
       return string;
