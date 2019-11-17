@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  helpers:
+    label:
+      audio_quiz_answer:
+        who: "Who's your new girlfriend?"
+        called: "And what is she called?"
