@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :audio_quiz_answers, only: [:index, :new, :create, :destroy]
   resources :whatsapp_stats
   resources :click_scores
   get '/top-five-rapid-clicks', to: 'click_scores#top_five'

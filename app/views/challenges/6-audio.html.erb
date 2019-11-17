@@ -1,8 +1,30 @@
-<h1>Audio</h1>
-<%# <%= audio_tag "audiofile.m4a", id: 'audio' %> %>
-<%= audio_tag ENV['TEST_AUDIO_FILE_URL'], id: 'audio' %>
+<%= audio_tag "nephew-message.m4a", id: 'audio' %>
+<%# <%= audio_tag ENV['TEST_AUDIO_FILE_URL'], id: 'audio' %>
+<%= javascript_include_tag '6-audio/audio.js' %>
 
+<div class="full-page-container flex-column-centered">
+  <h1>Cute Audio Quiz</h1>
+  <p class="audio__icon"><i class="fa fa-volume-up" aria-hidden="true"></i></p>
+  <p>Make sure your sound is on!</p>
+  <button id="audio-button" class="audio__button" type="button">Click here</button>
+  <p id="notice"><%= notice %></p>
 
-<div class="button">
-  <p>Click here</p>
+  <div id="audio-answer-form" class="audio__form" style="visibility:hidden;">
+    <%= form_with(model: @audio_quiz_answer, local: true) do |form| %>
+    <div class="field">
+      <%= form.label :who %>
+      <%= form.text_field :who %>
+    </div>
+
+    <div class="field">
+      <%= form.label :called %>
+      <%= form.text_field :called %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit %>
+    </div>
+    <% end %>
+  </div>
+
 </div>

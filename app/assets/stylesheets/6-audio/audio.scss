@@ -1,0 +1,23 @@
+.audio__button{
+  width: 25vw;
+  height: 3em;
+
+  border: solid 3px #da8fa5;
+  border-radius: 10px;
+  background-color: #e3e8f5;
+
+  font-size: 3em;
+
+  @media screen and (max-width: 800px){
+    width: 50vw;
+    height: 4em;
+    font-size: 2em;
+  }
+
+}
+
+.audio__icon{
+  & i {
+    font-size: 5em;
+  }
+}

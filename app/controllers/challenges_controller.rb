@@ -137,6 +137,9 @@ class ChallengesController < ApplicationController
         @correct_answers = CROSSWORD_ANSWERS
         @crossword_message = session[:crossword_message]
       end
+      if (CHALLENGES[day_of_month] === 'audio')
+        @audio_quiz_answer = AudioQuizAnswer.new
+      end
       render "#{day_of_month}-#{CHALLENGES[day_of_month]}"
     else
       redirect_to root_path
