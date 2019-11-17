@@ -1,5 +1,4 @@
-<%= audio_tag "nephew-message.m4a", id: 'audio' %>
-<%# <%= audio_tag ENV['NEPHEW_AUDIO_FILE_URL'], id: 'audio' %>
+<%= audio_tag ENV['NEPHEW_AUDIO_FILE_URL'], id: 'audio' %>
 <link href="https://fonts.googleapis.com/css?family=Concert+One&display=swap" rel="stylesheet">
 <%= javascript_include_tag '6-audio/audio.js' %>
 
@@ -32,8 +31,7 @@
     <% end %>
   </div>
   <div id="easter-egg-container" class="flex-column-centered audio__easteregg-container">
-    <%= audio_tag 'audiofile.m4a', id: 'audio-easteregg' %>
-    <%# <%= audio_tag ENV['TEST_AUDIO_FILE_URL'], id: 'audio-easteregg' %> %>
+    <%= audio_tag ENV['TEST_AUDIO_FILE_URL'], id: 'audio-easteregg' %>
     <i id="easter-egg" class="fa fa-gift audio__easteregg" aria-hidden="true"></i>
   </div>
 </div>
