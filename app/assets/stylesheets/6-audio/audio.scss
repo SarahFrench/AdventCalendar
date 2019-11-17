@@ -1,10 +1,25 @@
+.audio__container{
+  background-color: #e3e8f5;
+  height: 100vh;
+}
+
+.audio__header{
+  color: #da8fa5;
+  font-size: 3em;
+}
+
+.audio__font{
+  font-family: 'Concert One', cursive;
+}
+
 .audio__button{
   width: 25vw;
   height: 3em;
 
-  border: solid 3px #da8fa5;
+  border: solid 3px  #e3e8f5;
   border-radius: 10px;
-  background-color: #e3e8f5;
+  background-color: #da8fa5;
+  color: #e3e8f5;
 
   font-size: 3em;
 
@@ -16,8 +31,43 @@
 
 }
 
-.audio__icon{
-  & i {
-    font-size: 5em;
+.audio__grey{
+  color: #808080;
+}
+
+.audio__label{
+  color: #808080;
+  font-family: sans-serif;
+  margin-right: 10px;
+}
+
+.audio__field{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+}
+
+.audio__textfield{
+  border-radius: 5px;
+}
+
+.audio__submit{
+  border: solid 2px #da8fa5;
+  border-radius: 5px;
+  color: #808080;
+  margin-left: auto;
+}
+
+.audio__easteregg-container{
+  font-family: sans-serif;
+  margin-top: 2em;
+  max-width: inherit;
+}
+
+.audio__easteregg{
+  text-align: center;
+  color: #808080;
+  &:hover{
+    font-size: 2em;
   }
 }
