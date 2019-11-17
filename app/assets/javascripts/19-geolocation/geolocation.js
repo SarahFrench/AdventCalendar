@@ -6,6 +6,7 @@ function getLatLong(){
   });
 }
 
+let key = process.env.mapbox_api_key;
 
 function getLocationInfo(lat, long){
   return new Promise((resolve, reject)=>{
