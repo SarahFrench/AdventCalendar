@@ -1,0 +1,30 @@
+.xmas-day__image{
+  max-height: 80vh;
+  @media screen and (max-width: 800px){
+    width: 100vw;
+  }
+
+}
+
+div.xmas__container{
+  margin-top: 32px;
+  margin-left: 20%;
+  margin-right: 20%;
+  border-radius: 10px;
+  padding: 16px;
+  @media screen and (max-width: 800px) {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  background-color: rgba(184, 241, 241, 0.3);
+}
+
+.xmas_message{
+  color: white;
+  font-family: 'Vidaloka', cursive;
+  text-align: center;
+  opacity: 1;
+  @media screen and (max-width: 800px) {
+    font-size: 2em;
+  }
+}
