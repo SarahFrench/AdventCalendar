@@ -5,6 +5,7 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 NOTES.md
+.env
 
 # Ignore audio, image and video files
 /app/assets/audios/*
