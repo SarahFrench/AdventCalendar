@@ -6,9 +6,10 @@
 
 NOTES.md
 
-# Ignore audio files
-/app/assets/audios/*.m4a
-/app/assets/audios/*.mp3
+# Ignore audio, image and video files
+/app/assets/audios/*
+app/assets/images/*
+app/assets/videos/*
 
 # Ignore bundler config.
 /.bundle
@@ -38,4 +39,3 @@ NOTES.md
 
 
 .DS_Store
-app/assets/images/*
