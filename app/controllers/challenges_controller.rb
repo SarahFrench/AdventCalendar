@@ -16,6 +16,7 @@ class ChallengesController < ApplicationController
     12 => 'bo-jo',
     15 => 'limerick',
     17 => 'pelham',
+    18 => 'mealplan',
     19 => 'geolocation',
     20 => 'crossword',
     21 => 'troll-bar',
@@ -188,5 +189,5 @@ class ChallengesController < ApplicationController
       answers[k] = v.downcase
     end
   end
-
+  
 end
