@@ -174,9 +174,6 @@ class ChallengesController < ApplicationController
     params.delete(:controller)
     params.delete(:action)
     params.permit(params.keys)
-    # params.keys.each do |key|
-    #   params[key] = params[key].downcase
-    # end
   end
 
   def all_correct_answers?(answers)
@@ -189,5 +186,5 @@ class ChallengesController < ApplicationController
       answers[k] = v.downcase
     end
   end
-  
+
 end
