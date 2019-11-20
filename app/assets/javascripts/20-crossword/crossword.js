@@ -30,3 +30,34 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
 })
+
+
+document.addEventListener('DOMContentLoaded', function(){
+  let button = document.getElementsById('check-answers-button');
+  document.addEventListener('click', function(){
+    const answers = getAnswers();
+    const letters = getLetters();
+    const correctLetters = {};
+
+    //TODO: iterate through k:v of letters, if matches answers then set in correctLetters
+    //boolean to track if any errors found
+    //if boolean true, use correctLetters to replace text in input fields.
+    //if false then 100% correct - show congratulations message
+  })
+})
+
+function getLetters(){
+  const inputs = document.getElementsByTagName('input');
+  let answers = {};
+  for(let i = 0; i < inputs.length; i++){
+    answers[inputs[i].id] = inputs[i].value;
+  }
+  return answers;
+}
+
+async function getAnswers(){
+  const response = await fetch(`/crossword-answers.json`, {
+      method: 'GET'
+    });
+  return await response.json();
+}

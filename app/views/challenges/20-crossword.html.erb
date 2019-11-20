@@ -352,8 +352,8 @@
     <div class="crossword__box bg-black"></div>
     <div class="crossword__box bg-black"></div>
     <div class="crossword__box bg-black"></div>
-    <input class="submit-button crossword__button--style" type="submit" value="Check answers">
-  </form>
+    <input id="check-answers-button" class="submit-button crossword__button--style" type="submit" onclick="submitLetters()">
+  </div>
     <div class="">
       <% if @crossword_message %>
         <p class="text-center crossword__message"><%= @crossword_message %></p>
