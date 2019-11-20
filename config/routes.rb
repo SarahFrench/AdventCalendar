@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get '/about', to: 'home#about'
 
+  get '/days', to: redirect('/')
   resources :challenges, only: [:show], path: '/days'
 
   resources :audio_quiz_answers, only: [:index, :new, :create, :destroy]
