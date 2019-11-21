@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+  root to: 'home#index'
+  get '/about', to: 'home#about'
+
+  get '/days', to: redirect('/')
+  resources :challenges, only: [:show], path: '/days'
+
   resources :audio_quiz_answers, only: [:index, :new, :create, :destroy]
   resources :whatsapp_stats
   resources :click_scores
-  get '/top-five-rapid-clicks', to: 'click_scores#top_five'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: 'home#index'
-  get '/about', to: 'home#about'
-  resources :challenges, only: [:show], path: '/days'
 
+  get '/crossword-answers', to: 'crossword#answers'
+  get '/top-five-rapid-clicks', to: 'click_scores#top_five'
   get '/rm-crossword-info', to: 'challenges#forget_crossword_answers'
   post '/days/check-crossword', to: 'challenges#check_crossword'
   get '/initialise-whatsapp-stats', to: 'whatsapp_stats#init'

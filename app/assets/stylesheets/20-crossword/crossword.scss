@@ -122,8 +122,12 @@
 //   }
 // }
 
-.highlight{
+.crossword__highlight{
   background-color: yellow;
+}
+
+.crossword__incorrect{
+  background-color: #b0e0e6;
 }
 
 .submit-button{
@@ -139,6 +143,6 @@
   padding-right: 0.5em;
 }
 
-form.crossword__container input[type=text] {
+.crossword__container input[type=text] {
   text-transform: capitalize;
 }
