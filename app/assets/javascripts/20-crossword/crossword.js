@@ -71,25 +71,43 @@ document.addEventListener('DOMContentLoaded', function(){
 
       saveAnswers(correctLetters)
       fillInBoxes(correctLetters)
-      if(isCompleted(correctLetters)){
+
+      function changeMessage(message){
+        let el = document.getElementsByClassName('crossword__message')[0];
+        el.innerText = message;
+      }
+
+      if(Object.keys(correctLetters).length === 94){
         changeMessage("Yay, you've completed the crossword! 100% correct!")
       } else {
         changeMessage("I've removed all the incorrect letters from the board. Click anywhere to remove the error highlight")
       }
+
     })
+
+
+    async function getAnswers(){
+      const response = await fetch(`/crossword-answers`, {
+          method: 'GET'
+        });
+      return await response.json();
+    }
+
+    function getLetters(){
+      const inputs = document.querySelectorAll('input[id^=letter]')
+      let answers = {};
+      for(let i = 0; i < inputs.length; i++){
+        answers[inputs[i].id] = inputs[i].value;
+      }
+      return answers;
+    }
 
 
   })
 })
 
-function isCompleted(correctLetters){
-  return Object.keys(correctLetters).length === 94
-}
 
-function changeMessage(message){
-  let el = document.getElementsByClassName('crossword__message')[0];
-  el.innerText = message;
-}
+
 
 function fillInBoxes(object){
   for(let i = 1; i < 95; i++){
@@ -115,20 +133,4 @@ function loadAnswers(){
     let answers = JSON.parse(window.localStorage["advent-crossword"]);
     fillInBoxes(answers);
   }
-}
-
-function getLetters(){
-  const inputs = document.querySelectorAll('input[id^=letter]')
-  let answers = {};
-  for(let i = 0; i < inputs.length; i++){
-    answers[inputs[i].id] = inputs[i].value;
-  }
-  return answers;
-}
-
-async function getAnswers(){
-  const response = await fetch(`/crossword-answers`, {
-      method: 'GET'
-    });
-  return await response.json();
 }
