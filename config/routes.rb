@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :whatsapp_stats
   resources :click_scores
 
+  get '/crossword-answers', to: 'crossword#answers'
   get '/top-five-rapid-clicks', to: 'click_scores#top_five'
   get '/rm-crossword-info', to: 'challenges#forget_crossword_answers'
   post '/days/check-crossword', to: 'challenges#check_crossword'
