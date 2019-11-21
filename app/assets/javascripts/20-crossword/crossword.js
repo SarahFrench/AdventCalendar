@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 document.addEventListener('DOMContentLoaded', function(){
-  let button = document.getElementsById('check-answers-button');
+  let button = document.getElementById('check-answers-button');
   document.addEventListener('click', function(){
     const answers = getAnswers();
     const letters = getLetters();
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 function getLetters(){
-  const inputs = document.getElementsByTagName('input');
+  const inputs = document.querySelectorAll('input[id^=letter]')
   let answers = {};
   for(let i = 0; i < inputs.length; i++){
     answers[inputs[i].id] = inputs[i].value;
@@ -56,7 +56,7 @@ function getLetters(){
 }
 
 async function getAnswers(){
-  const response = await fetch(`/crossword-answers.json`, {
+  const response = await fetch(`/crossword-answers`, {
       method: 'GET'
     });
   return await response.json();
