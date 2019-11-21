@@ -25,11 +25,6 @@ class ChallengeService
 
   def initialize(day_of_month=1)
     @day_of_month ||= day_of_month
-    if is_crossword?
-      @old_answers ||= session[:old_answers]
-      @correct_answers ||= CROSSWORD_ANSWERS
-      @crossword_message ||= session[:crossword_message]
-    end
   end
 
   def accessible?
@@ -56,10 +51,6 @@ class ChallengeService
   end
 
   private
-
-  def is_crossword?
-    CHALLENGES[@day_of_month] == 'crossword'
-  end
 
   def in_development_mode?
     ENV['RAILS_ENV'] == "development"

@@ -12,10 +12,6 @@ class ChallengesController < ApplicationController
 
   end
 
-  def check_crossword
-    # JS on frontend to send all answers as one param
-  end
-
   private
 
   def set_challenge
