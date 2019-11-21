@@ -34,15 +34,34 @@ document.addEventListener('DOMContentLoaded', function(){
 
 document.addEventListener('DOMContentLoaded', function(){
   let button = document.getElementById('check-answers-button');
-  document.addEventListener('click', function(){
-    const answers = getAnswers();
-    const letters = getLetters();
-    const correctLetters = {};
+  button.addEventListener('click', function(){
+    let correctAnswers = getAnswers();
+    let submittedLetters = getLetters();
 
-    //TODO: iterate through k:v of letters, if matches answers then set in correctLetters
-    //boolean to track if any errors found
-    //if boolean true, use correctLetters to replace text in input fields.
-    //if false then 100% correct - show congratulations message
+
+    correctAnswers.then(answers => {
+      let correctLetters = {};
+
+      Object.keys(answers).forEach(function(k){
+        if (answers[k] == submittedLetters[k].toLowerCase()){
+          correctLetters[k] = answers[k];
+        }
+      })
+
+      return correctLetters
+
+    }).then( correctLetters => {
+
+      for(let i = 1; i < 95; i++){
+        let answer = correctLetters[`letter-${i}`];
+        let el = document.querySelector(`input[id=letter-${i}]`);
+        el.value = typeof answer != 'undefined' ? answer : "";
+      }
+
+      console.log(correctLetters);
+    })
+
+
   })
 })
 
