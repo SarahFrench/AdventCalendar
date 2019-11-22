@@ -1,0 +1,39 @@
+.can-can__container{
+  margin: 1em;
+  display: grid;
+  grid-template-columns: [col-0] 25vw [col-1] 25vw [col-2] 25vw [col-3] 25vw [col-4];
+  grid-template-rows: [row-0] 25vh [row-1] 25vh [row-2] 25vh [row-3] 25vh [row-4];
+}
+
+.can-can__image{
+  max-width: 50vw;
+  max-height: 80vh;
+
+  &.can-can__top{
+    z-index: 10;
+  }
+}
+
+.can-can__image--dance1 {
+  -webkit-animation: can-can-dance1 0.5s infinite linear;
+}
+
+.can-can__image--dance2 {
+  -webkit-animation: can-can-dance2 0.5s infinite linear;
+}
+
+@-webkit-keyframes can-can-dance1 {
+    0%  {-webkit-transform: rotate(-10deg) translate(0,-1em);}
+    20%  {-webkit-transform: rotate(0deg) translate(0, 1em);}
+    40% {-webkit-transform: rotate(10deg) translate(0,-1em);}
+    60%  {-webkit-transform: rotate(0deg) translate(0,1em);}
+    100%  {-webkit-transform: rotate(-10deg) translate(0,-1em);}
+}
+
+@-webkit-keyframes can-can-dance2 {
+    0%  {-webkit-transform: rotate(-10deg) translate(0,1em);}
+    20%  {-webkit-transform: rotate(0deg) translate(0, -1em);}
+    40% {-webkit-transform: rotate(10deg) translate(0,1em);}
+    60%  {-webkit-transform: rotate(0deg) translate(0,-1em);}
+    100%  {-webkit-transform: rotate(-10deg) translate(0,1em);}
+}
