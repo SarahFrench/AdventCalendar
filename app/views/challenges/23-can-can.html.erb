@@ -1,8 +1,13 @@
+<%= audio_tag 'can-can.m4a' %>
+
+<%= render 'challenges/svgs/can-can/left-curtain-long' %>
+<%= render 'challenges/svgs/can-can/right-curtain-long' %>
+
 <div class="can-can__container">
-  <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"can-can__image--dance2 can-can__image can-can__top" %>
-  <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"can-can__image--dance2 can-can__image" %>
-  <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"can-can__image--dance2 can-can__image can-can__top" %>
-  <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"can-can__image--dance2 can-can__image" %>
+  <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image can-can__top" %>
+  <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
+  <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image can-can__top" %>
+  <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
 </div>
 
 <style media="screen">
