@@ -1,4 +1,4 @@
-<%= audio_tag 'can-can.m4a' %>
+<%= audio_tag ENV['CAN_CAN_AUDIO_URL'] %>
 
 <div id="overlay" class="full-page-container child-centered-in-parent can-can__dark-overlay">
   <div class="can-can__overlay-message flex-column-centered">
@@ -13,10 +13,10 @@
 </div>
 
 <div class="can-can__container">
-  <%= image_tag 'can-can/cancan1.png', class:"can-can__image--hidden can-can__image--dance can-can__image" %>
-  <%= image_tag 'can-can/cancan2.png', class:"can-can__image--hidden can-can__image--dance can-can__image" %>
-  <%= image_tag 'can-can/cancan3.png', class:"can-can__image--hidden can-can__image--dance can-can__image" %>
-  <%= image_tag 'can-can/cancan4.png', class:"can-can__image--hidden can-can__image--dance can-can__image" %>
+  <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
+  <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
+  <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
+  <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
 </div>
 
 <style media="screen">
