@@ -58,6 +58,13 @@ body{
   align-items: center;
 }
 
+.child-centered-in-parent{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .two-em{
   font-size: 2em;
 }

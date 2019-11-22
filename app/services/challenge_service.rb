@@ -20,6 +20,7 @@ class ChallengeService
     20 => 'crossword',
     21 => 'troll-bar',
     22 => 'samoyed',
+    23 => 'can-can',
     25 => 'xmas-day'
   }
 

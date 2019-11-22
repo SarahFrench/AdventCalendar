@@ -1,0 +1,74 @@
+.can-can__dark-overlay {
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  & .can-can__overlay-message {
+    background-color: rgba(255,255,255,0.6);
+    border: solid 2px #F0D400;
+    border-radius: 10px;
+    padding: 1em;
+  }
+
+}
+.can-can__begin-button {
+  background-color: #F0D400;
+  border: 0;
+  color: black;
+  font-size: 1em;
+  border-radius: 10px;
+  padding: 5px 10px;
+}
+
+.can-can__container{
+  width: 100%;
+  margin: 1em;
+  display: grid;
+  grid-template-columns: [col-0] 25vw [col-1] 25vw [col-2] 25vw [col-3] 25vw [col-4];
+  grid-template-rows: [row-0] 100vh [row-1];
+}
+
+.can-can__image{
+  max-width: 50vw;
+  max-height: 80vh;
+
+  &.can-can__top{
+    z-index: 10;
+  }
+}
+
+.can-can__image--hidden {
+  z-index: -100;
+  display: none;
+}
+
+.can-can__image--dance {
+  -webkit-animation: can-can-dance 0.33s infinite linear;
+}
+
+@-webkit-keyframes can-can-dance {
+    0%  {-webkit-transform: rotate(-10deg) translate(0, 0.5em);}
+    33%  {-webkit-transform: rotate(0deg) translate(0, 0em);}
+    66% {-webkit-transform: rotate(10deg) translate(0,-0.5em);}
+    100%  {-webkit-transform: rotate(0deg) translate(0,-1em);}
+}
+
+
+.can-can__curtain {
+  height: 100vh;
+  z-index: -1;
+
+  &.can-can__left-curtain-align {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  &.can-can__right-curtain-align {
+     position: absolute;
+     left: 50%;
+     top: 0;
+  }
+
+}
