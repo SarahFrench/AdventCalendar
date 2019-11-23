@@ -1,17 +1,16 @@
 document.addEventListener('DOMContentLoaded', function(){
   let rightCurtain = document.getElementById('right-curtain');
   let rightStartPos = window.visualViewport.height/2;
-  
-  let begin = document.getElementById('begin-button');
 
-  begin.addEventListener('click', function(){
-    let overlay = document.getElementById('overlay');
-    document.body.removeChild(overlay);
-
-    let audio = document.getElementsByTagName('audio')[0];
-    audio.play();
-  })
 })
+
+function start(){
+  let overlay = document.getElementById('overlay');
+  document.body.removeChild(overlay);
+
+  let audio = document.getElementsByTagName('audio')[0];
+  audio.play();
+}
 
 document.addEventListener('DOMContentLoaded', function(){
     let audio = document.getElementsByTagName('audio')[0];
