@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function(){
         if(audio.currentTime > 26.2 && audio.currentTime < 27.0){
           swapToSpin(dancers);
         }
-        if(audio.currentTime > 27.2 && audio.currentTime < 28.6){
+        if(audio.currentTime > 27.4 && audio.currentTime < 28.6){
           swapToDance(dancers);
         }
 
