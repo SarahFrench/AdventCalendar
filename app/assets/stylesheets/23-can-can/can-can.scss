@@ -62,6 +62,11 @@
   top: -10px;
   z-index: 99;
 
+  @media screen and (max-width: 800px) {
+    width: 120vw;
+    height: 105vh;
+  }
+
   &--up{
     transition: all 1s ease-out;
     transform: translateY(-100%);
