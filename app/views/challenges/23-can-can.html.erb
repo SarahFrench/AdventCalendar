@@ -1,9 +1,11 @@
 <%= audio_tag ENV['CAN_CAN_AUDIO_URL'] %>
 
-<div id="overlay" class="can-can__dark-overlay">
-  <div class="can-can__overlay-message">
-    <h1>Welcome</h1>
-    <button id='begin-button' class="can-can__begin-button" type="button" name="button" onclick="start();">Begin</button>
+<div class="full-page-container">
+  <div id="overlay" class="child-centered-in-parent can-can__dark-overlay">
+    <div class="can-can__overlay-message flex-column-centered">
+      <h1>Welcome</h1>
+      <button id='begin-button' class="can-can__begin-button" type="button" name="button" onclick="start();">Begin</button>
+    </div>
   </div>
 </div>
 
