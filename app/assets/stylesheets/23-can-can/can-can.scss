@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   z-index: 100;
-  height: 100%;
+  height: 105%;
   width: 100%;
 
   & .can-can__overlay-message {
@@ -55,17 +55,9 @@
 
 .curtain{
   position: absolute;
-  width: 105vw;
-  height: 100vh;
+  width: 100%;
+  height: 90%;
   z-index: 99;
-  left: -10px;
-  top: -10px;
-  z-index: 99;
-
-  @media screen and (max-width: 800px) {
-    width: 120vw;
-    height: 105vh;
-  }
 
   &--up{
     transition: all 1s ease-out;

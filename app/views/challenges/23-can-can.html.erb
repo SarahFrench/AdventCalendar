@@ -1,11 +1,10 @@
 <%= audio_tag ENV['CAN_CAN_AUDIO_URL'] %>
 
-<div id="overlay" class="full-page-container">
-  <div id="overlay" class="child-centered-in-parent">
-    <div class="can-can__overlay-message flex-column-centered" style="position:absolute; margin-top:5em; z-index:1000;">
-      <h1>Welcome</h1>
-      <button id='begin-button' class="can-can__begin-button" type="button" name="button" onclick="start();">Begin</button>
-    </div>
+
+<div id="overlay" class="child-centered-in-parent can-can__dark-overlay">
+  <div class="can-can__overlay-message flex-column-centered">
+    <h1>Welcome</h1>
+    <button id='begin-button' class="can-can__begin-button" type="button" name="button" onclick="start();">Begin</button>
   </div>
 </div>
 
@@ -25,6 +24,13 @@
 <style media="screen">
   body{
     background-color: orange;
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    min-width: 100vw;
+    width: 120vw;
+    height: 120vh;
+    min-height: 100vh;
   }
 </style>
 
