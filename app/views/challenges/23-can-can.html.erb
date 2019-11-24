@@ -7,17 +7,43 @@
   </div>
 </div>
 
-<div id="curtains-container">
-  <%= render 'challenges/svgs/can-can/left-curtain-long' %>
-  <%= render 'challenges/svgs/can-can/right-curtain-long' %>
-</div>
 
-<div class="can-can__container">
-  <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
-  <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
-  <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
-  <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"can-can__image--hidden can-can__image--dance can-can__image" %>
-</div>
+<!-- The parent component -->
+<div class="curtain">
+
+    <!-- The component wrapper -->
+  <div class="curtain__wrapper">
+
+    <!-- The checkbox hack! -->
+        <input id="curtain-open-trigger" type="checkbox" checked>
+
+    <!-- The left curtain panel -->
+    <div class="curtain__panel curtain__panel--left">
+      <%= render 'challenges/svgs/can-can/left' %>
+    </div> <!-- curtain__panel -->
+
+    <!-- The prize behind the curtain panels -->
+    <div class="curtain__prize">
+      <div class="can-can__container">
+        <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+        <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+        <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+        <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+      </div>
+    </div> <!-
+    </div> <!-- curtain__prize -->
+
+    <!-- The right curtain panel -->
+    <div class="curtain__panel curtain__panel--right">
+      <%= render 'challenges/svgs/can-can/right' %>
+    </div> <!-- curtain__panel -->
+
+  </div> <!-- curtain__wrapper -->
+</div> <!-- curtain -->
+
+
+
+
 
 <style media="screen">
   body{

@@ -3,6 +3,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 100;
 
   & .can-can__overlay-message {
     background-color: rgba(255,255,255,0.6);
@@ -38,11 +39,6 @@
   }
 }
 
-.can-can__image--hidden {
-  z-index: -100;
-  display: none;
-}
-
 .can-can__image--dance {
   -webkit-animation: can-can-dance 0.33s infinite linear;
 }
@@ -55,20 +51,70 @@
 }
 
 
-.can-can__curtain {
-  height: 100vh;
-  z-index: -1;
+.curtain {
+  width: 100%; /* Ensures the component is the full screen width */
+  height: 100vh; /* We're using this for demo purposes */
+  overflow: hidden; /* Allows us to slide the panels outside the container without them showing */
+}
 
-  &.can-can__left-curtain-align {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+.curtain--left {
+  width: 110%;
+  height: 100%;
+  margin-right: -6em;
+}
 
-  &.can-can__right-curtain-align {
-     position: absolute;
-     left: 50%;
-     top: 0;
-  }
+.curtain--right {
+  width: 110%;
+  height: 100%;
+  margin-left: -2em;
+}
 
+.curtain__wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+input[type=checkbox] {
+  position: absolute; /* Force the checkbox at the start of the container */
+  cursor: pointer; /* Indicate the curtain is clickable */
+  width: 0%; /* The checkbox is as wide as the component */
+  height: 0%; /* The checkbox is as tall as the component */
+  z-index: -100; /* Make sure the checkbox is on top of everything else */
+  opacity: 0; /* hide the checkbox */
+}
+
+/* Slide the first panel in */
+input[type=checkbox]:checked ~ div.curtain__panel--left {
+    transform: translateX(0);
+}
+
+/* Slide the second panel in */
+input[type=checkbox]:checked ~ div.curtain__panel--right {
+    transform: translateX(0);
+}
+
+.curtain__panel {
+  background: orange;
+  width: 50%; /* Each panel takes up half the container */
+  height: 100vh; /* Used for demo purposes */
+  float: left; /* Makes sure panels are side-by-side */
+  position: relative; /* Needed to define the z-index */
+  z-index: 2; /* Places the panels in front of the prize */
+  transition: all 1s ease-out; /* Animates the sliding transition */
+}
+
+.curtain__panel--left {
+  transform: translateX(-100%);
+}
+
+.curtain__panel--right {
+    transform: translateX(100%);
+}
+
+.curtain__prize {
+  background: orange;
+  position: absolute; /* Forces the prize position into the container start */
+  z-index: 1; /* Places the prize behind the panels, which are z-index 2 */
+  width: 100%;
+  height: 100%;
 }
