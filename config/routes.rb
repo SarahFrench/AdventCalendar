@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get '/about', to: 'home#about'
 
   get '/days', to: redirect('/')
+  get '/days/10', to: redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
   resources :challenges, only: [:show], path: '/days'
 
   resources :audio_quiz_answers, only: [:index, :new, :create, :destroy]
