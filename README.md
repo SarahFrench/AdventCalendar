@@ -2,8 +2,15 @@
 
 - [Trello board used to manage tasks, log bug fixes etc](https://trello.com/b/i519TQ0o/advent-calendar)
 
+## Things I've learned:
 
+#### There's a reason why CSS frameworks are popular!
+I fell into a bad habit of making CSS classes for one specific job, which could have been achieved by mixing and matching smaller CSS classes that contained the repeating CSS rules. I had a go using B.E.M naming in some of the CSS but then it meant that reusing CSS was a little jarring, as classes were named based on what page they were originally intended to be used in.
 
+#### Controlling state with vanilla JavaScript is laborious
+One of the main takeaways I had from this project was improving and practicing my JavaScript skills; in my apprenticeship I've been learning JS & Node but it's not often used in my job. By messing around in this project I've had the opportunity to apply the skills I've learned to various problems. In particular I've improved my awareness of Web APIs, including: geolocation, audio & video, localStorage, and drag & drop.
+
+But... the JavaScript for Day 5 (Only Connect) is dense. And since starting to learn Vue at work I can see how that game could be written in a much better, cleaner way. The state, e.g. which rows are selected or sorted, will be easier to monitor and change. And a bonus will be more readable code that is easier to understand due to less 'diving into the DOM'.
 
 ## Notes:
 
