@@ -31,6 +31,11 @@
   display: grid;
   grid-template-columns: [col-0] 25vw [col-1] 25vw [col-2] 25vw [col-3] 25vw [col-4];
   grid-template-rows: [row-0] 100vh [row-1];
+  @media screen and (max-width: 800px) {
+    display: grid;
+    grid-template-columns: [col-0] 50vw [col-1] 50vw [col-2];
+    grid-template-rows: [row-0] 50vh [row-1] 50vh [row-2];
+  }
 }
 
 .can-can__image{
@@ -82,12 +87,24 @@
   height: 100%;
 }
 
+.can-can__cymbal-container {
+  position: relative;
+  top: -60%;
+  left: 25%;
+  @media screen and (max-width: 800px) {
+    top: -50%;
+  }
+}
 
 .cymbal {
   background-color: yellow;
   height: 100px;
   width: 20px;
   display: inline-block;
+  @media screen and (max-width: 800px) {
+    height: 80px;
+    width: 10px;
+  }
 }
 
 .cymbal__left {
