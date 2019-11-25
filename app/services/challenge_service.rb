@@ -11,7 +11,7 @@ class ChallengeService
     7 => 'rapid',
     8 => 'whatsapp',
     9 => 'wide',
-    10 => 'vibrate',
+    10 => 'rick-roll',
     12 => 'bo-jo',
     15 => 'limerick',
     17 => 'pelham',
