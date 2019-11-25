@@ -50,3 +50,10 @@ function menuClose(){
   document.getElementById('menu-area').style.width = '0%';
   document.getElementById('menu-button').style.visibility = "visible";
 }
+
+function resetHomepage(){
+  var choice = confirm("This will make all the panels reappear on the homepage. Do you want to continue?");
+  if (choice) {
+    localStorage.removeItem('advent');
+  }
+}
