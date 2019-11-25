@@ -14,13 +14,13 @@ class ChallengeService
     10 => 'rick-roll',
     11 => 'under-desk',
     12 => 'bo-jo',
+    13 => 'samoyed',
     15 => 'limerick',
     17 => 'pelham',
     18 => 'mealplan',
     19 => 'geolocation',
     20 => 'crossword',
     21 => 'troll-bar',
-    22 => 'samoyed',
     23 => 'can-can',
     25 => 'xmas-day'
   }
