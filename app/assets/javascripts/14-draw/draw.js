@@ -87,11 +87,27 @@ function saveNewDrawing(){
   let response = POSTRequest(title, description, imageData);
 
   response.then(json => {
-    console.log(json)
+    let date = new Date;
+    let time = `${date.getHours()}:${date.getMinutes()}`;
+    if(!jsonIsError(json)){
+      document.getElementById('drawing-save-feedback').innerText = `Image saved at ${time}!`;
+    } else if (json.base64_png[0] === "can't be blank"){
+      document.getElementById('drawing-save-feedback').innerText = `You can't save a blank image!`;
+    } else {
+      document.getElementById('drawing-save-feedback').innerText = `Something went wrong with the save at ${time}!`;
+    }
   }).catch(err => {
-    console.log(err);
+    document.getElementById('drawing-save-feedback').innerText = `Something went wrong, there was an error`;
   })
 }
+
+
+function jsonIsError(json){
+  return (
+    (json.title === undefined || json.description === undefined || json.base64_png === undefined)
+  )
+}
+
 
 async function POSTRequest(title, description, imageData){
   let csrfToken = document.querySelectorAll('meta[name=csrf-token]')[0].content;
