@@ -17,7 +17,7 @@
       <tr>
         <td><%= drawing.title %></td>
         <td><%= drawing.description %></td>
-        <td><%= drawing.base64_png %></td>
+        <td> <img src="<%=drawing.base64_png%>" </td>
         <td><%= link_to 'Show', drawing %></td>
         <td><%= link_to 'Edit', edit_drawing_path(drawing) %></td>
         <td><%= link_to 'Destroy', drawing, method: :delete, data: { confirm: 'Are you sure?' } %></td>

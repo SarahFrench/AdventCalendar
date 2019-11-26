@@ -95,7 +95,6 @@ function saveNewDrawing(){
 
 async function POSTRequest(title, description, imageData){
   let csrfToken = document.querySelectorAll('meta[name=csrf-token]')[0].content;
-  console.log(csrfToken);
 
   const response = await fetch('/drawings.json', {
       method: 'POST',
