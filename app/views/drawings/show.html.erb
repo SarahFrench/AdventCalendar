@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @drawing.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @drawing.description %>
+</p>
+
+<p>
+  <strong>Base64 png:</strong>
+  <%= @drawing.base64_png %>
+</p>
+
+<%= link_to 'Edit', edit_drawing_path(@drawing) %> |
+<%= link_to 'Back', drawings_path %>
