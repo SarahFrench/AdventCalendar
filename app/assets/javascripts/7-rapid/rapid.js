@@ -220,8 +220,7 @@ function recordNewScore(){
 
 function jsonIsError(json){
   return (
-    (json.name === undefined || json.score === undefined) ||
-    (typeof json.name === 'array' || typeof json.score === 'array')
+    (json.name === undefined || json.score === undefined)
   )
 }
 
