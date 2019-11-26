@@ -15,10 +15,53 @@
 </div>
 
   <div class="can-can__container">
-    <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"can-can__image--dance can-can__image can-can__top" %>
-    <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"can-can__image--dance can-can__image" %>
-    <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"can-can__image--dance can-can__image can-can__top" %>
-    <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+    <div class="can-can__dancer-and-cymbal">
+      <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"can-can__image--dance can-can__image can-can__top" %>
+      <div class="can-can__cymbal-container can-can__image--dance">
+        <div class="cymbal cymbal__left">
+          <%= render 'challenges/svgs/can-can/cymbals/left-cymbal' %>
+        </div>
+        <div class="cymbal cymbal__right">
+          <%= render 'challenges/svgs/can-can/cymbals/right-cymbal' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="can-can__dancer-and-cymbal">
+      <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+      <div class="can-can__cymbal-container can-can__image--dance">
+        <div class="cymbal cymbal__left">
+          <%= render 'challenges/svgs/can-can/cymbals/left-cymbal' %>
+        </div>
+        <div class="cymbal cymbal__right">
+          <%= render 'challenges/svgs/can-can/cymbals/right-cymbal' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="can-can__dancer-and-cymbal">
+      <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"can-can__image--dance can-can__image can-can__top" %>
+      <div class="can-can__cymbal-container can-can__image--dance">
+        <div class="cymbal cymbal__left">
+          <%= render 'challenges/svgs/can-can/cymbals/left-cymbal' %>
+        </div>
+        <div class="cymbal cymbal__right">
+          <%= render 'challenges/svgs/can-can/cymbals/right-cymbal' %>
+        </div>
+      </div>
+    </div>
+
+    <div class="can-can__dancer-and-cymbal">
+      <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+      <div class="can-can__cymbal-container can-can__image--dance">
+        <div class="cymbal cymbal__left">
+          <%= render 'challenges/svgs/can-can/cymbals/left-cymbal' %>
+        </div>
+        <div class="cymbal cymbal__right">
+          <%= render 'challenges/svgs/can-can/cymbals/right-cymbal' %>
+        </div>
+      </div>
+    </div>
   </div>
 
 
