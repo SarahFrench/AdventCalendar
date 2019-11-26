@@ -78,3 +78,32 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
 })
+
+function saveNewDrawing(){
+  let title = document.getElementById('image-title').value;
+  let description = document.getElementById('image-description').value;
+  let imageData = document.getElementsByTagName('canvas')[0].toDataURL();
+
+  let response = POSTRequest(title, description, imageData);
+
+  response.then(json => {
+    console.log(json)
+  }).catch(err => {
+    console.log(err);
+  })
+}
+
+async function POSTRequest(title, description, imageData){
+  let csrfToken = document.querySelectorAll('meta[name=csrf-token]')[0].content;
+  console.log(csrfToken);
+
+  const response = await fetch('/drawings.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json', 'X-CSRF-Token': `${csrfToken}`
+      },
+      body: `{"drawing":{"title":"${title}", "description":"${description}", "base64_png":"${imageData}"}}`
+    });
+
+    return await response.json();
+}

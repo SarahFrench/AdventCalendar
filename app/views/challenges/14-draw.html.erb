@@ -27,4 +27,10 @@
   <a id="download-button" >Download your drawing</a>
 </button>
 
+<div class="">
+  <label for="title">Your image's title:</label><input id="image-title" type="text" name="title" value="">
+  <label for="description">Your image's description:</label><input id="image-description"  type="text" name="description" value="">
+</div>
+<button type="button" name="button" onclick="saveNewDrawing();">Save your drawing</button>
+
 <%= javascript_include_tag '14-draw/draw.js' %>
