@@ -226,13 +226,8 @@ function jsonIsError(json){
 }
 
 async function POSTRequest(name, score){
-  let csrfToken;
-  let metas= document.getElementsByTagName('meta');
-  for(let i=0; i < metas.length; i++){
-    if(metas[i].name === "csrf-token"){
-      csrfToken= metas[i].content;
-    }
-  }
+
+  let csrfToken = document.querySelectorAll('meta[name=csrf-token]')[0].content;
 
   const response = await fetch('/click_scores.json', {
       method: 'POST',

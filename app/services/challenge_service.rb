@@ -15,6 +15,7 @@ class ChallengeService
     11 => 'under-desk',
     12 => 'bo-jo',
     13 => 'samoyed',
+    14 => 'draw',
     15 => 'limerick',
     17 => 'pelham',
     18 => 'mealplan',
