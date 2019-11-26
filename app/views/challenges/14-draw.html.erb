@@ -1,0 +1,30 @@
+<h1>Draw something in the canvas below</h1>
+<h3>You can choose different colours and brush size</h3>
+<canvas class="draw" width="600" height="400"></canvas>
+<div>
+  <input id='brush-size' type="range" list="tickmarks" min="1" max="20" step="2" value="10">
+    <datalist id="tickmarks">
+      <option value="1"></option>
+      <option value="5"></option>
+      <option value="10"></option>
+      <option value="15"></option>
+      <option value="20"></option>
+      </datalist>
+  <label for="brush-size">Brush size = <span id="brush-size-display">10</span></label>
+</div>
+<button id="undo-button">
+  Undo last brush stroke
+</button>
+<div>
+  <div id="#000000" class="draw__colour-swatch" style="background-color:#000000;"></div>
+  <div id="#FFFFFF" class="draw__colour-swatch" style="background-color:#FFFFFF;"></div>
+  <div id="#FF0000" class="draw__colour-swatch" style="background-color:#FF0000;"></div>
+  <div id="#FFFF00" class="draw__colour-swatch" style="background-color:#FFFF00;"></div>
+  <div id="#0000FF" class="draw__colour-swatch" style="background-color:#0000FF;"></div>
+
+</div>
+<button>
+  <a id="download-button" >Download your drawing</a>
+</button>
+
+<%= javascript_include_tag '14-draw/draw.js' %>
