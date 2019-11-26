@@ -50,10 +50,21 @@ document.addEventListener('DOMContentLoaded', function(){
         if (audio.currentTime > 36.0 && audio.currentTime < 36.5){
           // correct timing for a big change
           //Need to use boolean to enforce once only, or make upper limit 36.2?
-          console.log("NOW");
+          showCymbals();
         }
+        if(audio.currentTime > 36.0){
+          document.body.style.backgroundColor = (document.body.style.backgroundColor == "orange") ? "teal" : "orange";
+        }
+
   })
 })
+
+function showCymbals(){
+  let cymbals = document.getElementsByClassName('can-can__cymbal--hidden');
+  while(cymbals[0]){
+    cymbals[0].classList.remove('can-can__cymbal--hidden');
+  }
+}
 
 function swapToSpin(dancers){
   dancers[0].classList.remove('can-can__image--dance')
