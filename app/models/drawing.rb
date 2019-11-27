@@ -1,4 +1,5 @@
 class Drawing < ApplicationRecord
+  scope :newest_first, -> { reorder(created_at: :desc) }
 
   validate :image_cannot_be_blank
 
