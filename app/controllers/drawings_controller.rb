@@ -7,20 +7,6 @@ class DrawingsController < ApplicationController
     @drawings = Drawing.all
   end
 
-  # GET /drawings/1
-  # GET /drawings/1.json
-  def show
-  end
-
-  # GET /drawings/new
-  def new
-    @drawing = Drawing.new
-  end
-
-  # GET /drawings/1/edit
-  def edit
-  end
-
   # POST /drawings
   # POST /drawings.json
   def create
@@ -37,26 +23,12 @@ class DrawingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /drawings/1
-  # PATCH/PUT /drawings/1.json
-  def update
-    respond_to do |format|
-      if @drawing.update(drawing_params)
-        format.html { redirect_to @drawing, notice: 'Drawing was successfully updated.' }
-        format.json { render :show, status: :ok, location: @drawing }
-      else
-        format.html { render :edit }
-        format.json { render json: @drawing.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /drawings/1
   # DELETE /drawings/1.json
   def destroy
     @drawing.destroy
     respond_to do |format|
-      format.html { redirect_to drawings_url, notice: 'Drawing was successfully destroyed.' }
+      format.html { redirect_to days_14_drawings_path, notice: 'Drawing was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

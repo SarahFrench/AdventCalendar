@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :drawings
   root to: 'home#index'
   get '/about', to: 'home#about'
 
@@ -10,6 +9,10 @@ Rails.application.routes.draw do
   resources :audio_quiz_answers, only: [:index, :new, :create, :destroy]
   resources :whatsapp_stats
   resources :click_scores
+  
+  resources :drawings, only: [:create, :show, :destroy]
+  get '/days/14/drawings', to: 'drawings#index'
+
 
   get '/crossword-answers', to: 'crossword#answers'
   get '/top-five-rapid-clicks', to: 'click_scores#top_five'
