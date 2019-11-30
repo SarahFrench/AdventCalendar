@@ -16,12 +16,12 @@
   <div id="audio-answer-form" class="audio__form" style="visibility:hidden;">
     <%= form_with(model: @audio_quiz_answer, local: true) do |form| %>
     <div class="field audio__field">
-      <%= form.label :who, class:"audio__label d-block-on-mobile"%>
+      <%= form.label "Who's your new girlfriend?", class:"audio__label d-block-on-mobile"%>
       <%= form.text_field :who, class:"audio__textfield" %>
     </div>
 
     <div class="field audio__field">
-      <%= form.label :called, class:"audio__label d-block-on-mobile" %>
+      <%= form.label "And what is she called?", class:"audio__label d-block-on-mobile" %>
       <%= form.text_field :called, class:"audio__textfield" %>
     </div>
 
