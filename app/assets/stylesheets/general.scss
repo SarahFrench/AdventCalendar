@@ -93,6 +93,30 @@ body{
   }
 }
 
+.ml {
+  &-1{
+    margin-left: 1em;
+  }
+  &-2{
+    margin-left: 2em;
+  }
+  &-3{
+    margin-left: 3em;
+  }
+}
+
+.mr {
+  &-1{
+    margin-right: 1em;
+  }
+  &-2{
+    margin-right: 2em;
+  }
+  &-3{
+    margin-right: 3em;
+  }
+}
+
 .d-block{
   display: block;
 }

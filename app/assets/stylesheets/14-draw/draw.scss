@@ -8,3 +8,24 @@ canvas.draw {
   border: solid 1px black;
   display: inline-block;
 }
+
+.draw__font{
+  font-family: 'Poiret One', cursive;
+}
+
+.draw__button {
+  font-family: sans-serif;
+  background-color: white;
+  padding: 10px 15px;
+  border-radius: 10px;
+}
+
+.draw__under-canvas-area{
+  display: flex;
+  flex-direction: row;
+}
+
+.draw__description {
+  width: 200px;
+  height: 100px;
+}
