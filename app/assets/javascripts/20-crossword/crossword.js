@@ -32,9 +32,11 @@ document.addEventListener('DOMContentLoaded', function(){
 
 })
 
-function clearAnswers(){
+function clearAnswersRemoveMessage(){
   saveAnswers('[]');
   fillInBoxes({});
+  let el = document.getElementsByClassName('crossword__message')[0];
+  el.innerText = '';
 }
 
 function removeErrorHighlight(){

@@ -30,6 +30,10 @@ class ChallengeService
     @day_of_month ||= day_of_month
   end
 
+  def day_of_month
+    @day_of_month
+  end
+
   def accessible?
     if in_development_mode?
       #in development mode I can see any page

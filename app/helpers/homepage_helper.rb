@@ -10,10 +10,26 @@ module HomepageHelper
 
   def is_it_xmas_day?
     if Time.now.year == 2019
-      (Time.now.day == 25 && Time.now.month == 12) ? true : false
+      (Time.now.day >= 25 && Time.now.month == 12) ? true : false
     else
       true
     end
+  end
+
+  def menu_links_html
+    html = ""
+    if Time.now.year == 2019
+      for i in (1..Time.now.day)
+        if i < 26
+          html += "<a href=\"/days/#{i}\" class=\"menu-link pad-left\" >Day #{i}</a>"
+        end
+      end
+    else
+      for i in (1..25)
+        html += "<a href=\"/days/#{i}\" class=\"menu-link pad-left\" >Day #{i}</a>"
+      end
+    end
+    html.html_safe
   end
 
 end
