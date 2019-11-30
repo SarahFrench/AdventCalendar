@@ -355,11 +355,12 @@
     <div class="crossword__box bg-black"></div>
     <input id="check-answers-button" class="submit-button crossword__button--style" type="submit">
   </div>
+  <p class="text-center crossword__message"></p>
   </section>
   <section class="crossword__clues mt-1">
     <p class="text-center">Click on a clue it'll highlight the relevant boxes</p>
     <div class="crossword__buttons">
-      <button id="remove-answers" class="crossword__button--style" type="button" style="width:inherit;" onclick="clearAnswers();">Clear answers</button>
+      <button id="remove-answers" class="crossword__button--style" type="button" style="width:inherit;" onclick="clearAnswersRemoveMessage();">Clear answers</button>
       <button id="remove-highlight" class="crossword__button--style" type="button">Remove highlight</button>
     </div>
 
