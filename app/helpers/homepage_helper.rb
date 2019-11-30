@@ -10,7 +10,7 @@ module HomepageHelper
 
   def is_it_xmas_day?
     if Time.now.year == 2019
-      (Time.now.day == 25 && Time.now.month == 12) ? true : false
+      (Time.now.day >= 25 && Time.now.month == 12) ? true : false
     else
       true
     end
