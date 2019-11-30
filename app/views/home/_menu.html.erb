@@ -8,8 +8,6 @@
   <hr class="menu-horizontal-rule">
 
   <div class="menu-links-container">
-    <% for i in (1..Time.now.day)%>
-      <a href="<%="/days/#{i}"%> " class="menu-link pad-left" ><%= "Day #{i}"%> </a>
-    <% end %>
+    <%= menu_links_html%>
   </div>
 </div>
