@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
 
-<div class="flex-column-centered">
+<div class="flex-column-centered mr-1 ml-1 mt-2 mb-3">
 
 
   <h1 class="draw__font">Please draw something for me in the canvas below!</h1>
@@ -19,14 +19,14 @@
         <div id="#0000FF" class="draw__colour-swatch" style="background-color:#0000FF;"></div>
       </div>
 
-      <input id='brush-size' type="range" list="tickmarks" min="1" max="20" step="2" value="10">
+      <input id='brush-size' type="range" list="tickmarks" min="1" max="20" step="1" value="10">
         <datalist id="tickmarks">
           <option value="1"></option>
           <option value="5"></option>
           <option value="10"></option>
           <option value="15"></option>
           <option value="20"></option>
-          </datalist>
+        </datalist>
       <label for="brush-size" class="d-block mb-1">Brush size = <span id="brush-size-display">10</span></label>
 
       <button id="undo-button" class="draw__button d-block"">

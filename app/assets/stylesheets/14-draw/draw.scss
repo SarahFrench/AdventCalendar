@@ -23,6 +23,9 @@ canvas.draw {
 .draw__under-canvas-area{
   display: flex;
   flex-direction: row;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 }
 
 .draw__description {
