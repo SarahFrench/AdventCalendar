@@ -35,16 +35,7 @@ class ChallengeService
   end
 
   def accessible?
-    if in_development_mode?
-      #in development mode I can see any page
-      true
-    elsif being_viewed_after_2019?
-      #after Dec 2019 all pages are visible in the deployed project whenever you visit
-      true
-    else
-      #In December 2019 you need to wait to see each day!
-      @day_of_month < (Time.now.day + 1)
-    end
+    true
   end
 
   def route
