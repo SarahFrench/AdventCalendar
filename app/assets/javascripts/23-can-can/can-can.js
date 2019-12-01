@@ -14,6 +14,9 @@ document.addEventListener('DOMContentLoaded', function(){
       // console.log(audio.currentTime);
         if(audio.currentTime > 9.5 && audio.currentTime < 11){
           curtain.classList.add('curtain--up');
+          for(let i=0; i < dancers.length; i++){
+            dancers[i].classList.remove('hidden');
+          }
         }
         // 1
         if(audio.currentTime > 20.5 && audio.currentTime < 21.0){

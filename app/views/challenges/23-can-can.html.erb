@@ -4,7 +4,8 @@
 <div id="overlay" class="child-centered-in-parent can-can__dark-overlay">
   <div class="can-can__overlay-message flex-column-centered">
     <h1>Welcome to the show</h1>
-    <p>Sound up!</p>
+    <p>If you're on mobile please zoom so the curtain fits the page. CSS is hard :'( </p>
+    <p>Sound up! Warning: flashing lights</p>
     <i class="fa fa-volume-up mb-3" aria-hidden="true"></i>
     <button id='begin-button' class="can-can__begin-button" type="button" name="button" onclick="start();">Begin</button>
   </div>
@@ -16,7 +17,7 @@
 
   <div class="can-can__container">
     <div class="can-can__dancer-and-cymbal">
-      <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"can-can__image--dance can-can__image can-can__top" %>
+      <%= image_tag ENV['CAN_CAN_1_IMG_URL'], class:"hidden can-can__image--dance can-can__image can-can__top" %>
       <div class="can-can__cymbal-container can-can__image--dance">
         <div class="cymbal cymbal__left">
           <%= render 'challenges/svgs/can-can/cymbals/left-cymbal' %>
@@ -28,7 +29,7 @@
     </div>
 
     <div class="can-can__dancer-and-cymbal">
-      <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+      <%= image_tag ENV['CAN_CAN_2_IMG_URL'], class:"hidden can-can__image--dance can-can__image" %>
       <div class="can-can__cymbal-container can-can__image--dance">
         <div class="cymbal cymbal__left">
           <%= render 'challenges/svgs/can-can/cymbals/left-cymbal' %>
@@ -40,7 +41,7 @@
     </div>
 
     <div class="can-can__dancer-and-cymbal">
-      <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"can-can__image--dance can-can__image can-can__top" %>
+      <%= image_tag ENV['CAN_CAN_3_IMG_URL'], class:"hidden can-can__image--dance can-can__image can-can__top" %>
       <div class="can-can__cymbal-container can-can__image--dance">
         <div class="cymbal cymbal__left">
           <%= render 'challenges/svgs/can-can/cymbals/left-cymbal' %>
@@ -52,7 +53,7 @@
     </div>
 
     <div class="can-can__dancer-and-cymbal">
-      <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"can-can__image--dance can-can__image" %>
+      <%= image_tag ENV['CAN_CAN_4_IMG_URL'], class:"hidden can-can__image--dance can-can__image" %>
       <div class="can-can__cymbal-container can-can__image--dance">
         <div class="cymbal cymbal__left">
           <%= render 'challenges/svgs/can-can/cymbals/left-cymbal' %>
