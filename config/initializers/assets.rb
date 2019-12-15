@@ -26,8 +26,8 @@ Rails.application.config.assets.precompile += %w[
   13-samoyed/*.js
   14-draw/*.js
   16-connect-again/*.js
+  17-troll-bar/*.js
   19-geolocation/*.js
   20-crossword/*.js
-  21-troll-bar/*.js
   23-can-can/*.js
 ]
