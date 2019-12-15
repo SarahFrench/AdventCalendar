@@ -18,11 +18,11 @@ class ChallengeService
     14 => 'draw',
     15 => 'limerick',
     16 => 'connect-again',
-    17 => 'pelham',
+    17 => 'troll-bar',
     18 => 'mealplan',
     19 => 'geolocation',
     20 => 'crossword',
-    21 => 'troll-bar',
+    21 => 'pelham',
     23 => 'can-can',
     25 => 'xmas-day'
   }
