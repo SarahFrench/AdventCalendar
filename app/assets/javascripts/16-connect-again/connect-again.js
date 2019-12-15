@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function(){
 class Game {
   constructor(){
     this.answers = {
-      1: ['film', 'video', 'secret'],
+      1: ['film', 'video', 'secret', 'sarah'],
       2: ['stuff Sarah does', 'Sarah', 'sarah', 'lame', 'stuff'],
       3: ['Mum', 'mum', 'mum text', 'Natalie text', 'Mum\'s', "mum's", "text"],
       4: ['first date', 'Brown Derby', 'date', 'first', 'pub'],
