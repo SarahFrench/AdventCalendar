@@ -17,6 +17,7 @@ class ChallengeService
     13 => 'samoyed',
     14 => 'draw',
     15 => 'limerick',
+    16 => 'connect-again',
     17 => 'pelham',
     18 => 'mealplan',
     19 => 'geolocation',
