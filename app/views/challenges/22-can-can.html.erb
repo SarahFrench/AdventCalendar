@@ -1,4 +1,4 @@
-<%= audio_tag 'can-can.m4a' %>
+<%= audio_tag ENV['CAN_CAN_AUDIO_URL'], id: 'audio' %>
 
 
 <div id="overlay" class="child-centered-in-parent can-can__dark-overlay">
@@ -82,4 +82,4 @@
   }
 </style>
 
-<%= javascript_include_tag '23-can-can/can-can.js'%>
+<%= javascript_include_tag '22-can-can/can-can.js'%>

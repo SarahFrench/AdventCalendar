@@ -23,7 +23,7 @@ class ChallengeService
     19 => 'geolocation',
     20 => 'crossword',
     21 => 'pelham',
-    23 => 'can-can',
+    22 => 'can-can',
     25 => 'xmas-day'
   }
 
