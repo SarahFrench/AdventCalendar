@@ -1,6 +1,6 @@
 <style media="screen">
   body {
-    background-image: url('https://res.cloudinary.com/dl1rwtqzi/image/upload/v1577061246/carpet_dqn7il.jpg');
+    background-image: url(<%=ENV['CARPET_IMG_URL']%>);
         background-size: contain;
   }
 </style>
@@ -28,32 +28,32 @@
           <div class="dingbats">
             <div class="mb-1">
               <div class="quiz__number comic-sans">Q1</div>
-              <%= image_tag 'pub-quiz/dingbats1.png', class:'dingbats__image' %>
+              <%= image_tag ENV['DINGBATS_IMG_1'], class:'dingbats__image' %>
               <%= form.text_field :q1answer, class: "quiz__input d-block" %>
             </div>
             <div class="mb-1">
               <div class="quiz__number comic-sans">Q2</div>
-              <%= image_tag 'pub-quiz/dingbats2.png', class:'dingbats__image' %>
+              <%= image_tag ENV['DINGBATS_IMG_2'], class:'dingbats__image' %>
               <%= form.text_field :q2answer, class: "quiz__input d-block" %>
             </div>
             <div class="mb-1">
               <div class="quiz__number comic-sans">Q3</div>
-              <%= image_tag 'pub-quiz/dingbats3.png', class:'dingbats__image' %>
+              <%= image_tag ENV['DINGBATS_IMG_3'], class:'dingbats__image' %>
               <%= form.text_field :q3answer, class: "quiz__input d-block" %>
             </div>
             <div class="mb-1">
               <div class="quiz__number comic-sans">Q4</div>
-              <%= image_tag 'pub-quiz/dingbats4.png', class:'dingbats__image' %>
+              <%= image_tag ENV['DINGBATS_IMG_4'], class:'dingbats__image' %>
               <%= form.text_field :q4answer, class: "quiz__input d-block" %>
             </div>
             <div class="mb-1">
               <div class="quiz__number comic-sans">Q5</div>
-              <%= image_tag 'pub-quiz/dingbats5.png', class:'dingbats__image' %>
+              <%= image_tag ENV['DINGBATS_IMG_5'], class:'dingbats__image' %>
               <%= form.text_field :q5answer, class: "quiz__input d-block" %>
             </div>
             <div class="mb-1">
               <div class="quiz__number comic-sans">Q6</div>
-              <%= image_tag 'pub-quiz/dingbats6.png', class:'dingbats__image' %>
+              <%= image_tag ENV['DINGBATS_IMG_6'], class:'dingbats__image' %>
               <%= form.text_field :q6answer, class: "quiz__input d-block" %>
             </div>
           </div>
@@ -63,7 +63,7 @@
           <section id="photo-1" class="flex-column-centered mb-2">
             <div class="polaroid flex-column-centered mt-0">
               <div class="quiz__number comic-sans">Q7</div>
-              <%= image_tag 'pub-quiz/picture1.jpg', id:"photo-1", class:"photo"%>
+              <%= image_tag ENV['PUB_QUIZ_PHOTO_1'], id:"photo-1", class:"photo"%>
               <div class="polaroid__bottom">
                 <p class="comic-sans">Where did you show me this?</p>
                 <%= form.text_field :q7answer, class: "quiz__input d-block" %>
@@ -73,7 +73,7 @@
           <section id="photo-2" class="flex-column-centered mb-2">
             <div class="polaroid flex-column-centered mt-0">
               <div class="quiz__number comic-sans">Q8</div>
-              <%= image_tag 'pub-quiz/picture2.png', id:"photo-2", class:"photo"%>
+              <%= image_tag ENV['PUB_QUIZ_PHOTO_2'], id:"photo-2", class:"photo"%>
               <div class="polaroid__bottom">
                 <p class="comic-sans">What did the image classification say I looked like?</p>
                 <%= form.text_field :q8answer, class: "quiz__input d-block" %>
@@ -83,7 +83,7 @@
           <section id="photo-3" class="flex-column-centered mb-2">
             <div class="polaroid flex-column-centered mt-0">
               <div class="quiz__number comic-sans">Q9</div>
-              <%= image_tag 'pub-quiz/picture3.jpg', id:"photo-3", class:"photo"%>
+              <%= image_tag ENV['PUB_QUIZ_PHOTO_3'], id:"photo-3", class:"photo"%>
               <div class="polaroid__bottom">
                 <p class="comic-sans">What got hurt in this performance?</p>
                 <%= form.text_field :q9answer, class: "quiz__input d-block" %>
@@ -93,7 +93,7 @@
           <section id="photo-4" class="flex-column-centered mb-2">
             <div class="polaroid flex-column-centered mt-0">
               <div class="quiz__number comic-sans">Q10</div>
-              <%= image_tag 'pub-quiz/picture4.jpg', id:"photo-4", class:"photo"%>
+              <%= image_tag ENV['PUB_QUIZ_PHOTO_4'], id:"photo-4", class:"photo"%>
               <div class="polaroid__bottom">
                 <p class="comic-sans">What were we doing this evening before you fell asleep in our Uber?</p>
                 <%= form.text_field :q10answer, class: "quiz__input d-block" %>
