@@ -1,11 +1,3 @@
-// .timeline {
-//   background-color: #aaaaaa;
-//   position: absolute;
-//   top: 0;
-//   left: 50%;
-//   width: 5px;
-//   height: 100vh;
-// }
 
 .timeline__container {
   width: 100vw;
@@ -67,4 +59,8 @@
 
 .blue-tick--second {
   margin-left: -0.5em;
+}
+
+.arial {
+  font-family: sans-serif;
 }
