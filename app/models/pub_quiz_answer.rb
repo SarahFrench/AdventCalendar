@@ -1,0 +1,2 @@
+class PubQuizAnswer < ApplicationRecord
+end

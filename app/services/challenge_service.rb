@@ -24,6 +24,7 @@ class ChallengeService
     20 => 'crossword',
     21 => 'pelham',
     22 => 'can-can',
+    23 => 'pub-quiz',
     25 => 'xmas-day'
   }
 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :pub_quiz_answers
   root to: 'home#index'
   get '/about', to: 'home#about'
 

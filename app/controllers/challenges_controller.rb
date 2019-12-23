@@ -2,6 +2,7 @@ class ChallengesController < ApplicationController
 
   before_action :set_challenge, only: [:show]
   before_action :new_audio_quiz_answer, only: [:show]
+  before_action :new_pub_quiz_answer, only: [:show]
 
   def show
 
@@ -21,6 +22,10 @@ class ChallengesController < ApplicationController
 
   def new_audio_quiz_answer()
     @audio_quiz_answer = AudioQuizAnswer.new if @challenge.day_of_month === 6
+  end
+
+  def new_pub_quiz_answer()
+    @pub_quiz_answer = PubQuizAnswer.new if @challenge.day_of_month === 23
   end
 
 end
