@@ -30,4 +30,5 @@ Rails.application.config.assets.precompile += %w[
   19-geolocation/*.js
   20-crossword/*.js
   22-can-can/*.js
+  23-pub-quiz/*.js
 ]
