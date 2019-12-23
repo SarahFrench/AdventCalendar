@@ -1,0 +1,47 @@
+<%= form_with(model: pub_quiz_answer, local: true) do |form| %>
+  <% if pub_quiz_answer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(pub_quiz_answer.errors.count, "error") %> prohibited this pub_quiz_answer from being saved:</h2>
+
+      <ul>
+      <% pub_quiz_answer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :teamname %>
+    <%= form.text_field :teamname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :q1answer %>
+    <%= form.text_field :q1answer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :q2answer %>
+    <%= form.text_field :q2answer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :q3answer %>
+    <%= form.text_field :q3answer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :q4answer %>
+    <%= form.text_field :q4answer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :q5answer %>
+    <%= form.text_field :q5answer %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

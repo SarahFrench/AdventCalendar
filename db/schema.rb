@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_212635) do
+ActiveRecord::Schema.define(version: 2019_12_23_020605) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,30 @@ ActiveRecord::Schema.define(version: 2019_11_26_212635) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "pub_quiz_answers", force: :cascade do |t|
+    t.string "teamname"
+    t.string "q1answer"
+    t.string "q2answer"
+    t.string "q3answer"
+    t.string "q4answer"
+    t.string "q5answer"
+    t.string "q6answer"
+    t.string "q7answer"
+    t.string "q8answer"
+    t.string "q9answer"
+    t.string "q10answer"
+    t.string "q11answer"
+    t.string "q12answer"
+    t.string "q13answer"
+    t.string "q14answer"
+    t.string "q15answer"
+    t.string "q16answer"
+    t.string "q17answer"
+    t.string "q18answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "whatsapp_stats", force: :cascade do |t|
