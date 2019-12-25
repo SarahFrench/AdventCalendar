@@ -5,13 +5,97 @@
     document.getElementsByClassName('back-button')[0].style.color="white"
   })
 </script>
+<%= audio_tag ENV['HUGO_NERD_SPEAK_AUDIO_URL'], id: 'audio' %>
+<%= javascript_include_tag '25-xmas-day/xmas-day.js' %>
+
 <div class="flex-column-centered">
   <%= image_tag ENV['XMAS_DAY_IMG_URL'], class: "xmas-day__image" %>
 </div>
 <div class="xmas__container">
   <h1 class="xmas_message--header">Merry Christmas Hugo</h1>
-  <p class="xmas_message--body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus rutrum tellus pellentesque eu tincidunt tortor aliquam nulla. Pharetra convallis posuere morbi leo urna. Arcu non sodales neque sodales ut etiam. Condimentum id venenatis a condimentum vitae sapien pellentesque habitant morbi. Donec ultrices tincidunt arcu non sodales. Elementum nisi quis eleifend quam adipiscing vitae. Vitae suscipit tellus mauris a diam maecenas sed enim ut. Id aliquet risus feugiat in ante metus dictum at. Enim sit amet venenatis urna cursus. Facilisis volutpat est velit egestas dui. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam. Tellus in hac habitasse platea. Sed risus pretium quam vulputate dignissim suspendisse in est. Ultricies integer quis auctor elit sed vulputate mi sit amet. Interdum posuere lorem ipsum dolor sit. Orci ac auctor augue mauris augue neque gravida in fermentum. Ipsum faucibus vitae aliquet nec. In iaculis nunc sed augue lacus viverra vitae congue eu. Magna etiam tempor orci eu lobortis elementum nibh tellus.</p>
+  <p class="xmas_message--body">The picture above is the one I drew to make the homepage design :) </p>
 
-  <p class="xmas_message--body">Sagittis id consectetur purus ut faucibus. Ac tortor vitae purus faucibus ornare suspendisse sed. Ultricies mi quis hendrerit dolor. Eget nunc scelerisque viverra mauris in aliquam. Eu facilisis sed odio morbi. Ultrices in iaculis nunc sed. Pellentesque eu tincidunt tortor aliquam. Tellus orci ac auctor augue mauris augue neque. Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Auctor urna nunc id cursus metus aliquam. At risus viverra adipiscing at in tellus integer. Justo eget magna fermentum iaculis. Arcu cursus vitae congue mauris rhoncus aenean vel.</p>
+  <p class="xmas_message--body">I wasn't sure what to put for this day because I figured you'd expect some massive show-stopper day. The idea I had was kind of a year in review, like you suggested we do together. It'd be cute to do it IRL, but here's my version.</p>
+  <p class="xmas_message--body mb-3">Right now I have 357 (!) starred messages in WhatsApp for our chat. Everytime you said something cute, or something happened that felt like a milestone, I starred it (I'm lame). Below are some highlights :)</p>
 
+<div class="xmas-timeline">
+  <div class="timeline">
+  <div class="timeline__container left">
+    <div class="content">
+      <h4 class="xmas_message--header">Dec'18</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_DEC1'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">I loved how we just clicked on WhatsApp in the beginning and that you felt the same way. Also that moment during our date was a good previous of our bantz to come :)</p>
+    </div>
+  </div>
+  <div class="timeline__container right">
+    <div class="content">
+      <h4 class="xmas_message--header">Dec'18</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_DECJAN2'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">I was trying to play it cool here and totally expected you to say no thanks to spending the whole day together. But when you said yes I was SOOOO pumped</p>
+    </div>
+  </div>
+  <div class="timeline__container left">
+    <div class="content">
+      <h4 class="xmas_message--header">Feb'19</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_FEB3'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">There were a few times when you messaged me out of the blue about feeling happy, and obviously I loved it and felt the same way. I really admire(d) how forthcoming you were with things during early dating, and by dating you I've definitely become a lot better at expressing myself ❤️</p>
+    </div>
+  </div>
+  <div class="timeline__container right">
+    <div class="content">
+      <h4 class="xmas_message--header">March'19</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_MAR4'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">I'm gonna immediately undercut what I just said above, lol. Basically I starred things when I didn't think saying how they made me felt was a good idea; didn't want to be too keen. So when you said this and hinted about us living together I starred it in like 0.6 seconds</p>
+    </div>
+  </div>
+  <div class="timeline__container left">
+    <div class="content">
+      <h4 class="xmas_message--header">April'19</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_APR5'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">I wanted a cute house husband boi who makes me cool food AND I GOT HIM YAYAYAYAYA #HouseSpouseLad</p>
+    </div>
+  </div>
+  <div class="timeline__container right">
+    <div class="content">
+      <h4 class="xmas_message--header">May'19</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_MAY6'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">This was after we went to A&E for the glass in my foot 😅, and had fun in the waiting room with a picnic and you teaching me how to do cryptic crosswords. You make boring everyday life so much fun xxx</p>
+    </div>
+  </div>
+  <div class="timeline__container left">
+    <div class="content">
+      <h4 class="xmas_message--header">June'19</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_JUN7'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">Hugo's a broody boi nah nah nah-nah naahhhhh</p>
+    </div>
+  </div>
+  <div class="timeline__container right">
+    <div class="content">
+      <h4 class="xmas_message--header">August'19</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_AUG8'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">It's weird thinking back to when we didn't live together tbh, because I can't imagine not living with you now. </p>
+    </div>
+  </div>
+  <div class="timeline__container left">
+    <div class="content">
+      <h4 class="xmas_message--header">Sept'19</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_SEP9'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">When you randomly text me that you love me it makes my day. Also I love how we are on the same weirdo wavelength</p>
+    </div>
+  </div>
+  <div class="timeline__container right">
+    <div class="content">
+      <h4 class="xmas_message--header">Dec'19</h4>
+      <%= image_tag ENV['XMAS_DAY_IMG_DEC10'], class: "xmas-timeline__img" %>
+      <p class="xmas-timeline__text">Being included in this collage meant so much to me, and its been so so so nice getting to know your family over the year. I remember how nervous I was when I first met your parents at the Southbank Centre (alone!!!!), and when meeting Sam charity shopping. I hope you get to feel as much a part of my family as I have with yours</p>
+    </div>
+  </div>
+</div>
+</div>
+<p class="xmas_message--body mt-3">This year's been absolutely magical and I can't wait for the years ahead. You're the kindest, goofiest, fartist, loveliest man I know and I'm the luckiest girl in the world xxxx </p>
+<div class="text-center xmas-timeline__heart">
+  <div id="heart" class="text-center">
+    💕
+  </div>
+</div>
 </div>

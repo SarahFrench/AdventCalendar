@@ -31,4 +31,5 @@ Rails.application.config.assets.precompile += %w[
   20-crossword/*.js
   22-can-can/*.js
   23-pub-quiz/*.js
+  25-xmas-day/*.js
 ]
