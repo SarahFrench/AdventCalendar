@@ -179,6 +179,9 @@ body {
   background-color: white;
   position: relative;
   border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Media queries - Responsive timeline on screens less than 600px wide */
