@@ -35,15 +35,47 @@ div.xmas__container{
 }
 
 .xmas-timeline{
-    & h2 {
+    & h4 {
       color: black;
+      margin-top: 10px;
+      margin-bottom: 5px;
     }
 
     & p {
       color: black;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      font-family: sans-serif;
     }
 }
 
+.xmas-timeline__img {
+  width: 200px;
+}
+
+.xmas-timeline__heart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size:x-large;
+
+  & div{
+      padding: 1em;
+      min-width: 50px;
+      min-height: 50px;
+    &:hover{
+      cursor: pointer;
+      border-radius: 50%;
+      border: solid 2px red;
+    }
+  }
+}
+
+.xmas-timeline__text {
+  font-size: small;
+  padding: 0px 5px;
+  text-align: justify;
+}
 
 // copied from W3 schools
 
@@ -143,7 +175,7 @@ body {
 
 /* The actual content */
 .content {
-  padding: 20px 30px;
+  padding: 5px;
   background-color: white;
   position: relative;
   border-radius: 6px;
